@@ -1,2 +1,2 @@
 import './style.css'
-console.log ()
+console.log (46546)
