@@ -196,3 +196,5 @@ if (age<3) {
 
 const isThursday = new Date().getDate() == 22 ? true : false
 console.log(isThursday)
+
+alert(null || 2 & 3 || 4)
