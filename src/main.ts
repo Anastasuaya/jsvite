@@ -18,14 +18,14 @@ let noVal
 noVal = 'g'
 console.log(noVal)
 
-let theValue
+// let theValue
 
 // cоздание константы
-const DAY_IN_WEEK = 7
+// const DAY_IN_WEEK = 7
 // Ошибка не можем изменять константы
 // DAY_IN_WEEK = 8
 
-const countedSum = a + newVar
+// const countedSum = a + newVar
 
 console.log('10 + 5 =', 10+5)
 console.log('10 - 5 =', 10-5)
