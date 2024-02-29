@@ -159,7 +159,7 @@ console.log(text)
 
 let y = 5
 let x = 1
-result = 120
+result = 24
 
 while(x) {
     result*= y
@@ -167,3 +167,16 @@ while(x) {
 }
 
 console.log(result)
+
+// Практика 3. Задание 5
+// Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
+
+num = 2
+result = 6
+
+do {
+    alert(num + num * num);
+    num++;
+} while (num< 6);
+
+console.log(num)
