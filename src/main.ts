@@ -93,3 +93,77 @@ import './style.css'
 
 // Практика 1. Задание 6
 // Пользователь вводит значения a и b для формулы a * x + b = 0, а программа считает и выводит значение x.
+
+
+
+
+// Практика 3. Задание 1
+
+// Вывести # столько раз, сколько указал пользователь.
+
+let i = 0
+let userInput = 10
+let text = ''
+
+while (i < userInput) {
+    text = text + '#'
+    i++
+}
+console.log(text)
+
+// Практика 3. Задание 1
+// Пользователь ввел число, а на экран вывелись все числа от введенного до 0
+
+
+userInput = 10
+text = ''
+while (userInput) {
+    text = text + userInput + '_'
+    userInput--
+}
+
+console.log(text)
+
+
+//  Практика 3. Задание 3
+// Запросить число и степень. Возвести число в указанную степень и вывести результат.
+let num = 10
+let count = 3
+let result = 1
+while (count) {
+    result *= num
+    count--
+}
+console.log(result)
+
+// Практика 3. Задание 4
+// Запросить 2 числа и найти все общие делители.
+
+let num1 = 416
+let num2 = 793
+
+text = ''
+let min = num1 < num2 ? num1 : num2
+
+while (min) {
+    if (num1 % min == 0 && num2 % min == 0) {
+        text += min + ''
+    }
+    min--
+}
+
+console.log(text)
+
+// Практика 3. Задание 5 
+// Посчитать факториал введенного пользователем числа.
+
+let y = 5
+let x = 1
+result = 120
+
+while(x) {
+    result*= y
+    x--
+}
+
+console.log(result)
