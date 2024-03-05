@@ -127,56 +127,175 @@ console.log(text)
 
 //  Практика 3. Задание 3
 // Запросить число и степень. Возвести число в указанную степень и вывести результат.
-let num = 10
-let count = 3
-let result = 1
-while (count) {
-    result *= num
-    count--
-}
-console.log(result)
+// let num = 10
+// let count = 3
+// let result = 1
+// while (count) {
+//     result *= num
+//     count--
+// }
+// console.log(result)
 
 // Практика 3. Задание 4
 // Запросить 2 числа и найти все общие делители.
 
-let num1 = 416
-let num2 = 793
+// let num1 = 416
+// let num2 = 793
 
-text = ''
-let min = num1 < num2 ? num1 : num2
+// text = ''
+// let min = num1 < num2 ? num1 : num2
 
-while (min) {
-    if (num1 % min == 0 && num2 % min == 0) {
-        text += min + ''
-    }
-    min--
-}
+// while (min) {
+//     if (num1 % min == 0 && num2 % min == 0) {
+//         text += min + ''
+//     }
+//     min--
+// }
 
-console.log(text)
+// console.log(text)
 
 // Практика 3. Задание 5 
 // Посчитать факториал введенного пользователем числа.
 
-let y = 5
-let x = 1
-result = 24
+// let y = 5
+// let x = 1
+// result = 24
 
-while(x) {
-    result*= y
-    x--
-}
+// while (x) {
+//     result *= y
+//     x--
+// }
 
-console.log(result)
+// console.log(result)
 
 // Практика 3. Задание 5
 // Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
 
-num = 2
-result = 6
+// num = 2
+// result = 6
 
-do {
-    alert(num + num * num);
-    num++;
-} while (num< 6);
+// do {
+//     alert(num + num * num);
+//     num++;
+// } while (num< 6);
 
-console.log(num)
+// console.log(num)
+
+
+
+// Функции
+
+// showMessage(..)     // показывает сообщение
+// getAge(..)          // возвращает возраст (получая его каким-то образом)
+// calcSum(..)         // вычисляет сумму и возвращает результат
+// createForm(..)      // создаёт форму (и обычно возвращает её)
+// checkPermission(..) // проверяет доступ, возвращая true/false
+
+// Практика 4. Задание 1
+// Написать функцию, которая принимает 2 числа и возвращает меньшее из них.
+
+function min(a: number, b: number) {
+    return a < b ? a : b;
+}
+
+console.log(min(101, 100))
+
+
+// Практика 4. Задание 2
+// Написать функцию, которая возводит переданное число в указанную степень.
+
+function pow(x: number, n: number) {
+    console.log(x)
+    console.log(n)
+    let result = x ** n;
+
+    console.log(result)
+    return result
+}
+
+let sumpow = pow(10, 3)
+console.log(sumpow)
+
+// Практика 4. Задание 3 (????)
+// Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.
+
+// function calcSum(x: number, n: number) {
+//     console.log(x)
+//     console.log(n)
+
+//     return x + n
+
+// }
+
+// let calc = calcSum(10, 5)
+
+// console.log(calc)
+
+
+
+// Практика 4. Задание 4
+// Написать функцию, которая проверяет, является ли переданное ей число простым.
+
+function checkNum(n:number) {
+
+    if ( n <= 0) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+let check = checkNum(1000)
+
+console.log(checkNum)
+
+
+
+// Практика 4. Задание 5
+// Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. Вызовите функцию для всех чисел от 2 до 9
+
+
+
+
+// Практика 4. Задание 6
+// Написать функцию, которая реализует работу оператора %. Функция принимает 2 параметра и возвращает остаток от деления первого параметра на второй. 
+// В функции использовать только + - * /, оператор % не использовать.
+
+
+
+
+
+// Практика 4. Задание 7
+// Написать функцию, которая принимает от 1 до 5 чисел и возвращает их сумму.
+
+
+function sum(a:number, b:number, c:number, x:number, n:number){
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(x)
+    console.log(n)
+
+    return a+b+c+x+n
+  
+}
+
+let sumOf2And4 = sum(2,4,6,8,10)
+console.log(sumOf2And4)
+
+// Практика 4. Задание 8
+// Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
+
+function max(a:number, b:number, c:number, x:number, n:number) {
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(x)
+    console.log(n)
+
+    return a < b ? a : b;
+
+}
+
+console.log(max(101, 100, 110, 167, 140))
