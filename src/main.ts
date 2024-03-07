@@ -281,7 +281,7 @@ function sum(a:number, b:number, c:number, x:number, n:number){
   
 }
 
-let sumOf2And4 = sum(2,4,6,8,10)
+let sumOf2And4 = sum(10,4,6,8,10)
 console.log(sumOf2And4)
 
 // Практика 4. Задание 8
