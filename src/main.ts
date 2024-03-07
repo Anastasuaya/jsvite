@@ -327,15 +327,39 @@ console.log(getFactorial(5))
 // Практика 5. Задание 2
 // Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
 
+// function printNumberForvard(start: number, end: number): void {
+//     if (start > end) {
+//         return
+//     }
+
+//     printNumberForvard(start , end -1)
+
+//     console.log (end)
+// }
+
+// printNumberForvard(1, 5)
+
+// function printNumberBackward(start: number, end: number): void {
+//     if (start < end) {
+//         return
+//     }
+
+//     printNumberBackward(start , end + 1)
+
+//     console.log (end)
+// }
+
+// printNumberBackward(5, 1)
+
 function printNumberForvard(start: number, end: number): void {
     if (start > end) {
         return
     }
+    console.log (start)
+    printNumberForvard(start +1 , end)
 
-    printNumberForvard(start , end -1)
-
-    console.log (end)
 }
+    
 
 printNumberForvard(1, 5)
 
@@ -343,10 +367,10 @@ function printNumberBackward(start: number, end: number): void {
     if (start < end) {
         return
     }
+    console.log (start)
+    printNumberBackward(start -1 , end)
 
-    printNumberBackward(start , end + 1)
 
-    console.log (end)
 }
 
 printNumberBackward(5, 1)
