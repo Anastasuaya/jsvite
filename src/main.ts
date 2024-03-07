@@ -327,29 +327,29 @@ console.log(getFactorial(5))
 // Практика 5. Задание 2
 // Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
 
-function getNumber(start: number, end: number): void {
+function printNumberForvard(start: number, end: number): void {
     if (start > end) {
         return
     }
 
-    getNumber(start + 1, end)
+    printNumberForvard(start , end -1)
 
-    console.log (start)
+    console.log (end)
 }
 
-getNumber(1, 5)
+printNumberForvard(1, 5)
 
-function getNumber1(start: number, end: number): void {
+function printNumberBackward(start: number, end: number): void {
     if (start < end) {
         return
     }
 
-    getNumber1(start - 1, end)
+    printNumberBackward(start , end + 1)
 
-    console.log (start)
+    console.log (end)
 }
 
-getNumber1(5, 1)
+printNumberBackward(5, 1)
 
 // Практика 5. Задание 3
 // Написать функцию, которая выводит переданное ей число задом наперед. Например: число 1234 вывести как 4321
