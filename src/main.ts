@@ -159,7 +159,7 @@ console.log(text)
 
 // let y = 5
 // let x = 1
-// result = 24
+//  let result = 24
 
 // while (x) {
 //     result *= y
@@ -236,9 +236,9 @@ console.log(sumpow)
 // Практика 4. Задание 4
 // Написать функцию, которая проверяет, является ли переданное ей число простым.
 
-function checkNum(n:number) {
+function checkNum(n: number) {
 
-    if ( n <= 0) {
+    if (n <= 0) {
         return false;
     }
     else {
@@ -270,31 +270,31 @@ console.log(checkNum)
 // Написать функцию, которая принимает от 1 до 5 чисел и возвращает их сумму.
 
 
-function sum(a:number, b:number, c:number, x:number, n:number){
+function sum(a: number, b: number, c: number, x: number, n: number) {
     console.log(a)
     console.log(b)
     console.log(c)
     console.log(x)
     console.log(n)
 
-    return a+b+c+x+n
-  
+    return a + b + c + x + n
+
 }
 
-let sumOf2And4 = sum(10,4,6,8,10)
+let sumOf2And4 = sum(10, 4, 6, 8, 10)
 console.log(sumOf2And4)
 
 // Практика 4. Задание 8
 // Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
 
-function max(num1:number, num2:number) {
+function max(num1: number, num2: number) {
 
     return num1 > num2 ? num1 : num2;
 
 }
 
- let num1 = 6
-let num2 =13
+let num1 = 6
+let num2 = 13
 
 
 console.log(max(num1, num2))
@@ -303,4 +303,88 @@ console.log(max(num1, num2))
 // Практика 4. Задание 9
 
 
+// Практика 5. Задание 1
+// Написать функцию, которая вычисляет факториал заданного числа.
+
+// let y = 5
+// let x = 1
+//  let result = 24
+
+// while (x) {
+//     result *= y
+//     x--
+// }
+
+// console.log(result)
+
+function getFactorial(n: number): number {
+
+    return (n == 1) ? 1 : n * getFactorial(n - 1)
+}
+console.log(getFactorial(5))
+
+
+// Практика 5. Задание 2
+// Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
+
+function getNumber(start: number, end: number): void {
+    if (start > end) {
+        return
+    }
+
+    getNumber(start + 1, end)
+
+    console.log (start)
+}
+
+getNumber(1, 5)
+
+function getNumber1(start: number, end: number): void {
+    if (start < end) {
+        return
+    }
+
+    getNumber1(start - 1, end)
+
+    console.log (start)
+}
+
+getNumber1(5, 1)
+
+// Практика 5. Задание 3
+// Написать функцию, которая выводит переданное ей число задом наперед. Например: число 1234 вывести как 4321
+
+function getReverseNumber(n: number): number {
+    if (n < 10) {
+        return n
+    } else {
+        return + (n % 10 + '' + getReverseNumber(Math.floor(n / 10)))
+    }
+}
+console.log(getReverseNumber(1234))
+// Практика 5. Задание 4
+// Написать функцию, которая считает сумму цифр числа. Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
+
+function sumOfDigits(n: number): number {
+    if (n < 10) {
+        return n
+    } else {
+        return + (n % 10 + sumOfDigits(Math.floor(n / 10)))
+    }
+}
+
+console.log(sumOfDigits(1357))
+
+// Практика 5. Задание 5
+// Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. Например: число 4 – (((()))).
+
+function getBracketsPairsByNum(n: number): string {
+    if (!n) {
+        return ''
+    } else {
+        return '(' + getBracketsPairsByNum(n - 1) + ')'
+    }
+}
+
+console.log(getBracketsPairsByNum(4))
 
