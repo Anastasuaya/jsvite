@@ -287,15 +287,20 @@ console.log(sumOf2And4)
 // Практика 4. Задание 8
 // Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
 
-function max(a:number, b:number, c:number, x:number, n:number) {
-    console.log(a)
-    console.log(b)
-    console.log(c)
-    console.log(x)
-    console.log(n)
+function max(num1:number, num2:number) {
 
-    return a < b ? a : b;
+    return num1 > num2 ? num1 : num2;
 
 }
 
-console.log(max(101, 100, 110, 167, 140))
+ let num1 = 6
+let num2 =13
+
+
+console.log(max(num1, num2))
+
+
+// Практика 4. Задание 9
+
+
+
