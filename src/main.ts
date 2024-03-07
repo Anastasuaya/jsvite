@@ -246,7 +246,7 @@ function checkNum(n:number) {
     }
 }
 
-let check = checkNum(1000)
+// let check = checkNum(1000)
 
 console.log(checkNum)
 
