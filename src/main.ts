@@ -414,3 +414,4 @@ function getBracketsPairsByNum(n: number): string {
 
 console.log(getBracketsPairsByNum(4))
 
+// Практика 6. Задание 1
