@@ -386,6 +386,8 @@ function getReverseNumber(n: number): number {
     }
 }
 console.log(getReverseNumber(1234))
+
+
 // Практика 5. Задание 4
 // Написать функцию, которая считает сумму цифр числа. Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
 
