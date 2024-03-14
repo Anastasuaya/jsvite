@@ -76,7 +76,7 @@ console.log(numb * numb)
 
 let km = 80
 
-km = parseInt(prompt ('Километры в мили') as string)
+// km = parseInt(prompt ('Километры в мили') as string)
 
 const KM_IN_MILE = 0.621371
 
