@@ -85,19 +85,36 @@ console.log(miles)
 
 // Практика 1. Задание 5
 // Реализуйте калькулятор. Пользователь вводит два числа, а программа выводит результаты действий + - * / между этими числами.
-// let num = 'Введите число'
-// console.log (num)
-// let num1 = 'Введите ещё одно число'
-// console.log (num1)
+
+let numm1 = 10
+console.log (numm1)
+let numm2 = 10
+console.log (numm2)
+
+console.log(numm1 + numm2)
+console.log(numm1 - numm2)
+console.log(numm1 * numm2)
+console.log(numm1 / numm2)
+console.log(numm1 ** numm2)
 
 // Практика 1. Задание 6
 // Пользователь вводит значения a и b для формулы a * x + b = 0, а программа считает и выводит значение x.
+// let a = 10
+// let b = 6
+
+// let x = b/a
+// console.log(x)
+
 
 // Практика 1. Задание 7
 // Запросите у пользователя текущее время (часы и минуты)
 // и выведите, сколько часов и минут осталось до следующего
 // дня.
 
+// let time = parseInt('Введите часы', 4)
+// let time1 = parseInt('Введите минуты', 30)
+
+// console.log()
 
 
 // Практика 1. Задание 8
