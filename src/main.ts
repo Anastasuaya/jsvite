@@ -61,7 +61,7 @@ console.log(numm)
 
 alert('Среднее арифметическое ваших чисел' + num + numm)
 
-console.log(num+numm)
+console.log(num + numm)
 
 // практика 1. Задание 3
 // Запросите у пользователя длину стороны квадрата и выведите площадь такого квадрата.
@@ -87,9 +87,9 @@ console.log(miles)
 // Реализуйте калькулятор. Пользователь вводит два числа, а программа выводит результаты действий + - * / между этими числами.
 
 let numm1 = 10
-console.log (numm1)
+console.log(numm1)
 let numm2 = 10
-console.log (numm2)
+console.log(numm2)
 
 console.log(numm1 + numm2)
 console.log(numm1 - numm2)
@@ -103,7 +103,7 @@ console.log(numm1 ** numm2)
 let a = 6
 let b = 30
 
-let x = b/a
+let x = b / a
 console.log(x)
 
 // Практика 1. Задание 7
@@ -538,11 +538,11 @@ function printNumberForvard(start: number, end: number): void {
     if (start > end) {
         return
     }
-    console.log (start)
-    printNumberForvard(start +1 , end)
+    console.log(start)
+    printNumberForvard(start + 1, end)
 
 }
-    
+
 
 printNumberForvard(1, 5)
 
@@ -550,8 +550,8 @@ function printNumberBackward(start: number, end: number): void {
     if (start < end) {
         return
     }
-    console.log (start)
-    printNumberBackward(start -1 , end)
+    console.log(start)
+    printNumberBackward(start - 1, end)
 
 
 }
@@ -597,4 +597,162 @@ function getBracketsPairsByNum(n: number): string {
 
 console.log(getBracketsPairsByNum(4))
 
-// Практика 6. Задание 1
+
+
+// Задание. практика 2.1
+
+
+// Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
+
+type Rectangle = {
+    topLeft: { x: number, y: number },
+    bottomRight: { x: number, y: number },
+}
+
+let rectangle: Rectangle = {
+    topLeft: { x: 0, y: 0 },
+    bottomRight: { x: 15, y: 15 },
+}
+
+// Задание 1.
+// Функция принимает объект-прямоугольник и выводит
+// информацию о нем (где какая точка расположена).
+
+function getInfoRectangle(rectangle: Rectangle) {
+
+    console.log(rectangle.topLeft.x, rectangle.topLeft.y)
+    console.log(rectangle.bottomRight.x, rectangle.bottomRight.y)
+}
+
+getInfoRectangle(rectangle)
+
+// Задание 2
+// Функция принимает объект-прямоугольник и возвращает
+// его ширину.
+function getWidthRectangle(rectangle: Rectangle) {
+    return Math.abs(rectangle.bottomRight.x) - Math.abs(rectangle.topLeft.x)
+}
+
+console.log(getWidthRectangle(rectangle))
+
+// Задание 3
+// Функция принимает объект-прямоугольник и возвращает
+// его высоту.
+function getHeightRectangle(rectangle: Rectangle) {
+    return Math.abs(rectangle.bottomRight.y) - Math.abs(rectangle.topLeft.y)
+}
+
+console.log(getHeightRectangle(rectangle))
+
+
+// Задание 4
+// Функция принимает объект-прямоугольник и возвращает
+// его площадь.
+function getAreaRectangle(rectangle: Rectangle) {
+    return getWidthRectangle(rectangle) * getHeightRectangle(rectangle)
+}
+
+console.log(getAreaRectangle(rectangle))
+// Задание 5
+// Функция принимает объект-прямоугольник и возвращает
+// его периметр.
+
+function getPerinetrRectangle(rectangle: Rectangle) {
+    return getWidthRectangle(rectangle) + getHeightRectangle(rectangle) * 2
+}
+
+console.log(getPerinetrRectangle(rectangle))
+
+
+// Задание 6
+// Функция изменения ширины прямоугольника. Она прини-
+// мает объект-прямоугольник и на сколько единиц изменить
+// ширину.
+
+function getNewWidthRectangle(rectangle: Rectangle, x: number) {
+
+    return rectangle.bottomRight.x += x
+}
+
+console.log(getNewWidthRectangle(rectangle, 5))
+
+// Задание 7
+// Функция изменения высоты прямоугольника. Она прини-
+// мает объект-прямоугольник и на сколько единиц изменить
+// высоту.
+function getNewHeightRectangle(rectangle: Rectangle, y: number) {
+    return rectangle.bottomRight.y += y
+}
+
+console.log(getNewHeightRectangle(rectangle, 5))
+
+// Зaдание 8
+// Функция изменения ширины и высоты прямоугольника.
+// Она принимает объект-прямоугольник и два значения –
+// для изменения ширины и высоты.
+
+function widthHeightRectangle(rectangle: Rectangle, x: number, y: number) {
+
+    getNewWidthRectangle(rectangle, x)
+    getNewHeightRectangle(rectangle, y)
+
+}
+
+widthHeightRectangle(rectangle, 6, 7)
+console.log(rectangle)
+// Задание 9
+// Функция смещения прямоугольника по оси X. Она при-
+// нимает объект-прямоугольник и на сколько единиц его
+// сдвинуть.
+function moveX(rectangle: Rectangle, x: number) {
+
+    rectangle.bottomRight.x += x
+    rectangle.topLeft.x += x
+}
+
+moveX(rectangle, 5)
+console.log(rectangle)
+
+// Задание 10
+// Функция смещения прямоугольника по оси Y. Она при-
+// нимает объект-прямоугольник и на сколько единиц его
+// сдвинуть.
+
+function moveY(rectangle: Rectangle, y: number) {
+
+    rectangle.bottomRight.y += y
+    rectangle.topLeft.y += y
+}
+
+moveY(rectangle, 5)
+console.log(rectangle)
+
+
+// Задание 11
+// Функция смещения прямоугольника и по оси X и по
+// оси Y. Она принимает объект-прямоугольник и два значе-
+// ния: сдвиг по оси X и сдвиг по оси Y.
+
+function moveXY(rectangle: Rectangle, x: number, y: number) {
+
+    moveX(rectangle, x)
+    moveY(rectangle, y)
+}
+
+moveXY(rectangle, 5, 7)
+console.log(rectangle)
+
+// Задание 12
+//  Функция для проверки, находится ли точка внутри пря-
+// моугольника. Она принимает объект-прямоугольник и
+// координаты точки
+
+function pointRectangle (rectangle: Rectangle, x: number, y: number) {
+    if ((x>= rectangle.topLeft.x && x<= rectangle.bottomRight.x) && (y>= rectangle.topLeft.y && y<= rectangle.bottomRight.y)) {
+        return true
+    }
+    return false
+}
+
+console.log(rectangle)
+console.log(pointRectangle(rectangle, 12,15))
