@@ -197,9 +197,9 @@ console.log(distance)
 // ры, программа переводит в евро. Курс валюты храните в
 // константе.
 
-let dollar = 100
+// let dollar = 100
 
-const DOLLAR_IN_EURO =
+// const DOLLAR_IN_EURO =
 
 
 // Домашка 1. Задание 7
