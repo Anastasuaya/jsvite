@@ -781,3 +781,27 @@ function pointRectangle (rectangle: Rectangle, x: number, y: number) {
     return false
 }
 console.log(pointRectangle(rectangle, 12,15))
+
+
+// Практика 2.2
+
+// Задание 1
+// Создать массив из 10 случайных чисел и написать несколько
+// функций для работы с ним.
+
+const arr1: number[] = [0, 4, 6, 5, 8, 5, 3, 3, 8, 0]
+const arr2: number[] = [5, 8, 1, 9, 3]
+
+function fillArrayRandomNumbers(arr:number[], length:number) {
+  for (let i=0; i<length; i++) {
+    arr.push(Math.floor(Math.random()*10))
+  }
+}
+
+fillArrayRandomNumbers(arr1, 10)
+fillArrayRandomNumbers(arr2, 5)
+
+
+console.log(arr1)
+console.log(arr2)
+console.log(arr2.includes(0))
