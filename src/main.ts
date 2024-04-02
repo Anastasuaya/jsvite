@@ -212,16 +212,21 @@ console.log(CONVERT)
 // должна посчитать сколько файлов размером в 820 Мб по-
 // мещается на флешку.
 
-const GB_IN_MB = 1024
+// const GB_IN_MB = 1024
 
-let filesize = 820
+// let filesize = 820
 
-let VolymeInGb = parseInt(prompt('Укажите объем флешки в гб', '1') as string)
+// let VolymeInGb = parseInt(prompt('Укажите объем флешки в гб', '1') as string)
 
-let QuantityFiles = parseInt((VolymeInGb * GB_IN_MB) / filesize)
+// let QuantityFiles = parseInt((VolymeInGb * GB_IN_MB) / filesize)
 
-console.log(QuantityFiles)
+// console.log(QuantityFiles)
 
+ const oneGigabyteToMegabytes = 1024
+ let fileSize = 820
+ let volumeInGigabytes = parseInt(prompt('Укажите объём флешки в Гб', '1') as string)
+ let numberOfFiles = parseInt((volumeInGigabytes * oneGigabyteToMegabytes) / fileSize)
+ console.log('Количество файлов размером по 820 Мб, которое помещается на флешку:', numberOfFiles, 'файлов')
 
 // Домашка 1. Задание 8
 // Пользователь вводит сумму денег в кошельке и цену одной
@@ -233,11 +238,11 @@ let chocolate = 70
 
 let QuantityChocolate = parseInt(summ / chocolate)
 
-console.log(QuantityChocolate , '- Количество шоколадок, которые вы можете купить')
+console.log(QuantityChocolate , 'Количество шоколадок, которые вы можете купить')
 
 let change = summ - (QuantityChocolate * chocolate)
 
-console.log(change , '- Ваша сдача')
+console.log(change , 'Ваша сдача')
 
 // Домашка 1. Задание 9
 // Запросите у пользователя трехзначное число и выведите
