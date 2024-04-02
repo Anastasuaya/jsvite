@@ -294,9 +294,9 @@ let num3 = -47
 
 if (num3 > 0 ) {
     console.log(num3 , 'положительное')
-} else (num3 < 0) {
-    console.log(num3 , 'отрицательное')
-} 
+} else (num3 < 0) 
+console.log(num3 , 'отрицательное')
+
 
 console.log(num3)
 
