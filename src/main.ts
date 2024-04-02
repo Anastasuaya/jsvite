@@ -284,7 +284,7 @@ if (number % 2 == 0) {
 // null / undefined.Хорошей идеей будет сделать отдельную проверку на null / undefined.
 
 
-// TODO Практика 2. Выполнено с 1 по 6 заданиe
+// TODO Практика 2. Выполнено с 1 по 7 заданиe
 
 // Практика 2. Задание 1
 // Запросить у пользователя число и определить, оно поло-
@@ -453,11 +453,39 @@ switch (months) {
     default:
         break
 }
+
+
 // Практика 2. Задание 7
 // Реализовать калькулятор. Пользователь вводит 2 числа и
 // знак (+ - * /). В зависимости от введенного знака решить
 // пример и вывести результат.
 
+let number1 = 3
+let number2 = 5
+let operator = '-'
+let res = 0
+
+switch(operator) {
+
+    case '+':
+        res = number1 + number2
+        break
+
+    case '-':
+        res = number1 - number2
+        break
+
+    case '/':
+        res = number1 / number2
+        break
+
+    case '*':
+        res = number1 * number2
+        break
+
+        default:
+            break
+}
 
 // Исп. тернарный оператор
 // Практика 2. Задание 8
