@@ -1082,16 +1082,16 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 
 // *Есть массив объектов
 
-const employees = [
-    { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
-    { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
-    { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
-    { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
-    { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
-    { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
-    { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
-    { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
-  ]
+// const employees = [
+//     { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
+//     { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
+//     { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
+//     { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
+//     { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
+//     { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
+//     { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
+//     { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
+//   ]
 
 //* Все функции вызывать несколько раз с разными параметрами
 
