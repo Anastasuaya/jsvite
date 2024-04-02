@@ -8,7 +8,7 @@ import './style.css'
 // var a = 2
 // console.log(a)
 
-// // Создание переменной
+// Создание переменной
 // let newVar = 5
 // newVar = 5
 
@@ -18,9 +18,9 @@ import './style.css'
 
 // let theValue
 
-// // Создание константы
+// Создание константы
 // const DAI_IN_WEEK = 7
-// // Ошибка не можем изменять константы
+// Ошибка не можем изменять константы
 
 
 // const countedsum = a + newVar
@@ -465,7 +465,7 @@ let number2 = 5
 let operator = '-'
 let res = 0
 
-switch(operator) {
+switch (operator) {
 
     case '+':
         res = number1 + number2
@@ -483,8 +483,8 @@ switch(operator) {
         res = number1 * number2
         break
 
-        default:
-            break
+    default:
+        break
 }
 
 console.log(number1, operator, number2, '=', res)
@@ -504,7 +504,7 @@ Num > Num ? console.log(Num) : console.log(Num1)
 
 let Numm = 351
 
-Numm % 5 ==0 ? console.log(Numm , 'Кратно') : console.log(Numm , 'Не кратно')
+Numm % 5 == 0 ? console.log(Numm, 'Кратно') : console.log(Numm, 'Не кратно')
 
 // Практика 2. Задание 10
 // Запросить у пользователя название планеты. Если поль-
@@ -1025,18 +1025,18 @@ console.log(arr2.includes(0))
 
 // 1.1.  Написать функцию возвращающую массив целых чисел от 0 до 10
 
-const arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-function  Array( arr: number[]) {
-    return { arr}
+function Array(arr: number[]) {
+    return { arr }
 }
 console.log(Array(arr))
 
 // 1.2.  Добавить в функцию параметры опциональные параметры начального и конечного значения массива
 //(если конечный элемент массива не передат, то он больше нечального на 10) . Вызвать функцию несаколько раз
 
-function parametrArray ( start=0 , end=start+10) {
-    return { start, end}
+function parametrArray(start = 0, end = start + 10) {
+    return { start, end }
 }
 
 console.log(parametrArray())
@@ -1045,17 +1045,29 @@ console.log(parametrArray(20, 50))
 
 // 1.3*. Написать функцию возвращающюю массив случайных целых чисел. Функция принимает 1 параметр, количество элементов в будущем массиве
 
-function generateArray ( start=0 , end=start+10) {
-    return {arr}
-}
+// function generateArray ( start=0 , end =) {
+//     return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// }
 
-console.log(generateArray())
-console.log(generateArray(20))
-console.log(generateArray(20, 50))
+// console.log(generateArray())
+// console.log(generateArray(20))
+// console.log(generateArray(20, 50))
+
 // 2.1. В файле html создать пустой div с произвольным id
 // 2.2. Получить объект div'а в js при помощи метода document.getElementById(ваш id) as HTMLDivElement
+const Div = document.getElementById("app") as HTMLDivElement
+
 // 2.3. Вывесли в полученный div текст, "Привет, пользователь"
+
+Div.innerHTML = `
+<p>Привет, пользователь!</p>
+`
 // 2.4. Написать функцию, которая возвращает текст "Привет, пользователь" или "Привет, <имяПользователя>" в зависимости от переданных параметров и использовать её в задании 2.3.
+
+function DivHtml(Div: any) {
+    return(Div.innerHTML)
+}
+console.log(DivHtml)
 
 // Есть массив объектов
 // const employees = [
