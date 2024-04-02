@@ -524,7 +524,7 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 
 //! ЦИКЛЫ
 
-// TODO практика 3. В процессе.
+// TODO практика 3. Вcё!
 
 //* Практика 3. Задание 1
 // Вывести # столько раз, сколько указал пользователь.
@@ -570,47 +570,47 @@ console.log(result)
 //* Практика 3. Задание 4
 // Запросить 2 числа и найти все общие делители.
 
-// let Numm1 = 416
-// let Numm2 = 793
+let Numm1 = 416
+let Numm2 = 793
 
-// text = ''
-// let minimum = Numm1 < Numm2 ? Numm1 : Numm2
+text = ''
+let minimum = Numm1 < Numm2 ? Numm1 : Numm2
 
-// while (minimum) {
-//     if (Numm1 % minimum == 0 && Numm2 % minimum == 0) {
-//         text += minimum + ''
-//     }
-//     minimum--
-// }
+while (minimum) {
+    if (Numm1 % minimum == 0 && Numm2 % minimum == 0) {
+        text += minimum + ''
+    }
+    minimum--
+}
 
-// console.log(text)
+console.log(text)
 
-// Практика 3. Задание 5 
+//* Практика 3. Задание 5 
 // Посчитать факториал введенного пользователем числа.
 
-// let y = 5
-// let x = 1
-//  let result = 24
+let y = 5
+let X = 1
+ let resultat = 24
 
-// while (x) {
-//     result *= y
-//     x--
-// }
+while (X) {
+    resultat *= y
+    X--
+}
 
-// console.log(result)
+console.log(resultat)
 
-// Практика 3. Задание 5
+//* Практика 3. Задание 6
 // Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
 
-// num = 2
-// result = 6
+num = 2
+result = 6
 
-// do {
-//     alert(num + num * num);
-//     num++;
-// } while (num< 6);
+do {
+    alert(num + num * num);
+    num++;
+} while (num< 6);
 
-// console.log(num)
+console.log(num)
 
 
 
