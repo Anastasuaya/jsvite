@@ -487,6 +487,8 @@ switch(operator) {
             break
 }
 
+console.log(number1, operator, number2, '=', res)
+
 // Исп. тернарный оператор
 // Практика 2. Задание 8
 // Запросить 2 числа и вывести большее из них.
