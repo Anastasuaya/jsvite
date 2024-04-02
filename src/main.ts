@@ -111,8 +111,7 @@ console.log(x)
 // и выведите, сколько часов и минут осталось до следующего
 // дня.
 
-// let time = parseInt('Введите часы', 20)
-// let time1 = parseInt('Введите минуты', 36)
+// let TimeNow = 
 
 // console.log()
 
@@ -135,6 +134,8 @@ console.log(x)
 // Зарплата работника составляет $250 + 10% от продаж.
 // Запросите общую сумму продаж за месяц и посчитайте
 // зарплату.
+
+
 
 // Домашка 1. Задание 1
 // Запросите у пользователя его имя и выведите в ответ:
@@ -173,7 +174,7 @@ console.log(square)
 // Домашка 1. Задание 4
 // Запросите у пользователя радиус окружности и выведите
 // площадь такой окружности.
-let r = 10
+let r = 19
 let A = 3.14 * r ** 2
 
 console.log(A)
@@ -197,9 +198,13 @@ console.log(distance)
 // ры, программа переводит в евро. Курс валюты храните в
 // константе.
 
-// let dollar = 100
+let dollar = 100
 
-// const DOLLAR_IN_EURO =
+const DOLLAR_IN_EURO = 0.93
+
+const CONVERT = DOLLAR_IN_EURO * dollar
+
+console.log(CONVERT)
 
 
 // Домашка 1. Задание 7
@@ -207,11 +212,32 @@ console.log(distance)
 // должна посчитать сколько файлов размером в 820 Мб по-
 // мещается на флешку.
 
+const GB_IN_MB = 1024
+
+let filesize = 820
+
+let VolymeInGb = parseInt(prompt('Укажите объем флешки в гб', '1') as string)
+
+let QuantityFiles = parseInt((VolymeInGb * GB_IN_MB) / filesize)
+
+console.log(QuantityFiles)
+
 
 // Домашка 1. Задание 8
 // Пользователь вводит сумму денег в кошельке и цену одной
 // шоколадки. Программа выводит сколько шоколадок может
 // купить пользователь и сколько сдачи у него останется.
+
+let summ = 600
+let chocolate = 70
+
+let QuantityChocolate = parseInt(summ / chocolate)
+
+console.log(QuantityChocolate , '- Количество шоколадок, которые вы можете купить')
+
+let change = summ - (QuantityChocolate * chocolate)
+
+console.log(change , '- Ваша сдача')
 
 // Домашка 1. Задание 9
 // Запросите у пользователя трехзначное число и выведите
