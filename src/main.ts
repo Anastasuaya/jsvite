@@ -233,11 +233,11 @@ let chocolate = 70
 
 let QuantityChocolate = (summ / chocolate)
 
-console.log(QuantityChocolate , 'Количество шоколадок, которые вы можете купить')
+console.log(QuantityChocolate, 'Количество шоколадок, которые вы можете купить')
 
 let change = summ - (QuantityChocolate * chocolate)
 
-console.log(change , 'Ваша сдача')
+console.log(change, 'Ваша сдача')
 
 // Домашка 1. Задание 9
 // Запросите у пользователя трехзначное число и выведите
@@ -253,8 +253,8 @@ console.log(change , 'Ваша сдача')
 let number = 13
 
 if (number % 2 == 0) {
-    console.log(number , 'четное')
-} else console.log(number , 'нечетное')
+    console.log(number, 'четное')
+} else console.log(number, 'нечетное')
 
 
 //! В JavaScript есть 8 основных типов данных.
@@ -284,7 +284,7 @@ if (number % 2 == 0) {
 // null / undefined.Хорошей идеей будет сделать отдельную проверку на null / undefined.
 
 
-// TODO Практика 2. Выполнено с 1 по 5 задания
+// TODO Практика 2. Выполнено с 1 по 6 заданиe
 
 // Практика 2. Задание 1
 // Запросить у пользователя число и определить, оно поло-
@@ -292,10 +292,10 @@ if (number % 2 == 0) {
 
 let num3 = -47
 
-if (num3 > 0 ) {
-    console.log(num3 , 'положительное')
-} else (num3 < 0) 
-console.log(num3 , 'отрицательное')
+if (num3 > 0) {
+    console.log(num3, 'положительное')
+} else (num3 < 0)
+console.log(num3, 'отрицательное')
 
 
 console.log(num3)
@@ -308,7 +308,7 @@ console.log(num3)
 let Age = 10
 
 if (Age > 0 && Age < 120) {
-    console.log('Ваш возраст' , Age)
+    console.log('Ваш возраст', Age)
 } else if (Age == 0) {
     console.log('Вы малыш')
 } else if (Age > 120) {
@@ -343,9 +343,9 @@ let seconds = 60
 
 if (hours > 24 || hours < 0
     || minutes > 60 || minutes < 0
-    || seconds > 60 || seconds < 0 ) {
-        console.log('Вы ввели некорректные данные')
-    }
+    || seconds > 60 || seconds < 0) {
+    console.log('Вы ввели некорректные данные')
+}
 
 if (hours > 24 || hours < 0) {
     console.log('Время должно быть в диапазоне от 0 до 24 часов')
@@ -353,7 +353,7 @@ if (hours > 24 || hours < 0) {
 if (minutes > 60 || minutes < 60) {
     console.log('Время должно быть в диапазоне от 0 до 24 минут')
 }
-if (seconds > 60 || seconds <  60 ) {
+if (seconds > 60 || seconds < 60) {
     console.log('Время должно быть в диапазоне от 0 до 24 секунд')
 }
 
@@ -399,6 +399,60 @@ if (dotX > 0 && dotY < 0) {
 // Запросить у пользователя номер месяца и вывести на экран
 // его название.
 
+let months = '6'
+
+switch (months) {
+    case '1':
+        console.log('Январь')
+        break
+
+    case '2':
+        console.log('Февраль')
+        break
+
+    case '3':
+        console.log('Март')
+        break
+
+    case '4':
+        console.log('Апрель')
+        break
+
+    case '5':
+        console.log('Май')
+        break
+
+    case '6':
+        console.log('Июнь')
+        break
+
+    case '7':
+        console.log('Июль')
+        break
+
+    case '8':
+        console.log('Август')
+        break
+
+    case '9':
+        console.log('Сентябрь')
+        break
+
+    case '10':
+        console.log('Октябрь')
+        break
+
+    case '11':
+        console.log('Ноябрь')
+        break
+
+    case '12':
+        console.log('Декабрь')
+        break
+
+    default:
+        break
+}
 // Практика 2. Задание 7
 // Реализовать калькулятор. Пользователь вводит 2 числа и
 // знак (+ - * /). В зависимости от введенного знака решить
@@ -889,13 +943,13 @@ console.log(rectangle)
 // моугольника. Она принимает объект-прямоугольник и
 // координаты точки
 
-function pointRectangle (rectangle: Rectangle, x: number, y: number) {
-    if ((x>= rectangle.topLeft.x && x<= rectangle.bottomRight.x) && (y>= rectangle.topLeft.y && y<= rectangle.bottomRight.y)) {
+function pointRectangle(rectangle: Rectangle, x: number, y: number) {
+    if ((x >= rectangle.topLeft.x && x <= rectangle.bottomRight.x) && (y >= rectangle.topLeft.y && y <= rectangle.bottomRight.y)) {
         return true
     }
     return false
 }
-console.log(pointRectangle(rectangle, 12,15))
+console.log(pointRectangle(rectangle, 12, 15))
 
 
 // Практика 2.2
@@ -907,10 +961,10 @@ console.log(pointRectangle(rectangle, 12,15))
 const arr1: number[] = [0, 4, 6, 5, 8, 5, 3, 3, 8, 0]
 const arr2: number[] = [5, 8, 1, 9, 3]
 
-function fillArrayRandomNumbers(arr:number[], length:number) {
-  for (let i=0; i<length; i++) {
-    arr.push(Math.floor(Math.random()*10))
-  }
+function fillArrayRandomNumbers(arr: number[], length: number) {
+    for (let i = 0; i < length; i++) {
+        arr.push(Math.floor(Math.random() * 10))
+    }
 }
 
 fillArrayRandomNumbers(arr1, 10)
