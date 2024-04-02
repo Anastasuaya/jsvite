@@ -231,7 +231,7 @@ console.log(QuantityFiles)
 let summ = 600
 let chocolate = 70
 
-let QuantityChocolate = parseInt(summ / chocolate)
+let QuantityChocolate = (summ / chocolate)
 
 console.log(QuantityChocolate , 'Количество шоколадок, которые вы можете купить')
 
