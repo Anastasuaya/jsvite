@@ -296,7 +296,9 @@ if (num3 > 0 ) {
     console.log(num3 , 'положительное')
 } else (num3 < 0) {
     console.log(num3 , 'отрицательное')
-} else console.log(num3 , 'ноль')
+} 
+
+console.log(num3)
 
 
 // Практика 2. Задание 2
