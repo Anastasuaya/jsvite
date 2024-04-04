@@ -1412,6 +1412,7 @@ PZ22z3Div.innerHTML = `
   // Получение объекта элемента по id
   const PZ22z3Div = document.getElementById('PZ22z3') as HTMLDivElement
   
+  
 
   // Сравнение чисел
   console.log(arrZ.sort((a,b)=>a-b))
