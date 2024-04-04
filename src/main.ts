@@ -363,8 +363,8 @@ if (seconds > 60 || seconds < 60) {
 // случаи попадания точки на оси X или Y или в начало
 // координат.
 
-let dotX = 6
-let dotY = -3
+let dotX = -12
+let dotY = 9
 
 if (dotX == 0 && dotY == 0) {
     console.log('Точка в начале координат')
