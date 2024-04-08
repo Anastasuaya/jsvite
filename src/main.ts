@@ -147,6 +147,14 @@ console.log(Number2)
 // Запросите общую сумму продаж за месяц и посчитайте
 // зарплату.
 
+const SALARY = 250
+const PERCENT = 0.1
+
+let TotalSum = 37648
+
+let TotalSalary = SALARY + (TotalSum * PERCENT)
+
+console.log(TotalSalary)
 // TODO Домашка 1. В процессе. Сделаны 1,2,3,4,5,6,7,8,10
 
 // Домашка 1. Задание 1
