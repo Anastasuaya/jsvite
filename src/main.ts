@@ -125,9 +125,9 @@ console.log('До следующего дня осталось' , HoursTomorrow 
 // вторую цифру этого числа. Для решения задачи используйте
 // оператор % (остаток от деления).
 
-let nuum = 398
+let nuum = 400
 
-let Result = (num/10) % 10
+let Result = (nuum/10) % 10
 
 console.log(Result)
 
