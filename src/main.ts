@@ -138,7 +138,7 @@ console.log(Result)
 
 let Number = 45981
 
-let Number2 = ((Number % 10) * 1000) + (Number / 10 % 10000)
+let Number2 = ((Number % 10) * 1000) + ((Number / 10) % 10000)
 
 console.log(Number2)
 
