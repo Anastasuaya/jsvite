@@ -111,9 +111,13 @@ console.log(x)
 // и выведите, сколько часов и минут осталось до следующего
 // дня.
 
-// let TimeNow = 
+let HoursNow = 17
+let MinutesNow = 51
 
-// console.log()
+let HoursTomorrow = 24 - HoursNow
+let MinutesTomorrow = 60 - MinutesNow
+
+console.log('До следующего дня осталось' , HoursTomorrow , 'часов' , MinutesTomorrow , 'минут')
 
 
 // Практика 1. Задание 8
