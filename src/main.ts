@@ -1298,3 +1298,11 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 
 
 console.log( 0.1 + 0.2 )
+
+let str = '';
+
+for (let i = 128513; i <= 128613; i++) {
+  str += String.fromCodePoint(i);
+}
+
+console.log(str)
