@@ -421,42 +421,42 @@ if (dotX > 0 && dotY < 0) {
 // Запросить у пользователя номер месяца и вывести на экран
 // его название.
 
-let months = '6'
+let months = '06'
 
 switch (months) {
-    case '1':
+    case '01':
         console.log('Январь')
         break
 
-    case '2':
+    case '02':
         console.log('Февраль')
         break
 
-    case '3':
+    case '03':
         console.log('Март')
         break
 
-    case '4':
+    case '04':
         console.log('Апрель')
         break
 
-    case '5':
+    case '05':
         console.log('Май')
         break
 
-    case '6':
+    case '06':
         console.log('Июнь')
         break
 
-    case '7':
+    case '07':
         console.log('Июль')
         break
 
-    case '8':
+    case '08':
         console.log('Август')
         break
 
-    case '9':
+    case '09':
         console.log('Сентябрь')
         break
 
@@ -546,35 +546,160 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 // Запросить у пользователя его возраст и определить, кем он
 // является: ребенком (0–2), подростком (12–18), взрослым
 // (18_60) или пенсионером (60– ...).
+ let Age1 = 19
 
+ if (Age1 >= 0 && Age1 <= 2) {
+    console.log('Вы ребенок')
+ } else if (Age1 >= 3 && Age1 <= 11) {
+    console.log('Вы ребенок постарше')
+ } else if (Age1 >= 12 && Age1 <= 18) {
+    console.log('Вы подросток')
+ } else if (Age1 >=19 && Age1 <=60) {
+    console.log('Вы взрослый')
+ } else if (Age1 < 0) {
+    console.log('Вы еще не родились')
+ } else console.log('Вы пенсионер')
 
 //* Задание 2
 // Запросить у пользователя число от 0 до 9 и вывести ему
 // спецсимвол, который расположен на этой клавише (1–!,
 // 2–@, 3–# и т. д).
 
+let WhenClick = '8'
+
+switch(WhenClick) {
+    
+    case '1':
+        console.log('!')
+        break
+
+    case '2':
+        console.log('@')
+        break
+
+    case '3':
+        console.log('#')
+        break
+
+    case '4':
+        console.log('$')
+        break
+
+    case '5':
+        console.log('%')
+        break
+
+    case '6':
+        console.log('^')
+        break
+
+    case '7':
+        console.log('&')
+        break
+
+    case '8':
+        console.log('*')
+        break
+
+    case '9':
+        console.log('(')
+}
+
 //* Задание 3
 // Запросить у пользователя трехзначное и число и проверить,
 // есть ли в нем одинаковые цифры.
+
+let num4 = 345
+
+console.log(num4/100 % 10)
+
+if ((num4/100 % 10) == (num4/10 % 10) ||
+   (num4/100 % 10) == num4 % 10 ||
+   (num4/10 % 10) == num4 %  10)
+   console.log(num4 , 'Одинаковые цифры есть')
 
 //* Задание 4
 // Запросить у пользователя год и проверить, високосный он
 // или нет. Високосный год либо кратен 400, либо кратен 4 и
 // при этом не кратен 100
 
+let year = 2024
+let day_in_year = 0
+
+if ( year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
+    (year % 4 == 0 && year % 100 != 0 && year % 400 != 0)) {
+        day_in_year = 366
+        console.log('Год високосный')
+    } else {
+        day_in_year = 365
+        console.log('Год не високосный')
+    }
+
 //* Задание 5
 // Запросить у пользователя пятиразрядное число и опреде-
 // лить, является ли оно палиндромом.
+
+let num5 = 121
+
+let num6 = (num5 % 10) * 100 + ((num5/ 10) % 10) * 10 + (num5/100) % 10
+
+console.log(num6)
+
+num5 == num6 ? console.log('Число палиндром') : console.log('Число не палидром')
+
 
 //* Задание 6
 // Написать конвертор валют. Пользователь вводит количе-
 // ство USD, выбирает, в какую валюту хочет перевести: EUR,
 // UAN или AZN, и получает в ответ соответствующую сумму.
 
+const DOLLAR_IN_EUR = 1.09
+const DOLLAR_IN_UAN = 0.14
+const DOLLAR_IN_AZN = 0.59
+
+let USD = 15
+let selection = 'AZN'
+let resultt = 0
+
+switch (selection) {
+    case 'EUR':
+        resultt = USD / DOLLAR_IN_EUR
+        break
+
+    case 'UAN':
+        resultt = USD / DOLLAR_IN_UAN
+        break
+
+    case 'AZN':
+        resultt = USD / DOLLAR_IN_AZN
+        break
+
+    default:
+        break
+}
+console.log(resultt)
+
+
 //* Задание 7
 // Запросить у пользователя сумму покупки и вывести сумму
 // к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300
 // до 500 – 5%, от 500 и выше – 7%.
+
+let PurchaseAmount = 2099
+
+let AmoundToBePaid = 0
+
+if (PurchaseAmount >= 200 && PurchaseAmount <= 300) {
+    AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.3)
+} else if (PurchaseAmount >= 300 && PurchaseAmount <= 500) {
+    AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.5)
+} else if (PurchaseAmount > 500) {
+    AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.7)
+} else {
+    AmoundToBePaid = PurchaseAmount
+} 
+console.log(AmoundToBePaid)
+
 
 //* Задание 8
 // Запросить у пользователя длину окружности и периметр
@@ -587,10 +712,100 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 // балла. После вопросов выведите пользователю количество
 // набранных баллов.
 
+let questions = ''
+let points = 0
+
+questions = prompt('Вопрос 1. Когда отменили крепостное право? \n a. В 1961 \n b. В 1761 \n c. В 1861') as string
+if (questions == 'c') points += 2
+
+questions = prompt('Вопрос 2. || - Что это? \n a. Оператор логического присваивания ИЛИ \n b. Оператор логического присваивания И \n c. Массив') as string
+
+if (questions == 'a') points += 2
+
+questions = prompt('Вопрос 3. Сколько в JavaScript основных типов данных? \n a. 5 \n b. 8 \n c. 10 ') as string
+
+if (questions == 'b') points += 2
+
+alert('Вы набрали' + ' ' + points + '' + 'баллов')
+
+console.log('Сумма набранных баллов:' , points)
+
 //* Задание 10
 // Запросить дату (день, месяц, год) и вывести следующую
 // за ней дату. Учтите возможность перехода на следующий
 // месяц, год, а также високосный год.
+//? Переменные для пользовательского ввода: день, месяц, год
+
+let Youday = 15
+let Youmonths = 6
+let Youyear = 2005
+
+if (Youmonths >= 1 && Youmonths <= 12) {
+
+    // Если в месяце 30 дней:
+    if (Youmonths == 4 || Youmonths == 6 || Youmonths == 9 || Youmonths == 11) {
+        if(Youday >= 1 && Youday <= 29)
+            Youday ++
+    } else if(Youday == 30) {
+        Youday = 1
+        Youmonths ++
+    } else {
+        console.log('Введите существующую дату')
+    }
+} else if (Youmonths == 2)
+// Если февраль
+
+// Если февраль в високосный год
+if (Youyear % 4 == 0 && Youyear % 100 == 0 && Youyear % 400 == 0 ||
+    (Youyear % 4 == 0 && Youyear % 100 != 0 && Youyear % 400 != 0)) {
+
+        if (Youday >= 1 && Youday <= 28) {
+            Youday ++
+    } else if (Youday == 1) {
+
+        Youday = 1
+        Youmonths ++ 
+    } else {
+        console.log('Введите существующую дату')
+    }
+    // Если февраль не високосный
+} else {
+    if (Youday >= 1 && Youday <= 27) {
+        Youday ++
+    } else if (Youday == 28) {
+        Youday = 1
+        Youmonths ++
+    } else {
+        console.log('Введите существующую дату')
+    }
+// Если декабрь, то переход на следующий год    
+} else if (Youmonths == 12) {
+    if (Youday >= 1 && Youday <= 30) {
+        Youday ++
+    } else if (Youday == 31) {
+
+        Youday = 1
+        Youmonths = 1
+        Youyear ++    
+    } else {
+        console.log('Введите существующую дату')
+    }
+
+    // Если в месяце 31 день
+} else {
+    if(Youday >= 1 && Youday <= 30) {
+        Youday ++
+    } else if (Youday == 31) {
+        Youday = 1
+        Youmonths ++
+    } else {
+        console.log('Введите существующую дату')
+    }
+
+} 
+
+console.log(Youday , Youmonths , Youyear)
+
 
 //! ЦИКЛЫ
 
