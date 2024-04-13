@@ -690,12 +690,19 @@ let PurchaseAmount = 2099
 let AmoundToBePaid = 0
 
 if (PurchaseAmount >= 200 && PurchaseAmount <= 300) {
+
     AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.3)
+
 } else if (PurchaseAmount >= 300 && PurchaseAmount <= 500) {
+
     AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.5)
+
 } else if (PurchaseAmount > 500) {
+
     AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.7)
+
 } else {
+    
     AmoundToBePaid = PurchaseAmount
 } 
 console.log(AmoundToBePaid)
