@@ -540,7 +540,7 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 
 
 
-// TODO домашка 1.2. В процессе
+// TODO домашка 1.2. Сделано всё, кроме 8 задания
 
 //* Задание 1
 // Запросить у пользователя его возраст и определить, кем он
@@ -702,7 +702,7 @@ if (PurchaseAmount >= 200 && PurchaseAmount <= 300) {
     AmoundToBePaid = PurchaseAmount - (PurchaseAmount * 0.7)
 
 } else {
-    
+
     AmoundToBePaid = PurchaseAmount
 } 
 console.log(AmoundToBePaid)
