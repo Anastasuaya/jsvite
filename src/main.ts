@@ -743,9 +743,9 @@ console.log('Сумма набранных баллов:' , points)
 // месяц, год, а также високосный год.
 //? Переменные для пользовательского ввода: день, месяц, год
 
-let Youday = 15
-let Youmonths = 6
-let Youyear = 2005
+let Youday = 22
+let Youmonths = 11
+let Youyear = 2004
 
 if (Youmonths >= 1 && Youmonths <= 12) {
 
