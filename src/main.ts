@@ -1003,34 +1003,39 @@ console.log(`Положительных чисел оказалось ${PozNumbe
 // и знак, решить пример, вывести результат и спросить, хо-
 // чет ли он решить еще один пример. И так до тех пор, пока
 // пользователь не откажется.
-do {
-   let number11 = parseInt(prompt('Введите первое число') as string)
-   let number20 =  parseInt(prompt('Введите второе число') as string)
-   let operatorr =  (prompt('Введите знак + , - , / , *') as string)
 
-    switch (operatorr) {
 
-        case '+':
+//? do {
+// ?   let number11 = parseInt(prompt('Введите первое число') as string)
+//  ?  let number20 =  parseInt(prompt('Введите второе число') as string)
+//   ? let operatorr =  (prompt('Введите знак + , - , / , *') as string)
 
-            alert (number11 + number20)
-            break
+// ?    switch (operatorr) {
+
+//  ?       case '+':
+
+//   ?          alert (number11 + number20)
+//    ?         break
     
-        case '-':
-             alert (number11 - number20)
-            break
+//     ?    case '-':
+//      ?        alert (number11 - number20)
+//   ?      break
     
-        case '/':
-            alert (number11 / number20)
-            break
+//    ?     case '/':
+//     ?        alert (number11 / number20)
+//      ?       break
     
-        case '*':
-            alert (number11 * number20)
-            break
+//   ?  case '*':
+//    ?         alert (number11 * number20)
+//     ?        break
     
-        default:
-            break
-    }
-} while (confirm('хотите решить ещё 1 пример?'))
+//      ?   default:
+//       ?      break
+//  ?   }
+//? } while (confirm('хотите решить ещё 1 пример?'))
+    
+
+
 //* Задание 7
 // Запросить у пользователя число и на сколько цифр его
 // сдвинуть. Сдвинуть цифры числа и вывести результат (если
