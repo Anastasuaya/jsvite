@@ -974,12 +974,63 @@ console.log(Howmanydigits)
 // статистику на экран. Учтите, что достаточно одной пере-
 // менной (не 10) для ввода чисел пользователем.
 
+let n1 = 1567
+
+let PozNumber = 0
+let NegNumber = 0
+let OddNumber = 0
+let EvenNumber = 0 
+let NullNumber = 0
+
+for (i = 1; i <= n1; i++) {
+    n1 = -90
+    if (n1 > 0) {
+        PozNumber += 1
+    } else if (n1 < 0) {
+        NegNumber += 1
+    } else {
+        NullNumber += 1
+    }
+
+    !(n1 % 2) ? (OddNumber += 1) : (EvenNumber +=1)
+}
+console.log(`Положительных чисел оказалось ${PozNumber}`, `Отрицательных чисел оказалось ${NegNumber}` ,
+    `Нулей оказалось ${NullNumber}` , `Четных чисел оказалось ${OddNumber}` , `Нечетных чисел оказалось ${EvenNumber}`
+)
+
 //* Задание 6
 // Зациклить калькулятор. Запросить у пользователя 2 числа
 // и знак, решить пример, вывести результат и спросить, хо-
 // чет ли он решить еще один пример. И так до тех пор, пока
 // пользователь не откажется.
+do {
+   let number11 = parseInt(prompt('Введите первое число') as string)
+   let number20 =  parseInt(prompt('Введите второе число') as string)
+   let operatorr =  (prompt('Введите знак + , - , / , *') as string)
 
+    switch (operatorr) {
+
+        case '+':
+
+            alert (number11 + number20)
+            break
+    
+        case '-':
+             alert (number11 - number20)
+            break
+    
+        case '/':
+            alert (number11 / number20)
+            break
+    
+        case '*':
+            alert (number11 * number20)
+            break
+    
+        default:
+            break
+    }
+} while (confirm('хотите решить ещё 1 пример?'))
 //* Задание 7
 // Запросить у пользователя число и на сколько цифр его
 // сдвинуть. Сдвинуть цифры числа и вывести результат (если
