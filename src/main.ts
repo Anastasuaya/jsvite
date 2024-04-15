@@ -46,9 +46,10 @@ import './style.css'
 // Практика 1. задание 1
 // Запросите у пользоватея число, возведите число во 2 степень, выведите на экран
 
-let numbr = parseInt('Введите число', 4)
+// let numbr = parseInt('Введите число', 4)
 
-alert('Ваше число, возведенное во 2 степень' + numbr ** 2)
+// alert('Ваше число, возведенное во 2 степень' + numbr ** 2)
+
 
 
 // Практика 1. Задание 2
@@ -59,7 +60,7 @@ console.log(num)
 let numm = 11
 console.log(numm)
 
-alert('Среднее арифметическое ваших чисел' + num + numm)
+// alert('Среднее арифметическое ваших чисел' + num + numm)
 
 console.log(num + numm)
 
@@ -67,7 +68,7 @@ console.log(num + numm)
 // Запросите у пользователя длину стороны квадрата и выведите площадь такого квадрата.
 
 let numb = 4
-alert('Площадь квадрата равна' + numb * numb)
+// alert('Площадь квадрата равна' + numb * numb)
 
 console.log(numb * numb)
 
@@ -234,16 +235,15 @@ console.log(CONVERT)
 // должна посчитать сколько файлов размером в 820 Мб по-
 // мещается на флешку.
 
-const GB_IN_MB = 1024
+// const GB_IN_MB = 1024
 
-let filesize = 820
+// let filesize = 820
 
-let VolymeInGb = parseInt(prompt('Укажите объем флешки в гб', '1') as string)
+// let VolymeInGb = parseInt(prompt('Укажите объем флешки в гб', '1') as string)
 
-let QuantityFiles = ((VolymeInGb * GB_IN_MB) / filesize)
+// let QuantityFiles = ((VolymeInGb * GB_IN_MB) / filesize)
 
-console.log(QuantityFiles)
-
+// console.log(QuantityFiles)
 
 // Домашка 1. Задание 8
 // Пользователь вводит сумму денег в кошельке и цену одной
@@ -550,14 +550,19 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 
  if (Age1 >= 0 && Age1 <= 2) {
     console.log('Вы ребенок')
+
  } else if (Age1 >= 3 && Age1 <= 11) {
     console.log('Вы ребенок постарше')
+
  } else if (Age1 >= 12 && Age1 <= 18) {
     console.log('Вы подросток')
+
  } else if (Age1 >=19 && Age1 <=60) {
     console.log('Вы взрослый')
+    
  } else if (Age1 < 0) {
     console.log('Вы еще не родились')
+
  } else console.log('Вы пенсионер')
 
 //* Задание 2
@@ -629,9 +634,11 @@ let day_in_year = 0
 if ( year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
     (year % 4 == 0 && year % 100 != 0 && year % 400 != 0)) {
         day_in_year = 366
+
         console.log('Год високосный')
     } else {
         day_in_year = 365
+
         console.log('Год не високосный')
     }
 
@@ -719,23 +726,23 @@ console.log(AmoundToBePaid)
 // балла. После вопросов выведите пользователю количество
 // набранных баллов.
 
-let questions = ''
-let points = 0
+//! let questions = ''
+//! let points = 0
 
-questions = prompt('Вопрос 1. Когда отменили крепостное право? \n a. В 1961 \n b. В 1761 \n c. В 1861') as string
-if (questions == 'c') points += 2
+//* questions = prompt('Вопрос 1. Когда отменили крепостное право? \n a. В 1961 \n b. В 1761 \n c. В 1861') as string
+//*if (questions == 'c') points += 2
 
-questions = prompt('Вопрос 2. || - Что это? \n a. Оператор логического присваивания ИЛИ \n b. Оператор логического присваивания И \n c. Массив') as string
+//* questions = prompt('Вопрос 2. || - Что это? \n a. Оператор логического присваивания ИЛИ \n b. Оператор логического присваивания И \n c. Массив') as string
 
-if (questions == 'a') points += 2
+//* if (questions == 'a') points += 2
 
-questions = prompt('Вопрос 3. Сколько в JavaScript основных типов данных? \n a. 5 \n b. 8 \n c. 10 ') as string
+//* questions = prompt('Вопрос 3. Сколько в JavaScript основных типов данных? \n a. 5 \n b. 8 \n c. 10 ') as string
 
-if (questions == 'b') points += 2
+//* if (questions == 'b') points += 2
 
-alert('Вы набрали' + ' ' + points + '' + 'баллов')
+//* alert('Вы набрали' + ' ' + points + '' + 'баллов')
 
-console.log('Сумма набранных баллов:' , points)
+//* console.log('Сумма набранных баллов:' , points)
 
 //* Задание 10
 // Запросить дату (день, месяц, год) и вывести следующую
@@ -898,7 +905,7 @@ num = 2
 result = 6
 
 do {
-    alert(num + num * num);
+    (num + num * num);
     num++;
 } while (num< 6);
 
@@ -909,6 +916,8 @@ console.log(num)
 //* Задание 1
 // Подсчитать сумму всех чисел в заданном пользователем
 // диапазоне.
+
+let sum1 = 
 
 //* Задание 2
 // Запросить 2 числа и найти только наибольший общий
@@ -976,11 +985,11 @@ console.log(num)
 // Практика 4. Задание 1
 // Написать функцию, которая принимает 2 числа и возвращает меньшее из них.
 
-function min(a: number, b: number) {
+function min(a: number, b: number): number  {
     return a < b ? a : b;
 }
 
-console.log(min(101, 100))
+console.log(min(101 , 100))
 
 
 // Практика 4. Задание 2
