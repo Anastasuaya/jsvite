@@ -917,18 +917,55 @@ console.log(num)
 // Подсчитать сумму всех чисел в заданном пользователем
 // диапазоне.
 
-let sum1 = 
+let from = 1
+let before = 7
+let sum1 = 0
+
+for (i = from; i <= before; i++) {
+    sum1 += i
+}
+console.log(sum1)
+
 
 //* Задание 2
 // Запросить 2 числа и найти только наибольший общий
 // делитель.
 
+let one = 75
+let two = 90
+let nod = 0
+
+for (i = 1; i <= two; i++) {
+    if (one % i == 0 && two % i == 0)
+        nod = i
+}
+console.log(nod)
+
 //* Задание 3
 // Запросить у пользователя число и вывести все делители
 // этого числа.
 
+let n = 90
+
+for (i = 1; i <=n; i++) {
+    if (n % i == 0)
+        console.log(i)
+}
+
 //* Задание 4
-// Определить количество цифр в введенном числе.
+// Определить количество цифр в введенном числе
+
+let nummm = 121
+
+let Howmanydigits = 0
+
+while (nummm > 0) {
+
+   nummm = Math.floor(nummm /= 10)
+
+    Howmanydigits++
+} 
+console.log(Howmanydigits)
 
 //* Задание 5
 // Запросить у пользователя 10 чисел и подсчитать, сколько
