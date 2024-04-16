@@ -1302,8 +1302,29 @@ console.log(getBracketsPairsByNum(4))
 //* Задание 1
 // Написать функцию возведения числа в степень.
 
+function NumberToPow (n: number , x: number): number {
+    if(X == 1) {
+        return n
+    } else {
+        return  pow(n , x - 1)
+    }
+}
+
+console.log(NumberToPow(4 , 3))
+
 //* Задание 2
 // Написать функцию поиска наибольшего общего делителя.
+
+function Nod(x: number , y: number): number {
+    if(x % y == 0) {
+        return x
+    } else {
+        x > y ? x %= y : y %= x
+        x += y
+    } return y
+}
+
+console.log(Nod(2 , 5))
 
 //* Задание 3
 // Написать функцию для поиска максимальной цифры в числе.
