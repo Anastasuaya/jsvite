@@ -1381,6 +1381,13 @@ console.log(OutpitOfMult(333))
 // номер 6 – число 8
 
 
+function FibonacciNum(num: number): number {
+
+    return num  <=1 ? num : FibonacciNum(num - 1) + FibonacciNum(num - 2)
+}
+
+console.log(FibonacciNum(90))
+
 // TODO Практика 2.1 всё выполнено!!!
 
 // Задание. практика 2.1
