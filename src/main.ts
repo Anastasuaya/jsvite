@@ -70,7 +70,7 @@ console.log(num + numm)
 let numb = 4
 // alert('Площадь квадрата равна' + numb * numb)
 
-console.log('Площадь квадрата равна' , numb * numb)
+console.log('Площадь квадрата равна', numb * numb)
 
 // Практика 1. Задание 4
 // Реализуйте конвертор из километров в мили(пользователь вводит километры, программа выводит мили). 1 км = 0, 621371 миль.Это значение укажите в коде как константу.
@@ -118,7 +118,7 @@ let MinutesNow = 51
 let HoursTomorrow = 24 - HoursNow
 let MinutesTomorrow = 60 - MinutesNow
 
-console.log('До следующего дня осталось' , HoursTomorrow , 'часов' , MinutesTomorrow , 'минут')
+console.log('До следующего дня осталось', HoursTomorrow, 'часов', MinutesTomorrow, 'минут')
 
 
 // Практика 1. Задание 8
@@ -128,7 +128,7 @@ console.log('До следующего дня осталось' , HoursTomorrow 
 
 let nuum = 398
 
-let Result = (nuum/10) % 10
+let Result = (nuum / 10) % 10
 
 console.log(Result)
 
@@ -546,24 +546,24 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 // Запросить у пользователя его возраст и определить, кем он
 // является: ребенком (0–2), подростком (12–18), взрослым
 // (18_60) или пенсионером (60– ...).
- let Age1 = 19
+let Age1 = 19
 
- if (Age1 >= 0 && Age1 <= 2) {
+if (Age1 >= 0 && Age1 <= 2) {
     console.log('Вы ребенок')
 
- } else if (Age1 >= 3 && Age1 <= 11) {
+} else if (Age1 >= 3 && Age1 <= 11) {
     console.log('Вы ребенок постарше')
 
- } else if (Age1 >= 12 && Age1 <= 18) {
+} else if (Age1 >= 12 && Age1 <= 18) {
     console.log('Вы подросток')
 
- } else if (Age1 >=19 && Age1 <=60) {
+} else if (Age1 >= 19 && Age1 <= 60) {
     console.log('Вы взрослый')
-    
- } else if (Age1 < 0) {
+
+} else if (Age1 < 0) {
     console.log('Вы еще не родились')
 
- } else console.log('Вы пенсионер')
+} else console.log('Вы пенсионер')
 
 //* Задание 2
 // Запросить у пользователя число от 0 до 9 и вывести ему
@@ -572,8 +572,8 @@ earth == 'Земля' || earth == 'Земля' ? console.log('Привет, зе
 
 let WhenClick = '8'
 
-switch(WhenClick) {
-    
+switch (WhenClick) {
+
     case '1':
         console.log('!')
         break
@@ -616,12 +616,12 @@ switch(WhenClick) {
 
 let num4 = 345
 
-console.log(num4/100 % 10)
+console.log(num4 / 100 % 10)
 
-if ((num4/100 % 10) == (num4/10 % 10) ||
-   (num4/100 % 10) == num4 % 10 ||
-   (num4/10 % 10) == num4 %  10)
-   console.log(num4 , 'Одинаковые цифры есть')
+if ((num4 / 100 % 10) == (num4 / 10 % 10) ||
+    (num4 / 100 % 10) == num4 % 10 ||
+    (num4 / 10 % 10) == num4 % 10)
+    console.log(num4, 'Одинаковые цифры есть')
 
 //* Задание 4
 // Запросить у пользователя год и проверить, високосный он
@@ -631,16 +631,16 @@ if ((num4/100 % 10) == (num4/10 % 10) ||
 let year = 2024
 let day_in_year = 0
 
-if ( year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
+if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
     (year % 4 == 0 && year % 100 != 0 && year % 400 != 0)) {
-        day_in_year = 366
+    day_in_year = 366
 
-        console.log('Год високосный')
-    } else {
-        day_in_year = 365
+    console.log('Год високосный')
+} else {
+    day_in_year = 365
 
-        console.log('Год не високосный')
-    }
+    console.log('Год не високосный')
+}
 
 //* Задание 5
 // Запросить у пользователя пятиразрядное число и опреде-
@@ -648,7 +648,7 @@ if ( year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
 
 let num5 = 121
 
-let num6 = (num5 % 10) * 100 + ((num5/ 10) % 10) * 10 + (num5/100) % 10
+let num6 = (num5 % 10) * 100 + ((num5 / 10) % 10) * 10 + (num5 / 100) % 10
 
 console.log(num6)
 
@@ -711,7 +711,7 @@ if (PurchaseAmount >= 200 && PurchaseAmount <= 300) {
 } else {
 
     AmoundToBePaid = PurchaseAmount
-} 
+}
 console.log(AmoundToBePaid)
 
 
@@ -758,67 +758,67 @@ if (Youmonths >= 1 && Youmonths <= 12) {
 
     // Если в месяце 30 дней:
     if (Youmonths == 4 || Youmonths == 6 || Youmonths == 9 || Youmonths == 11) {
-        if(Youday >= 1 && Youday <= 29)
-            Youday ++
-    } else if(Youday == 30) {
+        if (Youday >= 1 && Youday <= 29)
+            Youday++
+    } else if (Youday == 30) {
         Youday = 1
-        Youmonths ++
+        Youmonths++
     } else {
         console.log('Введите существующую дату')
     }
 } else if (Youmonths == 2)
-// Если февраль
+    // Если февраль
 
-// Если февраль в високосный год
-if (Youyear % 4 == 0 && Youyear % 100 == 0 && Youyear % 400 == 0 ||
-    (Youyear % 4 == 0 && Youyear % 100 != 0 && Youyear % 400 != 0)) {
+    // Если февраль в високосный год
+    if (Youyear % 4 == 0 && Youyear % 100 == 0 && Youyear % 400 == 0 ||
+        (Youyear % 4 == 0 && Youyear % 100 != 0 && Youyear % 400 != 0)) {
 
         if (Youday >= 1 && Youday <= 28) {
-            Youday ++
-    } else if (Youday == 1) {
+            Youday++
+        } else if (Youday == 1) {
 
-        Youday = 1
-        Youmonths ++ 
+            Youday = 1
+            Youmonths++
+        } else {
+            console.log('Введите существующую дату')
+        }
+        // Если февраль не високосный
     } else {
-        console.log('Введите существующую дату')
-    }
-    // Если февраль не високосный
-} else {
-    if (Youday >= 1 && Youday <= 27) {
-        Youday ++
-    } else if (Youday == 28) {
-        Youday = 1
-        Youmonths ++
+        if (Youday >= 1 && Youday <= 27) {
+            Youday++
+        } else if (Youday == 28) {
+            Youday = 1
+            Youmonths++
+        } else {
+            console.log('Введите существующую дату')
+        }
+        // Если декабрь, то переход на следующий год    
+    } else if (Youmonths == 12) {
+        if (Youday >= 1 && Youday <= 30) {
+            Youday++
+        } else if (Youday == 31) {
+
+            Youday = 1
+            Youmonths = 1
+            Youyear++
+        } else {
+            console.log('Введите существующую дату')
+        }
+
+        // Если в месяце 31 день
     } else {
-        console.log('Введите существующую дату')
-    }
-// Если декабрь, то переход на следующий год    
-} else if (Youmonths == 12) {
     if (Youday >= 1 && Youday <= 30) {
-        Youday ++
+        Youday++
     } else if (Youday == 31) {
-
         Youday = 1
-        Youmonths = 1
-        Youyear ++    
+        Youmonths++
     } else {
         console.log('Введите существующую дату')
     }
 
-    // Если в месяце 31 день
-} else {
-    if(Youday >= 1 && Youday <= 30) {
-        Youday ++
-    } else if (Youday == 31) {
-        Youday = 1
-        Youmonths ++
-    } else {
-        console.log('Введите существующую дату')
-    }
+}
 
-} 
-
-console.log(Youday , Youmonths , Youyear)
+console.log(Youday, Youmonths, Youyear)
 
 
 //! ЦИКЛЫ
@@ -889,7 +889,7 @@ console.log(text)
 
 let y = 5
 let X = 1
- let resultat = 24
+let resultat = 24
 
 while (X) {
     resultat *= y
@@ -907,7 +907,7 @@ result = 6
 do {
     (num + num * num);
     num++;
-} while (num< 6);
+} while (num < 6);
 
 console.log(num)
 
@@ -947,7 +947,7 @@ console.log(nod)
 
 let n = 90
 
-for (i = 1; i <=n; i++) {
+for (i = 1; i <= n; i++) {
     if (n % i == 0)
         console.log(i)
 }
@@ -961,10 +961,10 @@ let Howmanydigits = 0
 
 while (nummm > 0) {
 
-   nummm = Math.floor(nummm /= 10)
+    nummm = Math.floor(nummm /= 10)
 
     Howmanydigits++
-} 
+}
 console.log(Howmanydigits)
 
 //* Задание 5
@@ -979,7 +979,7 @@ let n1 = 1567
 let PozNumber = 0
 let NegNumber = 0
 let OddNumber = 0
-let EvenNumber = 0 
+let EvenNumber = 0
 let NullNumber = 0
 
 for (i = 1; i <= n1; i++) {
@@ -992,10 +992,10 @@ for (i = 1; i <= n1; i++) {
         NullNumber += 1
     }
 
-    !(n1 % 2) ? (OddNumber += 1) : (EvenNumber +=1)
+    !(n1 % 2) ? (OddNumber += 1) : (EvenNumber += 1)
 }
-console.log(`Положительных чисел оказалось ${PozNumber}`, `Отрицательных чисел оказалось ${NegNumber}` ,
-    `Нулей оказалось ${NullNumber}` , `Четных чисел оказалось ${OddNumber}` , `Нечетных чисел оказалось ${EvenNumber}`
+console.log(`Положительных чисел оказалось ${PozNumber}`, `Отрицательных чисел оказалось ${NegNumber}`,
+    `Нулей оказалось ${NullNumber}`, `Четных чисел оказалось ${OddNumber}`, `Нечетных чисел оказалось ${EvenNumber}`
 )
 
 //* Задание 6
@@ -1016,24 +1016,24 @@ console.log(`Положительных чисел оказалось ${PozNumbe
 
 //   ?          alert (number11 + number20)
 //    ?         break
-    
+
 //     ?    case '-':
 //      ?        alert (number11 - number20)
 //   ?      break
-    
+
 //    ?     case '/':
 //     ?        alert (number11 / number20)
 //      ?       break
-    
+
 //   ?  case '*':
 //    ?         alert (number11 * number20)
 //     ?        break
-    
+
 //      ?   default:
 //       ?      break
 //  ?   }
 //? } while (confirm('хотите решить ещё 1 пример?'))
-    
+
 
 
 //* Задание 7
@@ -1078,11 +1078,11 @@ console.log(`Положительных чисел оказалось ${PozNumbe
 // Практика 4. Задание 1
 // Написать функцию, которая принимает 2 числа и возвращает меньшее из них.
 
-function min(a: number, b: number): number  {
+function min(a: number, b: number): number {
     return a < b ? a : b;
 }
 
-console.log(min(101 , 100))
+console.log(min(101, 100))
 
 
 // Практика 4. Задание 2
@@ -1297,26 +1297,26 @@ function getBracketsPairsByNum(n: number): string {
 
 console.log(getBracketsPairsByNum(4))
 
-// TODO Домашка 1.5. В процессе
+// TODO Домашка 1.5. Всё сделано
 
 //* Задание 1
 // Написать функцию возведения числа в степень.
 
-function NumberToPow (n: number , x: number): number {
-    if(X == 1) {
+function NumberToPow(n: number, x: number): number {
+    if (X == 1) {
         return n
     } else {
-        return  pow(n , x - 1)
+        return pow(n, x - 1)
     }
 }
 
-console.log(NumberToPow(4 , 3))
+console.log(NumberToPow(4, 3))
 
 //* Задание 2
 // Написать функцию поиска наибольшего общего делителя.
 
-function Nod(x: number , y: number): number {
-    if(y % x == 0) {
+function Nod(x: number, y: number): number {
+    if (y % x == 0) {
         return x
     } else {
         x > y ? x %= y : y %= x
@@ -1324,16 +1324,16 @@ function Nod(x: number , y: number): number {
     } return y
 }
 
-console.log(Nod(2 , 12))
+console.log(Nod(2, 12))
 
 //* Задание 3
 // Написать функцию для поиска максимальной цифры в числе.
 
 function MaxNumber(num: number): number {
-    if(num == 0) {
+    if (num == 0) {
         return 0
     } else {
-        return Math.max(num % 10 , MaxNumber(Math.floor(num / 10)))
+        return Math.max(num % 10, MaxNumber(Math.floor(num / 10)))
     }
 }
 
@@ -1344,11 +1344,11 @@ console.log(MaxNumber(198))
 // данное число.
 
 function SimpleNumber(num: number) {
-    if(num % 2 !== 0) {
+    if (num % 2 !== 0) {
         return true
-    } else(num % 2 == 0 )
-        return false
-    
+    } else (num % 2 == 0)
+    return false
+
 }
 
 console.log(SimpleNumber(24))
@@ -1359,12 +1359,12 @@ console.log(SimpleNumber(24))
 // Например: число 18 – множители 2 * 3 * 3
 
 function OutpitOfMult(num: number): string {
-    if(num == 1) {
+    if (num == 1) {
         return ''
     }
-    for(i == 2; i <= num; i++) {
-        if(num % i == 0) {
-            return (' ' + i + ' ' + OutpitOfMult(num / i)).trim().replace(/\ /g , '*')
+    for (i == 2; i <= num; i++) {
+        if (num % i == 0) {
+            return (' ' + i + ' ' + OutpitOfMult(num / i)).trim().replace(/\ /g, '*')
         }
     }
     return ''
@@ -1383,10 +1383,11 @@ console.log(OutpitOfMult(333))
 
 function FibonacciNum(num: number): number {
 
-    return num  <=1 ? num : FibonacciNum(num - 1) + FibonacciNum(num - 2)
+    return num <= 1 ? num : FibonacciNum(num - 1) + FibonacciNum(num - 2)
 }
 
-console.log(FibonacciNum(90))
+console.log(FibonacciNum(3))
+
 
 // TODO Практика 2.1 всё выполнено!!!
 
@@ -1578,23 +1579,123 @@ console.log(arr2.includes(0))
 // модель, год выпуска, средняя скорость), и следующие функции
 // для работы с этим объектом.
 
+type Car = {
+    name: string,
+    age: number,
+    color: string,
+    speed: number,
+}
+
+let car: Car = {
+    name: 'Jaguar XK 150',
+    age: 1961,
+    color: 'red',
+    speed: 217,
+}
+
 // 1. Функция для вывода на экран информации об автомобиле.
+
+function GetCarInfo(car: Car) {
+    console.log(car.name, car.age, car.color, car.speed)
+}
+GetCarInfo(car)
+
 
 // 2. Функция для подсчета необходимого времени для пре-
 // одоления переданного расстояния со средней скоростью.
 // Учтите, что через каждые 4 часа дороги водителю необхо-
 // димо делать перерыв на 1 час.
 
+function GetTimeDist(car: Car, distance: number) {
+
+    const TIME = distance / car.speed
+
+    const REST_TIME = TIME / 4 ? Math.floor((distance / car.speed) / 4) - 1 : Math.floor((distance / car.speed) / 4)
+
+    return TIME + REST_TIME
+}
+console.log(GetTimeDist(car, 12000))
+
 //* Задание 2
 // Создать объект, хранящий в себе отдельно числитель и зна-
 // менатель дроби, и следующие функции для работы с этим объ-
 // ектом.
 
+type Fraction = {
+    numenator: number,
+    denominator: number
+}
+
+const fraction1: Fraction = {
+    numenator: 2,
+    denominator: 6
+}
+
+const fraction2 = {
+    numenator: 4,
+    denominator: 5
+} as Fraction
+
+function TransformToCommonDenominator(fr1: Fraction, fr2: Fraction) {
+    return {
+        fr1: {
+            numenator: fr1.numenator * fr2.denominator,
+            denominator: fr1.denominator * fr2.denominator
+        },
+        fr2: {
+            numenator: fr2.numenator * fr1.denominator,
+            denominator: fr1.denominator * fr2.denominator
+        }
+    }
+}
 // 1. Функция сложения 2-х объектов-дробей.
+
+function GetSumOfFraction(fr1: Fraction, fr2: Fraction) {
+
+    const commonFraction = TransformToCommonDenominator(fr1 , fr2)
+    return {
+        numenator: commonFraction.fr1.numenator + commonFraction.fr2.numenator,
+        denominator: commonFraction.fr1.denominator
+    }
+}
+
+console.log(GetSumOfFraction(fraction1 , fraction2))
+
+function getRedusedSumOfFractions(fr1: Fraction , fr2: Fraction) {
+
+    const result = GetSumOfFraction(fr1 , fr2)
+
+    return getReductedFraction(result)
+}
+
+console.log(getRedusedSumOfFractions(fraction1 , fraction2))
 
 // 2. Функция вычитания 2-х объектов-дробей.
 
+function getSubtrOfFractions(fr1: Fraction , fr2: Fraction) {
+    const commonFraction = TransformToCommonDenominator(fr1 , fr2)
+    const result = {
+        numenator: commonFraction.fr1.numenator - commonFraction.fr2.numenator,
+        denominator: commonFraction.fr1.denominator
+    } 
+    return getReductedFraction(result)
+}
+
+console.log(getSubtrOfFractions(fraction1, fraction2))
+
 // 3. Функция умножения 2-х объектов-дробей.
+
+function getMulOfFractions(fr1: Fraction , fr2: Fraction) {
+
+    const result = {
+        numenator: fr1.numenator * fr2.numenator,
+        denominator: fr1.denominator * fr2.denominator
+    } 
+    return getReductedFraction(result)
+}
+
+console.log(getMulOfFractions(fraction1 , fraction2))
+
 
 // 4. Функция деления 2-х объектов-дробей.
 
@@ -1852,12 +1953,12 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
-console.log( 0.1 + 0.2 )
+console.log(0.1 + 0.2)
 
 let str10 = '';
 
 for (let i = 128513; i <= 128613; i++) {
-  str10 += String.fromCodePoint(i);
+    str10 += String.fromCodePoint(i);
 }
 
 console.log(str10)
@@ -1874,7 +1975,7 @@ console.log(str10)
 // рой больше символов, чем в первой; или 0 – если строки
 // одинаковой длины.
 
-let str 
+let str
 
 //* Задание 2
 // Написать функцию, которая переводит в верхний регистр
