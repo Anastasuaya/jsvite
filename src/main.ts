@@ -1316,7 +1316,7 @@ console.log(NumberToPow(4 , 3))
 // Написать функцию поиска наибольшего общего делителя.
 
 function Nod(x: number , y: number): number {
-    if(x % y == 0) {
+    if(y % x == 0) {
         return x
     } else {
         x > y ? x %= y : y %= x
@@ -1324,19 +1324,53 @@ function Nod(x: number , y: number): number {
     } return y
 }
 
-console.log(Nod(2 , 5))
+console.log(Nod(2 , 12))
 
 //* Задание 3
 // Написать функцию для поиска максимальной цифры в числе.
+
+function MaxNumber(num: number): number {
+    if(num == 0) {
+        return 0
+    } else {
+        return Math.max(num % 10 , MaxNumber(Math.floor(num / 10)))
+    }
+}
+
+console.log(MaxNumber(198))
 
 //* Задание 4
 // Написать функцию, которая определяет простое ли пере-
 // данное число.
 
+function SimpleNumber(num: number) {
+    if(num % 2 !== 0) {
+        return true
+    } else(num % 2 == 0 )
+        return false
+    
+}
+
+console.log(SimpleNumber(24))
+
 //* Задание 5
 // Написать функцию для вывода всех множителей передан-
 // ного числа в возрастающем порядке.
 // Например: число 18 – множители 2 * 3 * 3
+
+function OutpitOfMult(num: number): string {
+    if(num == 1) {
+        return ''
+    }
+    for(i == 2; i <= num; i++) {
+        if(num % i == 0) {
+            return (' ' + i + ' ' + OutpitOfMult(num / i)).trim().replace(/\ /g , '*')
+        }
+    }
+    return ''
+}
+
+console.log(OutpitOfMult(333))
 
 //* Задание 6
 // Написать функцию, которая возвращает число Фибоначчи
@@ -1580,6 +1614,8 @@ console.log(arr2.includes(0))
 // «20:31:15», а не «20:30:75».
 
 
+
+//! ------------------------------------------------------------------------------------------------------------------------
 //! Практика массивы!!!!
 
 // 1.1.  Написать функцию возвращающую массив целых чисел от 0 до 10
@@ -1689,6 +1725,8 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 //      в div (3.9) выводить сумму зарплат
 //   }
 // })
+
+//! ------------------------------------------------------------------------------------------------------------------------
 
 //TODO Практика 2.2
 
