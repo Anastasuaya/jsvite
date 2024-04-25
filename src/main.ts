@@ -1152,19 +1152,19 @@ console.log(checkNum)
 // Написать функцию, которая принимает от 1 до 5 чисел и возвращает их сумму.
 
 
-function sum(a: number, b: number, c: number, x: number, n: number) {
-    console.log(a)
-    console.log(b)
-    console.log(c)
-    console.log(x)
-    console.log(n)
+// function sum(a: number, b: number, c: number, x: number, n: number) {
+//     console.log(a)
+//     console.log(b)
+//     console.log(c)
+//     console.log(x)
+//     console.log(n)
 
-    return a + b + c + x + n
+//     return a + b + c + x + n
 
-}
+// }
 
-let sumOf2And4 = sum(10, 4, 6, 8, 10)
-console.log(sumOf2And4)
+// let sumOf2And4 = sum(10, 4, 6, 8, 10)
+// console.log(sumOf2And4)
 
 // Практика 4. Задание 8
 // Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
@@ -2098,6 +2098,7 @@ function calculator(str:string):number {
     }
     return +str
   }
+
   console.log(calculator('18 + 9 * 7 / 2 / 3.5 - 5 + 10 * 2 * 4'))
   console.log(calculator('8 * 89/8 + 1'))
 
