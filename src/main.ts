@@ -637,6 +637,7 @@ if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
 
     console.log('Год високосный')
 } else {
+    
     day_in_year = 365
 
     console.log('Год не високосный')
