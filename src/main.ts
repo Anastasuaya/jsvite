@@ -637,7 +637,7 @@ if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
 
     console.log('Год високосный')
 } else {
-    
+
     day_in_year = 365
 
     console.log('Год не високосный')
@@ -2226,3 +2226,47 @@ function calculator(str:string):number {
 // obj.hasOwnProperty(key): возвращает true, если у obj есть собственное (не унаследованное) свойство с именем key.
 
 //! ------------------------------------------------------------------------------------------------------------------------
+
+
+//TODO Практика 2.4 
+
+
+//* Задание 1
+// Реализовать класс
+// ■ размера шрифта;
+// ■ цвета шрифта;
+// ■ семейства шрифта;
+// ■ метода print(), который принимает текст и печатает его
+// соответствующим шрифтом с помощью
+// Создать объект такого класса и продемонстрировать работу
+// метода.
+
+const pmDiv = document.getElementById('pm') as HTMLDivElement
+
+class PrintMachine {
+
+    tag: string
+    fSize: string
+    color: string
+    fFamily: string
+
+    constructor(fSize: string, color: string, fFamily: string, tag = 'p') {
+        this.tag = tag
+        this.fSize = fSize
+        this.color = color
+        this.fFamily = fFamily
+    }
+
+    print(text:string) {
+        pmDiv.innerHTML += `<${this.tag} style ="font-size: ${this.fSize}; font-family: ${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
+    }
+
+}
+
+PrintMachine
+const redPM = new PrintMachine('50px', 'red', 'Arial')
+const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
+  redPM.print('Alert')
+  blackPM.print('(tommorow)')
+  redPM.print('1 may on nose')
+  blackPM.print('not work')
