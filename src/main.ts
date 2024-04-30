@@ -1699,22 +1699,103 @@ console.log(getMulOfFractions(fraction1 , fraction2))
 
 // 4. Функция деления 2-х объектов-дробей.
 
+function getDivOfFractions(fr1: Fraction , fr2: Fraction) {
+
+    const result = {
+        numenator: fr1.numenator * fr2.denominator,
+        denominator: fr1.denominator * fr2.numenator
+    }
+    return getReductedFraction(result)
+}
+
+console.log(getDivOfFractions(fraction1 , fraction2))
+
 // 5. Функция сокращения объекта-дроби.
+
+function getReductedFraction(fr: Fraction) {
+
+    const min = fr.numenator < fr.denominator ? fr.numenator : fr.denominator
+
+    for(let i = min; i > 1; i--) {
+        if (fr.numenator % i == 0 && fr.denominator%i==0) {
+            fr.numenator /=i
+            fr.denominator /=i
+            return getReductedFraction(fr)
+        }
+
+        return fr
+    }
+}
 
 //* Задание 3
 // Создать объект, описывающий время (часы, минуты, секун-
 // ды), и следующие функции для работы с этим объектом.
 
+type time = {
+    hours: number,
+    minutes: number,
+    seconds: number
+}
+
+const Time : time = {
+    hours: 4,
+    minutes: 50,
+    seconds: 30
+}
+
+Time.hours++
+Time.minutes++
+Time.seconds++
+
 // 1. Функция вывода времени на экран.
+
+function getTimeInScreen(Time: time) {
+
+    const TimeStr = Time.hours + ':' + Time.minutes + ':' + Time.seconds
+    console.log(TimeStr)
+    return TimeStr
+}
 
 // 2. Функция изменения времени на переданное количество
 // секунд.
 
+function SecondChange(Time: time, seconds: number) {
+
+    const NewSeconds = Time.seconds + seconds
+    Time.seconds = NewSeconds % 60
+
+    const NewMinutes = Time.minutes + Math.trunc(NewSeconds / 60)
+    Time.minutes = NewMinutes % 60
+
+    const NewHours = Time.hours + Math.trunc(NewMinutes / 60)
+    Time.minutes = NewHours % 60
+
+}
+
 // 3. Функция изменения времени на переданное количество
 // минут.
 
+function MinuteChange(Time: time, minutes: number) {
+
+    SecondChange(Time, minutes * 60)
+}
+
 // 4. Функция изменения времени на переданное количество
 // часов.
+
+function HoursChange(Time: time, hours: number) {
+
+    SecondChange(Time, hours * 60 * 60)
+
+}
+
+console.log(getTimeInScreen(Time))
+SecondChange(Time, 98)
+console.log(getTimeInScreen(Time))
+MinuteChange(Time, 89)
+console.log(getTimeInScreen(Time))
+HoursChange(Time, 39)
+console.log(getTimeInScreen(Time))
 
 // Учтите, что в последних 3-х функциях, при изменении одной
 // части времени, может измениться и другая. Например: если ко
