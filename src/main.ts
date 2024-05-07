@@ -2295,16 +2295,40 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
   // С помощью написанного класса реализовать следующий блок
   // и добавить его на страницу с помощью document.write().
 
-  class HtmlElement {
-    tag: string
-    inSingle: boolean
-    text: string
-    atributes = [] as any []
-    styles = [] as any []
-    elements = [] as HtmlElement []
+//   class HtmlElement {
+//     tag: string
+//     inSingle: boolean
+//     text: string
+//     atributes = [] as any []
+//     styles = [] as any []
+//     elements = [] as HtmlElement []
 
-    constructor(tag: string, text = '') {
+//     constructor(tag: string, text = '') {
 
-        const singleArr = ['area','base','br','col','embed','hr','img','input','keygen','link','meta','param','source','track','wbr']
-    }
-  }
+//         const singleArr = ['area','base','br','col','embed','hr','img','input','keygen','link','meta','param','source','track','wbr']
+//     }
+//   }
+
+//! ------------------------------------------------------------------------------------------------------------------------
+
+// getFullYear()
+  // Получить год(4 цифры)
+  // getMonth()
+  // Получить месяц, от 0 до 11.
+  // getDate()
+  // Получить день месяца, от 1 до 31, что несколько противоречит названию метода.
+  // getHours(), getMinutes(), getSeconds(), getMilliseconds()
+  // Получить, соответственно, часы, минуты, секунды или миллисекунды.
+  // getDay()
+  // Вернуть день недели от 0(воскресенье) до 6(суббота).Несмотря на то, что в ряде стран за первый день недели принят понедельник, в JavaScript начало недели приходится на воскресенье.
+
+  // setFullYear(year, [month], [date])
+  // setMonth(month, [date])
+  // setDate(date)
+  // setHours(hour, [min], [sec], [ms])
+  // setMinutes(min, [sec], [ms])
+  // setSeconds(sec, [ms])
+  // setMilliseconds(ms)
+  // setTime(milliseconds)
+
+  //! ------------------------------------------------------------------------------------------------------------------------
