@@ -1810,12 +1810,12 @@ console.log(getTimeInScreen(Time))
 
 // 1.1.  Написать функцию возвращающую массив целых чисел от 0 до 10
 
-const arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// const arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-function Array(arr: number[]) {
-    return { arr }
-}
-console.log(Array(arr))
+// function Array(arr: number[]) {
+//     return { arr }
+// }
+// console.log(Array(arr))
 
 // 1.2.  Добавить в функцию параметры опциональные параметры начального и конечного значения массива
 //(если конечный элемент массива не передат, то он больше нечального на 10) . Вызвать функцию несаколько раз
@@ -1924,23 +1924,76 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 // Создать массив из 10 случайных чисел и написать несколько
 // функций для работы с ним.
 
+const Arr: number[] = []
+
 // 1. Функция принимает массив и выводит его на экран.
+
+function RandomNumber(Arr: number[] , length: number) {
+    for(let i = 0; i < length; i++) {
+        Arr.push(Math.floor(Math.random() * 10))
+    }
+}
+
+RandomNumber(Arr, 10)
+
+console.log(Arr)
 
 // 2. Функция принимает массив и выводит только четные
 // элементы.
 
+function OnlyEvenNumber(Arr: number[]) {
+    const Arr1 = []
+
+    for(i = 0; i < Arr.length; i++) {
+        if (Arr[i] % 2 === 0) {
+            Arr1.push(Arr[i])
+        }
+    }
+    console.log(Arr1)
+}
+console.log(OnlyEvenNumber(Arr))
+
 // 3. Функция принимает массив и возвращает сумму всех
 // элементов массива.
+
+function ArrSumNumber(Arr: number[]) {
+    let sum = 0 
+    for(i = 0; i < Arr.length; i++) {
+        sum += Arr[i]
+    }
+    console.log(sum)
+}
+
+console.log(ArrSumNumber(Arr))
 
 // 4. Функция принимает массив и возвращает его максималь-
 // ный элемент.
 
+function ArrMaxElem(Arr: number[]) {
+    return(Math.max(...Arr))
+}
+
+console.log(ArrMaxElem(Arr))
+
 // 5. Функция добавления нового элемента в массив по ука-
 // занному индексу.
 
+function NewElement(Arr: number[], el: number, index: number) {
+    Arr.splice(index, 0, el)
+    console.log(Arr)
+}
+
+console.log(NewElement(Arr, 6, 9))
+console.log(NewElement(Arr, 2, 5))
+
+
 // 6. Функция удаления элемента из массива по указанному
 // индексу.
-
+function DeleteElement(Arr: number[], index: number) {
+    Arr.splice(index, 1)
+    console.log(Arr)
+}
+console.log(DeleteElement(Arr, 5))
 //* Задание 2
 // Создать еще один массив из 5 случайных чисел и написать
 // следующие функции.
