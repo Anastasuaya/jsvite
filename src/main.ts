@@ -1994,6 +1994,7 @@ function DeleteElement(Arr: number[], index: number) {
     console.log(Arr)
 }
 console.log(DeleteElement(Arr, 5))
+
 //* Задание 2
 // Создать еще один массив из 5 случайных чисел и написать
 // следующие функции.
