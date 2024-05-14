@@ -1549,30 +1549,6 @@ function pointRectangle(rectangle: Rectangle, x: number, y: number) {
 console.log(pointRectangle(rectangle, 12, 15))
 
 
-// Практика 2.2
-
-// Задание 1
-// Создать массив из 10 случайных чисел и написать несколько
-// функций для работы с ним.
-
-const arr1: number[] = [0, 4, 6, 5, 8, 5, 3, 3, 8, 0]
-const arr2: number[] = [5, 8, 1, 9, 3]
-
-function fillArrayRandomNumbers(arr: number[], length: number) {
-    for (let i = 0; i < length; i++) {
-        arr.push(Math.floor(Math.random() * 10))
-    }
-}
-
-fillArrayRandomNumbers(arr1, 10)
-fillArrayRandomNumbers(arr2, 5)
-
-
-console.log(arr1)
-console.log(arr2)
-console.log(arr2.includes(0))
-
-
 //TODO Домашка 2.1. Всё сделано
 
 //* Задание 1
@@ -1918,6 +1894,24 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
+// const arr1: number[] = [0, 4, 6, 5, 8, 5, 3, 3, 8, 0]
+// const arr2: number[] = [5, 8, 1, 9, 3]
+
+// function fillArrayRandomNumbers(arr: number[], length: number) {
+//     for (let i = 0; i < length; i++) {
+//         arr.push(Math.floor(Math.random() * 10))
+//     }
+// }
+
+// fillArrayRandomNumbers(arr1, 10)
+// fillArrayRandomNumbers(arr2, 5)
+
+
+// console.log(arr1)
+// console.log(arr2)
+// console.log(arr2.includes(0))
+
+
 //TODO Практика 2.2
 
 //* Задание 1
@@ -1998,6 +1992,21 @@ console.log(DeleteElement(Arr, 5))
 //* Задание 2
 // Создать еще один массив из 5 случайных чисел и написать
 // следующие функции.
+
+const arr: number[] = []
+const arr1: number[] = []
+
+function RandomFiveNumber(arr: number[] , length: number) {
+    for(let i = 0; i < length; i++) {
+        arr.push(Math.floor(Math.random() * 10))
+    }
+}
+
+RandomFiveNumber(arr, 10)
+RandomFiveNumber(arr1, 5)
+
+console.log(arr)
+console.log(arr1)
 
 // 1. Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов
