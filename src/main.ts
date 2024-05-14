@@ -2011,7 +2011,26 @@ console.log(arr1)
 // 1. Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов
 // без повторений.
+function getNewArr(arr: number[], arr1: number[]) {
 
+    const arr2: number[] = []
+
+    for(let el of arr) {
+        if(!arr.includes(el)) {
+            arr.push(el)
+        }
+    }
+
+    for(let el of arr1) {
+        if(!arr.includes(el)) {
+            arr.push(el)
+        }
+    }
+
+    return arr2
+}
+
+console.log(getNewArr(arr, arr1))
 // 2. Функция принимает 2 массива и возвращает новый массив,
 // в котором собраны общие элементы (то есть элементы,
 // которые встречаются и в первом и во втором массивах)
