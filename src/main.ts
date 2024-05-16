@@ -2148,8 +2148,28 @@ console.log(SearchFruits('banana', FruitsSort))
 // ходимое количество и куплен или нет. Написать несколько функ-
 // ций для работы с таким массивом.
 
+type products = {
+    name: string,
+    count: number,
+    IsBuyed: boolean,
+}
+
+const toBuyList: products[] = [
+
+    {name: 'milk', count: 1, IsBuyed: true},
+    {name: 'cheese', count: 1, IsBuyed: true},
+    {name: 'chocolate', count: 1, IsBuyed: false},
+    {name: 'eggs', count: 10, IsBuyed: false},
+    {name: 'bread', count: 1, IsBuyed: true},
+]
+
 // 1. Вывод всего списка на экран таким образом, чтобы сначала
 // шли некупленные продукты, а потом – купленные.
+
+const toBuyListOl = document.getElementById('toBuyList') as HTMLOListElement
+
+console.log(toBuyListOl)
+
 
 // 2. Добавление покупки в список. Учтите, что при добавлении
 // покупки с уже существующим в списке продуктом, необ-
@@ -2219,6 +2239,7 @@ console.log(str10)
 //! ------------------------------------------------------------------------------------------------------------------------
 
 
+//! Строки
 // TODO Практика 2.3
 
 //* Задание 1
@@ -2401,8 +2422,8 @@ function calculator(str:string):number {
 //! ------------------------------------------------------------------------------------------------------------------------
 
 
+//! Классы
 //TODO Практика 2.4 
-
 
 //* Задание 1
 // Реализовать класс
@@ -2484,6 +2505,8 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
+
+//! Даты
 // getFullYear()
   // Получить год(4 цифры)
   // getMonth()
