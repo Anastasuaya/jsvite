@@ -2176,9 +2176,16 @@ function renderBuyList(arr: products[]) {
 
     for(let el of arr) {
         if(!el.IsBuyed) {
+            html = `<li style = "color: red">${el.name} ${el.count} <button data-name "${el.name}">Отметить купленным</button></li>`
+        }
+    }
+
+    for(let el of arr) {
+        if(el.IsBuyed) {
             html = `<li style = "color: green">${el.name} ${el.count}</li>`
         }
     }
+
     toBuyListOl.innerHTML = html
 }
 
