@@ -1929,7 +1929,7 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 
   //! ------------------------------------------------------------------------------------------------------------------------
 
-//TODO Практика 2.2
+//TODO Практика 2.2 Всё сделано.
 
 //* Задание 1
 // Создать массив из 10 случайных чисел и написать несколько
@@ -2028,19 +2028,20 @@ console.log(arr1)
 // 1. Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов
 // без повторений.
+
 function getNewArr(arr: number[], arr1: number[]) {
 
     const arr2: number[] = []
 
     for(let el of arr) {
-        if(!arr.includes(el)) {
-            arr.push(el)
+        if(!arr2.includes(el)) {
+            arr2.push(el)
         }
     }
 
     for(let el of arr1) {
-        if(!arr.includes(el)) {
-            arr.push(el)
+        if(!arr2.includes(el)) {
+            arr2.push(el)
         }
     }
 
@@ -2048,25 +2049,94 @@ function getNewArr(arr: number[], arr1: number[]) {
 }
 
 console.log(getNewArr(arr, arr1))
+
+
 // 2. Функция принимает 2 массива и возвращает новый массив,
 // в котором собраны общие элементы (то есть элементы,
 // которые встречаются и в первом и во втором массивах)
 // без повторений.
 
+function getElemTwoArr(arr: number[], arr1: number[]) {
+
+    const arr2: number[] = []
+
+    for(let el of arr) {
+        if(arr.includes(el) && arr1.includes(el)) {
+            if(!arr2.includes(el)) {
+                arr2.push(el)
+            }
+        }
+    }
+    return arr2
+}
+
+console.log(getElemTwoArr(arr, arr1))
+
+
 // 3. Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из первого массива,
 // которых нет во втором массиве.
+
+function getElemNotArr(arr: number[], arr1: number[]) {
+
+    const arr2: number[] = []
+
+    for(let el of arr) {
+        if(!arr1.includes(el)) {
+            if(!arr2.includes(el))
+            arr2.push(el)
+        }
+    }
+    return arr2
+}
+
+console.log( getElemNotArr(arr, arr1))
 
 //* Задание 3
 // Создать массив фруктов и отсортировать его по алфавиту.
 // Написать следующие функции.
 
+type fruits = {
+    name: string,
+}
+
+ const FruitsSort: fruits[] = [
+    {name: 'banana'},
+    {name: 'peach'},
+    {name: 'pineapple'},
+    {name: 'orange'},
+    {name: 'apple'},
+    {name: 'mango'},
+    {name: 'pear'}
+ ]
+
 // 1. Вывод на экран с помощью document.write() в виде списка
 // (с помощью тегов ul и li).
+
+let html = ``
+
+console.log(FruitsSort.sort((a, b) => a.name.localeCompare(b.name)))
+
+FruitsSort.sort((a,b) => +a - +b).forEach((el) => {
+    html = `<p>${el.name}</p>`
+})
+
+console.log(html)
+
 
 // 2. Поиск фрукта в массиве. Функция принимает название
 // фрукта и возвращает индекс найденного элемента или -1,
 // если не найден. Поиск должен быть нерегистрозависимым.
+
+function SearchFruits(name: string, arr: fruits[]) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].name == name) {
+            return i
+        }
+    }
+    return -1
+}
+console.log(SearchFruits('banana', FruitsSort))
 
   //! ------------------------------------------------------------------------------------------------------------------------
 
@@ -2436,3 +2506,4 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
   // setTime(milliseconds)
 
   //! ------------------------------------------------------------------------------------------------------------------------
+
