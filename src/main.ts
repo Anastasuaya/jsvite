@@ -2170,6 +2170,19 @@ const toBuyListOl = document.getElementById('toBuyList') as HTMLOListElement
 
 console.log(toBuyListOl)
 
+function renderBuyList(arr: products[]) {
+
+    let html = ''
+
+    for(let el of arr) {
+        if(!el.IsBuyed) {
+            html = `<li style = "color: green">${el.name} ${el.count}</li>`
+        }
+    }
+    toBuyListOl.innerHTML = html
+}
+
+renderBuyList(toBuyList)
 
 // 2. Добавление покупки в список. Учтите, что при добавлении
 // покупки с уже существующим в списке продуктом, необ-
