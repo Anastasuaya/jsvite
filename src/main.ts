@@ -2615,6 +2615,6 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
   // setSeconds(sec, [ms])
   // setMilliseconds(ms)
   // setTime(milliseconds)
-
+  
   //! ------------------------------------------------------------------------------------------------------------------------
 
