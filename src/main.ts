@@ -2196,6 +2196,22 @@ renderBuyList(toBuyList)
 // ходимо увеличивать количество в существующей покупке,
 // а не добавлять новую.
 
+const productNameImput = document.getElementById('productName') as HTMLInputElement
+const productCountInput = document.getElementById('productCount') as HTMLInputElement
+const productAddButton = document.getElementById('Addproduct') as HTMLInputElement
+
+function AddBuyList(arr: products[], name: string, count: number) {
+    let InList = false
+    for(let el of arr) {
+        if(el.name == name && !el.IsBuyed) {
+            el.count += count
+            InList = true
+        }
+    }
+    if (!InList) {
+        arr.push({ name, count, IsBuyed: false })
+    }
+}
 // 3. Покупка продукта. Функция принимает название продукта
 // и отмечает его как купленный.
 
