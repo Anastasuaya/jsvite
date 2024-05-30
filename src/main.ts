@@ -2211,10 +2211,45 @@ function AddBuyList(arr: products[], name: string, count: number) {
     if (!InList) {
         arr.push({ name, count, IsBuyed: false })
     }
+
+    renderBuyList(arr)
 }
+
+AddBuyList(toBuyList, 'oil', 1)
+
+productAddButton.addEventListener('click', function(){
+    const count = parseFloat(productCountInput.value.replace(',', '.'))
+    AddBuyList(toBuyList, productNameImput.value, count)
+    productNameImput.value = ''
+    productCountInput.value = ''
+})
 // 3. Покупка продукта. Функция принимает название продукта
 // и отмечает его как купленный.
 
+const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
+
+function setBuyed(arr: products[], name: string) {
+    for(let el of arr) {
+        if(el.name == name)
+        el.IsBuyed = true
+    }
+    renderBuyList(arr)
+}
+
+setBuyed(toBuyList, 'buckweat')
+
+setBuyedButton.addEventListener('click', function() {
+    setBuyed(toBuyList, productNameImput.value)
+    productNameImput.value = ''
+    productCountInput.value = ''
+})
+
+toBuyListOl.addEventListener('click', function(e) {
+    const target = e.target as HTMLElement
+    if (target.tagName == 'BUTTON' && target.dataset.name) {
+        setBuyed(toBuyList, target.dataset.name)
+    }
+})
 //* Задание 2
 // Создать массив, описывающий чек в магазине. Каждый эле-
 // мент массива состоит из названия товара, количества и цены за
@@ -2634,3 +2669,104 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
   
   //! ------------------------------------------------------------------------------------------------------------------------
 
+//TODO Изменение документа.
+
+//* Задание 1.
+//Создайте функцию clear(elem), которая удаляет всё содержимое из elem.
+
+//* Задание 2.
+// В примере ниже вызов table.remove() удаляет таблицу из документа.
+// Но если вы запустите его, вы увидите, что текст "aaa" все еще виден.
+// Почему так происходит?
+
+//* Задание 3.
+// Напишите интерфейс для создания списка.
+// Для каждого пункта
+// Запрашивайте содержимое пункта у пользователя с помощью prompt.
+// Создавайте элемент <li> и добавляйте его к <ul>.
+// Продолжайте до тех пор, пока пользователь не отменит ввод (нажатием клавиши Esc или введя пустую строку).
+// Все элементы должны создаваться динамически.
+// Если пользователь вводит HTML-теги, они должны обрабатываться как текст.
+
+//* Задание 4.
+// Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
+
+// Например:
+
+// let data = {
+//   "Рыбы": {
+//     "форель": {},
+//     "лосось": {}
+//   },
+
+//   "Деревья": {
+//     "Огромные": {
+//       "секвойя": {},
+//       "дуб": {}
+//     },
+//     "Цветковые": {
+//       "яблоня": {},
+//       "магнолия": {}
+//     }
+//   }
+// };
+// Синтаксис:
+
+// let container = document.getElementById('container');
+// createTree(container, data); // создаёт дерево в контейнере
+
+//* Задание 5.
+// Выведите список потомков в дереве
+// Есть дерево, организованное в виде вложенных списков ul/li.
+// Напишите код, который добавит каждому элементу списка <li> количество вложенных в него элементов. Узлы нижнего уровня, без детей – пропускайте.
+
+//* Задание 6.
+// Напишите функцию createCalendar(elem, year, month).
+// Вызов функции должен создать календарь для заданного месяца month в году year и вставить его в elem.
+// Календарь должен быть таблицей, где неделя – это <tr>, а день – это <td>.
+// У таблицы должен быть заголовок с названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
+// Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь:
+
+//* Задание 7.
+// Цветные часы с использованием setInterval
+// Создайте цветные часы как
+// Для стилизации используйте HTML/CSS, JavaScript должен только обновлять время в элементах.
+
+//* Задание 8.
+// Вставьте HTML в список
+// Напишите код для вставки <li>2</li><li>3</li> между этими двумя <li>:
+
+// <ul id="ul">
+//   <li id="one">1</li>
+//   <li id="two">4</li>
+// </ul>
+
+//* Задание 9.
+// Сортировка таблицы
+
+// Вот таблица:
+
+// <table>
+// <thead>
+//   <tr>
+//     <th>Name</th><th>Surname</th><th>Age</th>
+//   </tr>
+// </thead>
+// <tbody>
+//   <tr>
+//     <td>John</td><td>Smith</td><td>10</td>
+//   </tr>
+//   <tr>
+//     <td>Pete</td><td>Brown</td><td>15</td>
+//   </tr>
+//   <tr>
+//     <td>Ann</td><td>Lee</td><td>5</td>
+//   </tr>
+//   <tr>
+//     <td>...</td><td>...</td><td>...</td>
+//   </tr>
+// </tbody>
+// </table>
+// В ней может быть больше строк.
+
+// Напишите код для сортировки по столбцу "name".
