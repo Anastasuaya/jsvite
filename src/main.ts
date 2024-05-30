@@ -2176,13 +2176,13 @@ function renderBuyList(arr: products[]) {
 
     for(let el of arr) {
         if(!el.IsBuyed) {
-            html += `<li style = "color: red">${el.name} ${el.count}</li>`
+            html += `<li style = "color: brown">${el.name} ${el.count}</li>`
         }
     }
 
     for(let el of arr) {
         if(el.IsBuyed) {
-            html += `<li style = "color: green">${el.name} ${el.count}</li>`
+            html += `<li style = "color: darkgreen">${el.name} ${el.count}</li>`
         }
     }
 
