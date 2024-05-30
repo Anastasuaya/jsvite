@@ -2176,13 +2176,13 @@ function renderBuyList(arr: products[]) {
 
     for(let el of arr) {
         if(!el.IsBuyed) {
-            html = `<li style = "color: red">${el.name} ${el.count} <button data-name "${el.name}">Отметить купленным</button></li>`
+            html += `<li style = "color: red">${el.name} ${el.count}</li>`
         }
     }
 
     for(let el of arr) {
         if(el.IsBuyed) {
-            html = `<li style = "color: green">${el.name} ${el.count}</li>`
+            html += `<li style = "color: green">${el.name} ${el.count}</li>`
         }
     }
 
@@ -2230,8 +2230,9 @@ const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
 
 function setBuyed(arr: products[], name: string) {
     for(let el of arr) {
-        if(el.name == name)
-        el.IsBuyed = true
+        if(el.name == name) {
+            el.IsBuyed = true
+        }
     }
     renderBuyList(arr)
 }
