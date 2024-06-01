@@ -2228,57 +2228,32 @@ productAddButton.addEventListener('click', function(){
 // 3. Покупка продукта. Функция принимает название продукта
 // и отмечает его как купленный.
 
-// const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
-
-// function setBuyed(arr: products[], name: string) {
-//     for(let el of arr) {
-//         if(el.name == name) {
-//             el.isBuyed = true
-//         }
-//     }
-//     renderBuyList(arr)
-// }
-
-// setBuyed(toBuyList, 'buckweat')
-
-// setBuyedButton.addEventListener('click', function() {
-//     setBuyed(toBuyList, productNameImput.value)
-//     productNameImput.value = ''
-//     productCountInput.value = ''
-// })
-
-// toBuyListOl.addEventListener('click', function(e) {
-//     const target = e.target as HTMLElement
-//     if (target.tagName == 'BUTTON' && target.dataset.name) {
-//         setBuyed(toBuyList, target.dataset.name)
-//     }
-// })
-
 const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
 
 function setBuyed(arr: products[], name: string) {
-  for (let el of arr) {
-    if (el.name == name) {
-      el.isBuyed = true
+    for(let el of arr) {
+        if(el.name == name) {
+            el.isBuyed = true
+        }
     }
-  }
-  renderBuyList(arr)
+    renderBuyList(arr)
 }
 
-setBuyed(toBuyList, 'макароны')
+setBuyed(toBuyList, 'buckweat')
 
-setBuyedButton.addEventListener('click', function () {
-  setBuyed(toBuyList, productNameImput.value)
-  productNameImput.value = ''
-  productCountInput.value = ''
+setBuyedButton.addEventListener('click', function() {
+    setBuyed(toBuyList, productNameImput.value)
+    productNameImput.value = ''
+    productCountInput.value = ''
 })
 
-toBuyListOl.addEventListener('click', function (e) {
-  const target = e.target as HTMLElement
-  if (target.tagName == 'BUTTON' && target.dataset.name) {
-    setBuyed(toBuyList, target.dataset.name)
-  }
+toBuyListOl.addEventListener('click', function(e) {
+    const target = e.target as HTMLElement
+    if (target.tagName == 'BUTTON' && target.dataset.name) {
+        setBuyed(toBuyList, target.dataset.name)
+    }
 })
+
 
 //* Задание 2
 // Создать массив, описывающий чек в магазине. Каждый эле-
