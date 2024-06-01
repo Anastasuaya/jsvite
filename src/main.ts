@@ -2151,16 +2151,16 @@ console.log(SearchFruits('banana', FruitsSort))
 type products = {
     name: string,
     count: number,
-    IsBuyed: boolean,
+    isBuyed: boolean,
 }
 
 const toBuyList: products[] = [
 
-    {name: 'milk', count: 1, IsBuyed: true},
-    {name: 'cheese', count: 1, IsBuyed: true},
-    {name: 'chocolate', count: 1, IsBuyed: false},
-    {name: 'eggs', count: 10, IsBuyed: false},
-    {name: 'bread', count: 1, IsBuyed: true},
+    {name: 'milk', count: 1, isBuyed: true},
+    {name: 'cheese', count: 1, isBuyed: true},
+    {name: 'chocolate', count: 1, isBuyed: false},
+    {name: 'eggs', count: 10, isBuyed: false},
+    {name: 'bread', count: 1, isBuyed: true},
 ]
 
 // 1. Вывод всего списка на экран таким образом, чтобы сначала
@@ -2175,13 +2175,13 @@ function renderBuyList(arr: products[]) {
     let html = ''
 
     for(let el of arr) {
-        if(!el.IsBuyed) {
+        if(!el.isBuyed) {
             html += `<li style = "color: brown">${el.name} ${el.count}</li>`
         }
     }
 
     for(let el of arr) {
-        if(el.IsBuyed) {
+        if(el.isBuyed) {
             html += `<li style = "color: darkgreen">${el.name} ${el.count}</li>`
         }
     }
@@ -2203,13 +2203,13 @@ const productAddButton = document.getElementById('Addproduct') as HTMLInputEleme
 function AddBuyList(arr: products[], name: string, count: number) {
     let InList = false
     for(let el of arr) {
-        if(el.name == name && !el.IsBuyed) {
+        if(el.name == name && !el.isBuyed) {
             el.count += count
             InList = true
         }
     }
     if (!InList) {
-        arr.push({ name, count, IsBuyed: false })
+        arr.push({ name, count, isBuyed: false })
     }
 
     renderBuyList(arr)
@@ -2223,34 +2223,63 @@ productAddButton.addEventListener('click', function(){
     productNameImput.value = ''
     productCountInput.value = ''
 })
+
+
 // 3. Покупка продукта. Функция принимает название продукта
 // и отмечает его как купленный.
+
+// const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
+
+// function setBuyed(arr: products[], name: string) {
+//     for(let el of arr) {
+//         if(el.name == name) {
+//             el.isBuyed = true
+//         }
+//     }
+//     renderBuyList(arr)
+// }
+
+// setBuyed(toBuyList, 'buckweat')
+
+// setBuyedButton.addEventListener('click', function() {
+//     setBuyed(toBuyList, productNameImput.value)
+//     productNameImput.value = ''
+//     productCountInput.value = ''
+// })
+
+// toBuyListOl.addEventListener('click', function(e) {
+//     const target = e.target as HTMLElement
+//     if (target.tagName == 'BUTTON' && target.dataset.name) {
+//         setBuyed(toBuyList, target.dataset.name)
+//     }
+// })
 
 const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
 
 function setBuyed(arr: products[], name: string) {
-    for(let el of arr) {
-        if(el.name == name) {
-            el.IsBuyed = true
-        }
+  for (let el of arr) {
+    if (el.name == name) {
+      el.isBuyed = true
     }
-    renderBuyList(arr)
+  }
+  renderBuyList(arr)
 }
 
-setBuyed(toBuyList, 'buckweat')
+setBuyed(toBuyList, 'макароны')
 
-setBuyedButton.addEventListener('click', function() {
-    setBuyed(toBuyList, productNameImput.value)
-    productNameImput.value = ''
-    productCountInput.value = ''
+setBuyedButton.addEventListener('click', function () {
+  setBuyed(toBuyList, productNameImput.value)
+  productNameImput.value = ''
+  productCountInput.value = ''
 })
 
-toBuyListOl.addEventListener('click', function(e) {
-    const target = e.target as HTMLElement
-    if (target.tagName == 'BUTTON' && target.dataset.name) {
-        setBuyed(toBuyList, target.dataset.name)
-    }
+toBuyListOl.addEventListener('click', function (e) {
+  const target = e.target as HTMLElement
+  if (target.tagName == 'BUTTON' && target.dataset.name) {
+    setBuyed(toBuyList, target.dataset.name)
+  }
 })
+
 //* Задание 2
 // Создать массив, описывающий чек в магазине. Каждый эле-
 // мент массива состоит из названия товара, количества и цены за
