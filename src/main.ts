@@ -2279,10 +2279,24 @@ const ProductInCheck: check[] = [
 const ProductInCheckOl = document.getElementById('ProductInCheck') as HTMLOListElement
 
 function getCheck(arr: check[]) {
-    let html = ''
-    for (let el of arr) {
-        html += `<li> ${el.name} ${el.count} ${el.price}</li>`
+    let html = '<h3>"ООО Магнит"</h3>'
+    html += '<h3>Чек № 134</h3>'
+    html += `<table><tr>
+    <th>name</th>
+    <th>count</th>
+    <th>price</th>
+    </tr>`
+
+    for(let el of arr) {
+        html += `<tr>
+        <td>${el.name}</td>
+        <td>${el.count}</td>
+        <td>${el.price}</td>
+        </tr>`
     }
+
+    html += '</table>'
+    html += `<h3>К оплате ${sumCheck(arr)}руб.</h3>`
 
     ProductInCheckOl.innerHTML = html
 }
@@ -2323,6 +2337,7 @@ function MidCheck(arr: check[]) {
 }
 
 console.log(MidCheck(ProductInCheck))
+
 //* Задание 3
 // Создать массив css-стилей (цвет, размер шрифта, выравнива-
 //     ние, подчеркивание и т. д.). Каждый элемент массива – это объ-
