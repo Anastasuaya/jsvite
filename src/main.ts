@@ -1962,13 +1962,14 @@ console.log(findEmplByName(employees, 'Мария'))
 // 3.5. Написать функцию, принимающую массив работников и название отдела, и возвращающую новый массив, содержащий только сотрудников переданного отдела
 
 function getEmpl(arr: Employees[], department: string) {
-    arr.filter((el) => el.department == department)
+   return arr.filter((el) => el.department == department)
 }
 
 getEmpl(employees, 'prog')
 
 console.log(getEmpl(employees, 'prog'))
 console.log(getEmpl(employees, 'ads'))
+
 
 // 3.6. Написать функцию, принимающую массив работников и возвращающую сумму зарплат. Вызвать функцию по каждому отделу и по общему массиву
 
