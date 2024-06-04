@@ -631,16 +631,16 @@ if ((num4 / 100 % 10) == (num4 / 10 % 10) ||
 // при этом не кратен 100
 
 let year = 2024
-let day_in_year = 0
+let dayinyear = 0
 
 if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0 ||
     (year % 4 == 0 && year % 100 != 0 && year % 400 != 0)) {
-    day_in_year = 366
+    dayinyear = 366
 
     console.log('Год високосный')
 } else {
 
-    day_in_year = 365
+    dayinyear = 365
 
     console.log('Год не високосный')
 }
