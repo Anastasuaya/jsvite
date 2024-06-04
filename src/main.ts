@@ -1,3 +1,4 @@
+import { render } from 'sass'
 import './style.css'
 
 // console.log('Hello world')
@@ -1848,32 +1849,6 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 // }
 // console.log(DivHtml)
 
-  //! ------------------------------------------------------------------------------------------------------------------------
-
-// *Есть массив объектов
-
-// const employees = [
-//     { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
-//     { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
-//     { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
-//     { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
-//     { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
-//     { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
-//     { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
-//     { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
-//   ]
-
-//* Все функции вызывать несколько раз с разными параметрами
-
-// //* 2.1. Создать функцию, принимающую массив работников, и возвращающую массив уникальных отделов (department)
-
-// function sortEmpl(arr, key: 'name' | 'department' | ' salary') {
-//     return (arr, key)
-// }
-
-
-// deps.includes
-//? [ads, prog, disign]
 // 2.2. Написать функцию, принимающую массив работников и ключ объекта, по которому сделать сортировку массива
 // Учесть, что строковые параметры сортируются при помощи метода localeCompare, а числовые,- вычитанием
 // 2.3. Написать функцию, аналогичную описанной в задании 2.2., но сортирующую в обратном порядке
@@ -1882,13 +1857,119 @@ Div.innerHTML = ` <p>Привет, пользователь!</p> `
 // 2.6. Написать функцию, принимающую массив работников и возвращающую сумму зарплат. Вызвать функцию по каждому отделу и по общему массиву
 
 
+  //! ------------------------------------------------------------------------------------------------------------------------
+
+// *Есть массив объектов
+
+type Employees = {
+    name: string,
+    department: string,
+    salary: number
+}
+
+const employees: Employees[]  = [
+    { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
+    { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
+    { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
+    { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
+    { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
+    { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
+    { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
+    { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
+  ]
+
 //* Все функции вызывать несколько раз с разными параметрами
-// 3.1. Создать функцию, принимающую массив работников, и возвращающую массив уникальных отделов (department)
+
+ //* 3.1. Создать функцию, принимающую массив работников, и возвращающую массив уникальных отделов (department)
+// deps.includes
+// [ads, prog, disign]
+function arrEmpl(arr: Employees[], department: string) {
+    return arr.filter((el) => el.department == department)
+}
+
+arrEmpl(employees, 'ads')
+console.log(arrEmpl(employees, 'ads'))
+
+function ShowElem(arr: Employees[]) {
+    console.log(arr)
+    console.log(arr[0])
+    console.log(arr[0].name)
+    console.log(arr[0].department)
+    console.log(arr[0].salary)
+
+    for(let i = 0; i < arr.length; i++) {
+        console.log(arr[i].name)
+    }
+
+    for(let empl of arr) {
+        console.log(empl.name)
+
+        const newArr = [12, 30, 7]
+        return newArr
+    }
+}
+
+const getFunc = ShowElem(employees)
+console.log(getFunc)
+
+
+
 // 3.2. Написать функцию, принимающую массив работников и ключ объекта, по которому сделать сортировку массива
 // Учесть, что строковые параметры сортируются при помощи метода localeCompare, а числовые,- вычитанием
+
+function sortEmpl(arr: Employees[], key: 'name' | 'department' |'salary') {
+    return arr.sort((a,b) => {
+        if (a[key] > b[key]) return 1 
+        if (a[key] < b[key]) return -1
+        return 0
+    })
+}
+
+console.log(sortEmpl(employees, 'name'))
+console.log(sortEmpl(employees, 'department'))
+console.log(sortEmpl(employees, 'salary'))
+
+
 // 3.3. Написать функцию, аналогичную описанной в задании 2.2., но сортирующую в обратном порядке
+
+function ReturnsortEmpl(arr: Employees[], key: 'name' | 'department' | 'salary') {
+    return arr.sort((a,b) => {
+        if (a[key] < b[key]) return 1
+        if (a[key] > b[key]) return -1
+        return 0
+    })
+}
+
+console.log(ReturnsortEmpl(employees, 'name'))
+console.log(ReturnsortEmpl(employees, 'department'))
+console.log(ReturnsortEmpl(employees, 'salary'))
+
+
 // 3.4. Написать функцию, принимающую массив работников и имя, и возвращающую объект сотрудника или undefined
+
+function findEmplByName(arr: Employees[], name:string) {
+    for(let el of arr) {
+        if (el.name == name) {
+            return el
+        }
+    }
+    return undefined
+}
+
+console.log(findEmplByName(employees, 'Голикова Мария Филипповна'))
+console.log(findEmplByName(employees, 'Мария'))
+
 // 3.5. Написать функцию, принимающую массив работников и название отдела, и возвращающую новый массив, содержащий только сотрудников переданного отдела
+
+function getEmpl(arr: Employees[], department: string) {
+    arr.filter((el) => el.department == department)
+}
+
+getEmpl(employees, 'prog')
+
+console.log(getEmpl(employees, 'prog'))
+console.log(getEmpl(employees, 'ads'))
+
 // 3.6. Написать функцию, принимающую массив работников и возвращающую сумму зарплат. Вызвать функцию по каждому отделу и по общему массиву
 
 // 3.7. В HTML создать div для кнопок, задать ему id и получить объект div'a в js, аналогично заданию 2.2.
@@ -2140,7 +2221,7 @@ console.log(SearchFruits('banana', FruitsSort))
 
   //! ------------------------------------------------------------------------------------------------------------------------
 
-//TODO Домашка 2.2
+//TODO Домашка 2.2  СДЕЛАНО!!! УРА
 
 //* Задание 1
 // Создать массив «Список покупок». Каждый элемент массива
@@ -2280,7 +2361,9 @@ const ProductInCheckOl = document.getElementById('ProductInCheck') as HTMLOListE
 
 function getCheck(arr: check[]) {
     let html = '<h3>"ООО Магнит"</h3>'
+    html += '<hr>'
     html += '<h3>Чек № 134</h3>'
+    html += '<hr>'
     html += `<table><tr>
     <th>name</th>
     <th>count</th>
@@ -2296,7 +2379,8 @@ function getCheck(arr: check[]) {
     }
 
     html += '</table>'
-    html += `<h3>К оплате ${sumCheck(arr)}руб.</h3>`
+    html += '<hr>'
+    html += `<h3>К оплате: ${sumCheck(arr)}руб.</h3>`
 
     ProductInCheckOl.innerHTML = html
 }
@@ -2346,6 +2430,27 @@ console.log(MidCheck(ProductInCheck))
 //     текст, и выводит этот текст с помощью document.write() в тегах
 //     <p></p>, добавив в открывающий тег атрибут style со всеми сти-
 //     лями, перечисленными в массиве.
+
+const stylesText = [
+    {'color': 'green'},
+    {'font-size': '30px'},
+    {'text-aligin': 'center'},
+    {'padding': '13px'},
+]
+
+function StyleForText(styles: any[], text: string) {
+    let Styletext = ''
+    for(let el of styles) {
+        for(let key in el) {
+            Styletext += `${key}:${el[key]}`
+        }
+    }
+
+    const RenderText = `<p style = "${Styletext}>${text}</p>`
+    document.body.insertAdjacentHTML('beforeend', RenderText)
+}
+
+StyleForText(stylesText, 'Hello, World')
 
 
 //* Задание 4
