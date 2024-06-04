@@ -2260,15 +2260,69 @@ toBuyListOl.addEventListener('click', function(e) {
 // мент массива состоит из названия товара, количества и цены за
 // единицу товара. Написать следующие функции.
 
+type check = {
+    name: string,
+    count: number,
+    price: number,
+}
+
+const ProductInCheck: check[] = [
+    {name: 'potato', count: 10, price: 120},
+    {name: 'sugar', count: 2, price: 190},
+    {name: 'chocolate', count: 3, price: 180},
+    {name: 'fish', count: 1, price: 300},
+    {name: 'ham', count: 1, price: 250}
+]
+
 // 1. Распечатка чека на экран.
+
+const ProductInCheckOl = document.getElementById('ProductInCheck') as HTMLOListElement
+
+function getCheck(arr: check[]) {
+    let html = ''
+    for (let el of arr) {
+        html += `<li> ${el.name} ${el.count} ${el.price}</li>`
+    }
+
+    ProductInCheckOl.innerHTML = html
+}
+getCheck(ProductInCheck)
 
 // 2. Подсчет общей суммы покупки.
 
+function sumCheck(arr: check[]) {
+    let sum = 0
+
+    for(let el of arr) {
+        console.log(el)
+        sum += el.count * el.price
+    }
+    return sum
+}
+
+console.log(sumCheck(ProductInCheck))
+
 // 3. Получение самой дорогой покупки в чеке.
+
+function MaxSum(arr: check[]) {
+    let max = 0 
+    for(i = 0; i < arr.length; i++) {
+        if(arr[i].count * arr[i].price > max) {
+            max = arr[i].count * arr[i].price
+        }
+        return max
+    }
+}
+
+console.log(MaxSum(ProductInCheck))
 
 // 4. Подсчет средней стоимости одного товара в чеке.
 
+function MidCheck(arr: check[]) {
+    return sumCheck(arr) / arr.length
+}
 
+console.log(MidCheck(ProductInCheck))
 //* Задание 3
 // Создать массив css-стилей (цвет, размер шрифта, выравнива-
 //     ние, подчеркивание и т. д.). Каждый элемент массива – это объ-
