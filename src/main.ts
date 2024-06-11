@@ -2492,7 +2492,7 @@ console.log(str10)
 
 
 //! Строки
-// TODO Практика 2.3
+// TODO Практика 2.3. Всё сделано!!!
 
 //* Задание 1
 // Написать функцию, которая принимает 2 строки и срав-
@@ -2549,6 +2549,23 @@ console.log(LetterInStr('banana'))
 // увеличение продаж, только сегодня, не удаляйте, ххх.
 // Функция должна быть нечувствительна к регистру.
 
+function chekSpam(str: string) {
+
+    let loverStr = str.toLowerCase();
+    if (loverStr.includes('как заработать косарь?') || loverStr.includes('ольга 300м от вас') || 
+    loverStr.includes('моя спина не болит, потому что...') || loverStr.includes('получи фрибет')) {
+   return true
+    } else 
+    return false
+}
+
+console.log(chekSpam('banana'))
+console.log(chekSpam('как заработать косарь?'))
+console.log(chekSpam('Ольга 300м от вас'))
+console.log(chekSpam('Моя спина не болит, потому что...'))
+console.log(chekSpam('Получи фрибет'))
+
+
 //* Задание 5
 // Написать функцию сокращения строки. Функция прини-
 // мает строку и ее максимальную длину. Если длина строки
@@ -2557,27 +2574,98 @@ console.log(LetterInStr('banana'))
 // Например: truncate(“Hello, world!”, 8) должна вернуть
 // “Hello...”.
 
+function reductionStr(str: string, maxlength: number) {
+    if(str.length > maxlength) {
+        return str.slice(0, maxlength -1) + '...'
+    }
+}
+
+console.log(reductionStr('Hello, world', 6))
+
 //* Задание 6
 // Написать функцию, которая проверяет, является ли пере-
 // данная строка палиндромом.
+
+function palindromeStr(str: string) {
+    return  str.split('').reverse().join('') == str
+}
+
+console.log(palindromeStr('шалаш'))
 
 //* Задание 7
 // Написать функцию, которая считает количество слов в
 // предложении.
 
+function quantityWords(str: string) {
+    return str.split(``).length
+}
+
+console.log(quantityWords('Дождь, ну и пусть'))
+
 //* Задание 8
 // Написать функцию, которая возвращает самое длинное
 // слово из предложения.
 
+function retLongWord(str: string) {
+
+    const arrWord = str.split(` `)
+
+    let longWord = arrWord[0]
+
+    for(const words of arrWord) {
+        if(words.length > longWord.length) {
+            longWord = words
+        }
+    }
+    return longWord
+}
+
+console.log(retLongWord(`всё идёт по плану`))
+
 //* Задание 9
 // Написать функцию, которая считает среднюю длину слова
 // в предложении.
+
+summ = 0
+
+function mediumLength(str: string) {
+    str.replaceAll(',' , '').replaceAll('.','').replaceAll(':','').replaceAll('?','').replaceAll('!','')
+
+    const word = str.split(` `)
+
+    for(let words of word) {
+        summ += words.length
+    }
+
+    return summ / word.length
+}
+
+console.log(mediumLength(`Всё: идёт! по, плану?`))
 
 //* Задание 10
 // Написать функцию, которая принимает строку и символ
 // и выводит индексы, по которым находится этот символ в
 // строке. Также вывести, сколько всего раз встречается этот
 // символ в строке.
+
+function indexSymbol(str: string, char: string) {
+
+    const info = {
+        sumchar: 0,
+        position: [] as number[]
+    }
+
+    for(let i = 0; i < str.length; i++) {
+        if (char == str[i]) {
+            info.position.push(1)
+            info.sumchar++
+        }
+    }
+
+    return info
+}
+
+console.log(indexSymbol('лалала' , 'л'))
 
   //! ------------------------------------------------------------------------------------------------------------------------
 
