@@ -2505,19 +2505,42 @@ function compareStr(str1: string, str2: string) {
     for(let i = 0; i < str1.length && str2.length; i++) {
         if(str1.length > str2.length)
             return 1
-    } else if(str1.length < str2.length) {
+    } if(str2.length > str1.length) {
         return -1
     } else (str1.length == str2.length)
     return 0
 }
 console.log(compareStr('Собака', 'кошка'))
+
 //* Задание 2
 // Написать функцию, которая переводит в верхний регистр
 // первый символ переданной строки.
 
+function UpStr(str: string) {
+    for(let i = 0; i < str.length; i++ ) {
+        return str
+    }
+}
+
+console.log(UpStr('Феодосия'[0].toUpperCase()))
+
 //* Задание 3
 // Написать функцию, которая считает количество гласных
 // букв в переданной строке.
+
+let letter = ['a', 'e', 'i', 'o', 'u', 'y']
+
+summ = 0 
+
+function LetterInStr(str: string) {
+    for(let chat of str.toLowerCase()) {
+        if(letter.includes(chat)) {
+            summ += 1
+        }
+    }
+    return summ
+}
+console.log(LetterInStr('banana'))
 
 //* Задание 4
 // Написать функцию для проверки спама в переданной
