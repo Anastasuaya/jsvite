@@ -2501,8 +2501,16 @@ console.log(str10)
 // рой больше символов, чем в первой; или 0 – если строки
 // одинаковой длины.
 
-// let str
-
+function compareStr(str1: string, str2: string) {
+    for(let i = 0; i < str1.length && str2.length; i++) {
+        if(str1.length > str2.length)
+            return 1
+    } else if(str1.length < str2.length) {
+        return -1
+    } else (str1.length == str2.length)
+    return 0
+}
+console.log(compareStr('Собака', 'кошка'))
 //* Задание 2
 // Написать функцию, которая переводит в верхний регистр
 // первый символ переданной строки.
