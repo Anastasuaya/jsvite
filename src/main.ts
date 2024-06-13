@@ -2927,15 +2927,9 @@ function outputText(template: string, ...values: any[]) {
     return template
 }
 
-console.log(outputText('Today is %1 %2.%3.%4, Monday, 10, 8, 2020'))
+console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020))
 
-// function outputText(template: string, ...values: any[]) {
-//     for (let i = 0; i < template.length; i++) {
-//       template = template.replace('%' + (i + 1), values[i])
-//     }
-//     return template
-//   }
-//   console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020));
+
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
