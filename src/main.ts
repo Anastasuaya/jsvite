@@ -2677,6 +2677,37 @@ console.log(indexSymbol('лалала' , 'л'))
 // статистику о ней: количество букв, количество цифр и
 // количество других знаков.
 
+function newStr(str: string) {
+
+    const infoStr = {
+
+        sumLetter: 0,
+        sumFigure: 0,
+        sumSign: 0,
+    }
+
+    let letters = 'абвгдеёжзийклмнопрстуфхцчэюяabcdefghijklmnopqrstuvwxyz'
+
+    let figure = '1234567890'
+
+    let sign =  '/.,;:"!&%$#@*-+=\\'
+
+    let allLetters = letters + letters.toUpperCase()
+
+    for(let char of str) {
+        if (allLetters.includes(char)) {
+            infoStr.sumLetter++
+        } 
+        if (figure.includes(char)) {
+            infoStr.sumFigure++
+        } 
+        if (sign.includes(char)) {
+            infoStr.sumSign++
+        }
+    }
+    return infoStr
+}
+console.log(newStr('\\//...гдееж666'))
 
 //* Задание 2
 // Написать функцию, которая принимает двузначное число
@@ -2684,18 +2715,70 @@ console.log(indexSymbol('лалала' , 'л'))
 // Например: 35 – тридцать пять, 89 – восемьдесят девять,
 // 12 – двенадцать.
 
+function WriteLet(num: number) {
+
+    let units = ['ноль', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять']
+
+    let dozens = ['десять', 'одинадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать']
+
+    let rounds = [, , 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто']
+
+    if(num >= 0 && num <= 9) {
+        return units[num]
+    }
+    if(num >= 10 && num <= 20) {
+        return dozens[num - 10]
+    }
+    if(num >= 20 && num <= 99) {
+        if(num % 10 == 0) {
+            return rounds[num/10]
+        }
+    }
+
+    return rounds[Math.trunc(num / 10)] + ' ' + units[num % 10]
+}
+
+console.log(WriteLet(34))
 
 //* Задание 3
 // Написать функцию, которая заменяет в полученной строке
 // большие буквы на маленькие, маленькие – на большие, а
 // цифры – на знак нижнего подчеркивания.
 
+function replaceStr(str: string) {
+
+    let newstr = ''
+
+    for(let char of str){
+        if ('1234567890'.includes(char)) {
+            newstr += '_'
+        }
+        else if (char == char.toLowerCase()) {
+            newstr += char.toUpperCase()
+        }
+        else if (char == char.toUpperCase()) {
+            newstr += char.toLowerCase()
+        }
+    }
+    return newstr
+}
+
+console.log(replaceStr('ГдеЁж666'))
 
 //* Задание 4
 // Написать функцию, которая преобразует названия css-
 // стилей с дефисом в название в СamelСase стиле: font-size
 // в fontSize, background-color в backgroundColor, text-
 // align в textAlign.
+
+function replaceCss(str: string) {
+
+    return str.split('-').map((el, i) => i ? el[0].toUpperCase()+ el.slice(1) : el).join('')
+
+}
+console.log(replaceCss('font-size'))
+console.log(replaceCss('background-color'))
+console.log(replaceCss('text-aligin'))
 
 
 //* Задание 5
@@ -2704,13 +2787,24 @@ console.log(indexSymbol('лалала' , 'л'))
 // Например: cascading style sheets в CSS, объектно-
 // ориентированное программирование в ООП.
 
+function Abbr(str: string) {
+    return str.replaceAll('-', ' ').split(' '). map(el => el[0].toUpperCase()).join('')
+}
+
+console.log(Abbr('cascading style sheets'))
+console.log(Abbr('объектно-ориентированное программирование'))
+console.log(Abbr('организация объединенных наций'))
 
 //* Задание 6
 // Написать функцию, которая принимает любое коли-
 // чество строк, объединяет их в одну длинную строку и
 // возвращает ее.
 
+function contStr(...arr: string[]) {
+    return arr.join(';')
+}
 
+console.log(contStr('123, 123, 123'))
 //* Задание 7
 // Написать функцию – калькулятор. Функция принимает
 // строку с примером, определяет, какое действие необходимо
@@ -2761,6 +2855,31 @@ function calculator(str:string):number {
 // Например: url “https://itstep.org/ua/about”, информация
 // “протокол: https, домен: itstep.org, путь: /ua/about”.
 
+function ForUrl(url: string) {
+
+    let protocol
+    let domain
+    let way
+    let arr1 = url.split(`://`)
+    let arr2
+
+    for(let i = 0; i < arr1.length; i++) {
+
+        protocol = arr1[0]
+
+        arr2 = arr1[1].split(`/`)
+
+        domain = arr2[0]
+
+        arr2.shift()
+
+        way = arr2.join(`/`)
+    }
+
+    return "Информация: протокол:" + protocol + "," + "домен:" + domain + "," + "путь:" + way
+}
+
+console.log(ForUrl(`https://itstep.org/ua/about`))
 
 //* Задание 9
 // Написать функцию, которая принимает строку и раздели-
@@ -2769,6 +2888,25 @@ function calculator(str:string):number {
 // Например: строка “10/08/2020”, разделитель “/”, результат:
 // “10”, “08”, “2020”.
 
+function datestr(str: string, separator: any) {
+
+    let lastContent = 0
+    const arr = []
+
+    for (let i = 0; i < str.length; i++) {
+        if(str[i] == separator) {
+            arr.push(str.slice(lastContent, i))
+            lastContent = i + 1
+        }
+    }
+    if(str.slice(lastContent)) {
+        arr.push(str.slice(lastContent))
+    }
+    return arr
+}
+console.log(datestr("15/06/2024" , "/"))
+
+  
 
 //* Задание 10
 // Написать функцию вывода текста по заданному шаблону.
@@ -2779,8 +2917,25 @@ function calculator(str:string):number {
 // входного параметра.
 // Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
 // 8, 2020) должна вывести “Today is Monday 10.8.2020”.
+  
+function outputText(template: string, ...values: any[]) {
 
+    for (let i = 0; i < template.length; i++) {
+        template = template.replace('%' + (i + 1), values[i])
+    }
 
+    return template
+}
+
+console.log(outputText('Today is %1 %2.%3.%4, Monday, 10, 8, 2020'))
+
+// function outputText(template: string, ...values: any[]) {
+//     for (let i = 0; i < template.length; i++) {
+//       template = template.replace('%' + (i + 1), values[i])
+//     }
+//     return template
+//   }
+//   console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020));
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
