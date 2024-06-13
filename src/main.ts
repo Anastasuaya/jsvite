@@ -2977,13 +2977,22 @@ class PrintMachine {
 
 }
 
-PrintMachine
-const redPM = new PrintMachine('50px', 'red', 'Arial')
-const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
-  redPM.print('Alert')
-  blackPM.print('(tommorow)')
-  redPM.print('1 may on nose')
-  blackPM.print('not work')
+// class ExtendedPrintMachine extends PrintMachine {
+
+//     fontStyle: string
+
+//     constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p') {
+
+//     }
+// }
+
+// PrintMachine
+// const redPM = new PrintMachine('50px', 'red', 'Arial')
+// const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
+//   redPM.print('Alert')
+//   blackPM.print('(tommorow)')
+//   redPM.print('1 may on nose')
+//   blackPM.print('not work')
 
 
 
