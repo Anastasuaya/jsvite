@@ -1,4 +1,4 @@
-import { render } from 'sass'
+
 import './style.css'
 
 // console.log('Hello world')
@@ -2977,18 +2977,21 @@ class PrintMachine {
 
 }
 
-// class ExtendedPrintMachine extends PrintMachine {
+class ExtendedPrintMachine extends PrintMachine {
+    fontStyle: string
+    constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p' ) {
+      super(fSize, color, fFamily, tag)
+      this.fontStyle = fontStyle
+    }
+    print(text: string) {
+      pmDiv.innerHTML += `<${this.tag} style="font-style:${this.fontStyle};font-size:${this.fSize};font-family:${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
+    }
+  }
 
-//     fontStyle: string
 
-//     constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p') {
-
-//     }
-// }
-
-// PrintMachine
-// const redPM = new PrintMachine('50px', 'red', 'Arial')
-// const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
+PrintMachine
+const redPM = new PrintMachine('50px', 'red', 'Arial')
+const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 //   redPM.print('Alert')
 //   blackPM.print('(tommorow)')
 //   redPM.print('1 may on nose')
