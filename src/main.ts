@@ -3173,9 +3173,65 @@ desCss.innerHTML += bred.getCss()
 // С помощью написанных классов реализовать следующий блок
 // (см. рис. 2) и добавить его на страницу с помощьюdocument.write().
 
+class HTMLBlock {
+    style = [] as CssClass[]
+    element: HTMLElement
+    constructor(style: CssClass[], element: HTMLElement) {
+        this.element = element
+        this.style = style
+    }
 
+    getCode() {
+        return {
+            style: this.style.map(el => el.getCss()).join('\n'),
+            html: this.element.gethtml()
+        }
+    }
+}
+
+const docCss = document.getElementById('st') as HTMLDivElement
+const docDiv = document.getElementById('gr') as HTMLDivElement
+const biGreen = new CssClass('biGreen')
+
+biGreen.setStyle("color", "violet")
+biGreen.setStyle("color", "darkgreen")
+biGreen.setStyle("font-size", "24px")
+biGreen.setStyle("font-family", "Roboto")
+biGreen.setStyle("margin", "7px")
+
+console.log(biGreen.getCss())
+
+const wrClass = new CssClass('wrap')
+wrClass.setStyle("display", "flex")
+
+const blockClass = new CssClass('block')
+blockClass.setStyle("width", "300px")
+blockClass.setStyle("margin", "7px")
+
+const imgClass = new CssClass('img')
+imgClass.setStyle("width", "100%")
+imgClass.setStyle("color", "darkblue")
+
+const textClass = new CssClass('text')
+textClass.setStyle("text-aligin", "center")
+
+const block = new HTMLBlock([wrClass, blockClass, imgClass, textClass], wrapper)
+
+docCss.innerHTML += biGreen.getCss()
+docDiv.innerHTML = wrapper.gethtml()
+
+const blockCode = block.getCode()
+
+docCss.innerHTML += blockCode.style
+docDiv.innerHTML = blockCode.html
  //! ------------------------------------------------------------------------------------------------------------------------
 
+  
+//   docCss.innerHTML += bigGreen.getCss()
+//   docDiv.innerHTML = wrapper.getHtml()
+//   const blockCode = block.getCode()
+//   docCss.innerHTML += blockCode.styles
+//   docDiv.innerHTML = blockCode.html
 //! Даты
 // getFullYear()
   // Получить год(4 цифры)
