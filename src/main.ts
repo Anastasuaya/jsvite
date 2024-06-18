@@ -2977,21 +2977,21 @@ class PrintMachine {
 
 }
 
-class ExtendedPrintMachine extends PrintMachine {
-    fontStyle: string
-    constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p' ) {
-      super(fSize, color, fFamily, tag)
-      this.fontStyle = fontStyle
-    }
-    print(text: string) {
-      pmDiv.innerHTML += `<${this.tag} style="font-style:${this.fontStyle};font-size:${this.fSize};font-family:${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
-    }
-  }
+// class ExtendedPrintMachine extends PrintMachine {
+//     fontStyle: string
+//     constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p' ) {
+//       super(fSize, color, fFamily, tag)
+//       this.fontStyle = fontStyle
+//     }
+//     print(text: string) {
+//       pmDiv.innerHTML += `<${this.tag} style="font-style:${this.fontStyle};font-size:${this.fSize};font-family:${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
+//     }
+//   }
 
 
-PrintMachine
-const redPM = new PrintMachine('50px', 'red', 'Arial')
-const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
+// PrintMachine
+// const redPM = new PrintMachine('50px', 'red', 'Arial')
+// const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 //   redPM.print('Alert')
 //   blackPM.print('(tommorow)')
 //   redPM.print('1 may on nose')
@@ -3051,6 +3051,39 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 // ■ метод, вычисляющий длину окружности.
 // Продемонстрировать работу свойств и методов.
 
+class Circle {
+    #radius: number
+    constructor(radius: number) {
+       this.#radius = radius
+    }
+    get radius() {
+        console.log('getter worked', this.#radius)
+        return this.#radius
+    }
+    set radius(val: number) {
+        if (val <= 0) {
+            throw Error('nizza')
+        }
+        console.log('setter worked', val)
+         this.#radius = val
+    }
+    squareCircle() {
+        return Math.PI * this.#radius ** 2
+    }
+    lengthCircle() {
+        return 2 * Math.PI * this.#radius
+    }
+}
+
+const c = new Circle(10)
+
+console.log(c.radius)
+
+c.radius = 15
+
+console.log(c.radius)
+console.log(c.squareCircle())
+console.log(c.lengthCircle())
 
 //* Задание 2
 // Реализовать класс, описывающий html элемент.
@@ -3071,7 +3104,6 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 // строки, включая html код вложенных элементов.
 // С помощью написанного класса реализовать следующий блок
 // и добавить его на страницу с помощью document.write().
-
 //! Обратите внимание. Чтобы получить весь этот html в виде
 //! строки должно быть достаточно вызвать метод getHtml только
 //! у тега с идентификатором wrapper.
@@ -3084,6 +3116,43 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 // ■ метод для установки стиля;
 // ■ метод для удаления стиля;
 // ■ метод getCss(), который возвращает css код в виде строки.
+
+class CssClass {
+    style = [] as any[]
+    name: string
+    constructor(name: string) {
+        this.name = name
+    }
+
+    setStyle(name: any, value: any) {
+        this.style.push({name, value})
+    }
+
+    removePr( name: string) {
+        const index = this.style.findIndex(el => el.name == name)
+        if(index != -1) this.style.splice(index, 1)
+    }
+
+    getCss() {
+        const styles = this.style.map((el: {name: string, value: string}) => el.name + ':' + el.value).join(';')
+        return `.${this.name}{${styles}}`
+    }
+}
+
+const desCss = document.getElementById('st') as HTMLDivElement
+const bred = new CssClass('bred')
+
+bred.setStyle("color", "red")
+bred.setStyle("color", "green")
+bred.setStyle("font-size", "30px")
+bred.setStyle("font-family", "Arial")
+console.log(bred.getCss())
+
+bred.removePr("font-family")
+bred.removePr("color")
+console.log(bred.getCss())
+
+desCss.innerHTML += bred.getCss()
 
 
 //* Задание 4
@@ -3105,6 +3174,7 @@ const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
 // (см. рис. 2) и добавить его на страницу с помощьюdocument.write().
 
 
+ //! ------------------------------------------------------------------------------------------------------------------------
 
 //! Даты
 // getFullYear()
