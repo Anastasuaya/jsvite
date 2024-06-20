@@ -3154,30 +3154,30 @@ class HtmlElement {
     }
   }
   
-  const wrapper = new HtmlElement('div')
-  wrapper.setAtribute('id', 'wrapper')
-  wrapper.setAtribute('class', 'wrap')
-  let div = new HtmlElement('div')
-  div.setAtribute('class', 'block')
-  const h3 = new HtmlElement('h3', 'Lorem')
-  const img = new HtmlElement('img')
-  img.setAtribute('class', 'img')
-  img.setAtribute('src', 'vite.svg')
-  img.setAtribute('alt', 'Lorem')
-  const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
-  p.setAtribute('class', 'text')
-  const a = new HtmlElement('a', 'More...')
-  a.setAtribute('href', 'https://www.lipsum.com/')
-  a.setAtribute('target', '_blank')
-  p.append(a)
-  div.append(img)
-  div.append(p)
-  div.prepend(h3)
-  wrapper.append(div)
-  wrapper.append(div)
+//   const wrapper = new HtmlElement('div')
+//   wrapper.setAtribute('id', 'wrapper')
+//   wrapper.setAtribute('class', 'wrap')
+//   let div = new HtmlElement('div')
+//   div.setAtribute('class', 'block')
+//   const h3 = new HtmlElement('h3', 'Lorem')
+//   const img = new HtmlElement('img')
+//   img.setAtribute('class', 'img')
+//   img.setAtribute('src', 'vite.svg')
+//   img.setAtribute('alt', 'Lorem')
+//   const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
+//   p.setAtribute('class', 'text')
+//   const a = new HtmlElement('a', 'More...')
+//   a.setAtribute('href', 'https://www.lipsum.com/')
+//   a.setAtribute('target', '_blank')
+//   p.append(a)
+//   div.append(img)
+//   div.append(p)
+//   div.prepend(h3)
+//   wrapper.append(div)
+//   wrapper.append(div)
   
-  const heDiv = document.getElementById('he') as HTMLDivElement
-  heDiv.innerHTML = wrapper.getHtml()
+//   const heDiv = document.getElementById('he') as HTMLDivElement
+//   heDiv.innerHTML = wrapper.getHtml()
   
 //! Обратите внимание. Чтобы получить весь этот html в виде
 //! строки должно быть достаточно вызвать метод getHtml только
@@ -3248,57 +3248,57 @@ desCss.innerHTML += bred.getCss()
 // С помощью написанных классов реализовать следующий блок
 // (см. рис. 2) и добавить его на страницу с помощьюdocument.write().
 
-class HTMLBlock {
-    style = [] as CssClass[]
-    element: HTMLElement
-    constructor(style: CssClass[], element: HTMLElement) {
-        this.element = element
-        this.style = style
-    }
+// class HTMLBlock {
+//     style = [] as CssClass[]
+//     element: HTMLElement
+//     constructor(style: CssClass[], element: HTMLElement) {
+//         this.element = element
+//         this.style = style
+//     }
 
-    getCode() {
-        return {
-            style: this.style.map(el => el.getCss()).join('\n'),
-            html: this.element.gethtml()
-        }
-    }
-}
+//     getCode() {
+//         return {
+//             style: this.style.map(el => el.getCss()).join('\n'),
+//             html: this.element.gethtml()
+//         }
+//     }
+// }
 
-const docCss = document.getElementById('st') as HTMLDivElement
-const docDiv = document.getElementById('gr') as HTMLDivElement
-const biGreen = new CssClass('biGreen')
+// const docCss = document.getElementById('st') as HTMLDivElement
+// const docDiv = document.getElementById('gr') as HTMLDivElement
+// const biGreen = new CssClass('biGreen')
 
-biGreen.setStyle("color", "violet")
-biGreen.setStyle("color", "darkgreen")
-biGreen.setStyle("font-size", "24px")
-biGreen.setStyle("font-family", "Roboto")
-biGreen.setStyle("margin", "7px")
+// biGreen.setStyle("color", "violet")
+// biGreen.setStyle("color", "darkgreen")
+// biGreen.setStyle("font-size", "24px")
+// biGreen.setStyle("font-family", "Roboto")
+// biGreen.setStyle("margin", "7px")
 
-console.log(biGreen.getCss())
+// console.log(biGreen.getCss())
 
-const wrClass = new CssClass('wrap')
-wrClass.setStyle("display", "flex")
+// const wrClass = new CssClass('wrap')
+// wrClass.setStyle("display", "flex")
 
-const blockClass = new CssClass('block')
-blockClass.setStyle("width", "300px")
-blockClass.setStyle("margin", "7px")
+// const blockClass = new CssClass('block')
+// blockClass.setStyle("width", "300px")
+// blockClass.setStyle("margin", "7px")
 
-const imgClass = new CssClass('img')
-imgClass.setStyle("width", "100%")
-imgClass.setStyle("color", "darkblue")
+// const imgClass = new CssClass('img')
+// imgClass.setStyle("width", "100%")
+// imgClass.setStyle("color", "darkblue")
 
-const textClass = new CssClass('text')
-textClass.setStyle("text-aligin", "center")
+// const textClass = new CssClass('text')
+// textClass.setStyle("text-aligin", "center")
 
-const block = new HTMLBlock([wrClass, blockClass, imgClass, textClass], wrapper)
+// const block = new HTMLBlock([wrClass, blockClass, imgClass, textClass], wrapper)
 
-docCss.innerHTML += biGreen.getCss()
-docDiv.innerHTML = wrapper.gethtml()
+// docCss.innerHTML += biGreen.getCss()
+// docDiv.innerHTML = wrapper.gethtml()
 
-const blockCode = block.getCode()
+// const blockCode = block.getCode()
 
-docCss.innerHTML += blockCode.style
-docDiv.innerHTML = blockCode.html
+// docCss.innerHTML += blockCode.style
+// docDiv.innerHTML = blockCode.html
  //! ------------------------------------------------------------------------------------------------------------------------
 
   
