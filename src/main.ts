@@ -2955,27 +2955,27 @@ console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020))
 // Создать объект такого класса и продемонстрировать работу
 // метода.
 
-const pmDiv = document.getElementById('pm') as HTMLDivElement
+// const pmDiv = document.getElementById('pm') as HTMLDivElement
 
-class PrintMachine {
+// class PrintMachine {
 
-    tag: string
-    fSize: string
-    color: string
-    fFamily: string
+//     tag: string
+//     fSize: string
+//     color: string
+//     fFamily: string
 
-    constructor(fSize: string, color: string, fFamily: string, tag = 'p') {
-        this.tag = tag
-        this.fSize = fSize
-        this.color = color
-        this.fFamily = fFamily
-    }
+//     constructor(fSize: string, color: string, fFamily: string, tag = 'p') {
+//         this.tag = tag
+//         this.fSize = fSize
+//         this.color = color
+//         this.fFamily = fFamily
+//     }
 
-    print(text:string) {
-        pmDiv.innerHTML += `<${this.tag} style ="font-size: ${this.fSize}; font-family: ${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
-    }
+//     print(text:string) {
+//         pmDiv.innerHTML += `<${this.tag} style ="font-size: ${this.fSize}; font-family: ${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
+//     }
 
-}
+// }
 
 // class ExtendedPrintMachine extends PrintMachine {
 //     fontStyle: string
