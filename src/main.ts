@@ -3006,72 +3006,76 @@ mee2.print('Eula is my wife')
   // С помощью написанного класса реализовать следующий блок
   // и добавить его на страницу с помощью document.write().
 
-  const newsDiv = document.getElementById('news') as HTMLDivElement
-  const newsTitleInput = document.getElementById('title') as HTMLDivElement
-  const newsTextInput = document.getElementById('text') as HTMLDivElement
-  const newsTagInput = document.getElementById('tag') as HTMLDivElement
-  const newsDateInput = document.getElementById('date') as HTMLDivElement
-  const newsAInput = document.getElementById('a') as HTMLDivElement
-  const newsAddButton = document.getElementById('addbutton') as HTMLDivElement
+//   const newsDiv = document.getElementById('news') as HTMLDivElement
+//   const newsTitleInput = document.getElementById('title') as HTMLDivElement
+//   const newsTextInput = document.getElementById('text') as HTMLDivElement
+//   const newsTagInput = document.getElementById('tag') as HTMLDivElement
+//   const newsDateInput = document.getElementById('date') as HTMLDivElement
+//   const newsAInput = document.getElementById('a') as HTMLDivElement
+//   const newsAddButton = document.getElementById('addbutton') as HTMLDivElement
 
-//   newsAddButton.addEventListener('click' () => {
-//     newsF.addNews(newsTitleInput.value, newsTextInput.value )
-//   })
-// newsAddInput.addEventListener('click', () => {
+
+//   newsAddButton.addEventListener('click', () => {
 //     newsF.addNews(newsTitleInput.value, newsTextInput.value, newsTagInput.value, newsDateInput.value, newsAInput.value)
+//   })
+
+// //?   Удалить новость
+
+//   const newsFindInput = document.getElementById('Finput') as HTMLDivElement
+//   const newsDelInput = document.getElementById('Dinput') as HTMLDivElement
+
+//   newsDelInput.addEventListener('click', () => {
+//     newsFindInput.deleteNews(+newsFindInput.value)
+//   })
+
+// //?   Найти новость по тегу
+
+// const findInput = document.getElementById('find') as HTMLDivElement
+// const findIdInp = document.getElementById('IdInp') as HTMLDivElement
+
+// findIdInp.addEventListener('click', () => {
+//     newsF.searchNewsByTag(findInput.value)
 // })
 
-// })
-// //удалить новость
-// const newsFindInput = document.getElementById('numNew') as HTMLInputElement
-// const newsDelInput = document.getElementById('delNew') as HTMLInputElement
-// newsDelInput.addEventListener('click', () => {
-//     newsF.deleteNews(+newsFindInput.value)
-// })
-// // найти по тегу
-// const findNInput = document.getElementById('findN') as HTMLInputElement
-// const finddidInput = document.getElementById('findid') as HTMLInputElement
-// finddidInput.addEventListener('click', () => {
-//     newsF.searchNewsByTag(findNInput.value)
-// })
-
-// class News {
+// class news {
 //     heading
 //     date
 //     text
 //     hashtag
 //     a
-//     constructor(heading: string, text: string, hashtag: string, date: string, a: string) {
+
+//     constructor(heading: string, date: string, text: string, hashtag: string, a: string ) {
 //         this.heading = heading
+//         this.date = date
 //         this.text = text
 //         this.hashtag = hashtag
-//         this.date = new Date(date)
-//         this.a = a
+//         this.a = a 
 //     }
+
 //     getDate() {
 //         let today = new Date()
-//         let diffTime = Math.abs(today.getTime() - this.date.getTime())
-//         let diffDays = diffTime / (1000 * 60 * 60 * 24)
-//         if (diffDays < 1) {
+//         let dTime = Math.abs(today.getTime() - this.date.getTime())
+//         let dDays = dDays / (1000 * 60 * 60 * 24)
+
+//         if (dDays < 1) {
 //             return 'Today'
-//         } else if (diffDays < 7) {
-//             return `${diffDays} дней назад`
+
+//         } else if (dDays < 7) {
+//             return `${dDays} дней назад`
+
 //         } else {
 //             return this.date.toLocaleDateString()
 //         }
 //     }
+
 //     print() {
 //         return `<h1>${this.heading}</h1>
-//         <p class="">${this.getDate()}</p>
+//         <p class ="">${this.getDate()}</p>
 //         <p>${this.text}</p>
-//         <a href=" https://www.nytimes.com/2024/04/25/arts/design/san-francisco-museum-sound.html">${this.a}</a>
+//         <a href = "https://www.nytimes.com/2024/04/25/arts/design/san-francisco-museum-sound.html">${this.a}</a>
 //         <p>${this.hashtag}</p>`
 //     }
-// }
-// const newNews = new News('Music Is More Than Just Sound', 'Music is music. But music is also the stuff surrounding the music.Beethoven`s Fifth Symphony, “The White Album,” Coltrane live at Birdland: On their own, these are but air molecules vibrating across our eardrums. Music becomes sacred partly through the material culture it inspires.And just as music shapes design — think jazz album cover versus metal album cover — design also codes how we hear music. In an old Xeroxed flyer for a punk show was information on how to absorb those songs; in an iconic ad for Maxell cassette  tapes lurked signals about the spirit of rock...', '#music #song #TheNYT', '2024-04-07T18:50:20', ' More')
-
-// newNews.print()
-
+// } 
 
 //*  Задание 3.
 // Реализовать класс, описывающий новостную ленту.
@@ -3085,6 +3089,19 @@ mee2.print('Eula is my wife')
 // ■ метод для поиска новостей по тегу (возвращает массив
 // новостей, в которых указан переданный в метод тег).
 // Продемонстрировать работу написанных методов.
+
+
+//     print() {
+//         return `<h1>${this.heading}</h1>
+//         <p class="">${this.getDate()}</p>
+//         <p>${this.text}</p>
+//         <a href=" https://www.nytimes.com/2024/04/25/arts/design/san-francisco-museum-sound.html">${this.a}</a>
+//         <p>${this.hashtag}</p>`
+//     }
+// }
+// const newNews = new News('Music Is More Than Just Sound', 'Music is music. But music is also the stuff surrounding the music.Beethoven`s Fifth Symphony, “The White Album,” Coltrane live at Birdland: On their own, these are but air molecules vibrating across our eardrums. Music becomes sacred partly through the material culture it inspires.And just as music shapes design — think jazz album cover versus metal album cover — design also codes how we hear music. In an old Xeroxed flyer for a punk show was information on how to absorb those songs; in an iconic ad for Maxell cassette  tapes lurked signals about the spirit of rock...', '#music #song #TheNYT', '2024-04-07T18:50:20', ' More')
+
+// newNews.print()
 
 //! ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -3598,3 +3615,11 @@ desCss.innerHTML += bred.getCss()
 // В ней может быть больше строк.
 
 // Напишите код для сортировки по столбцу "name".
+
+//! ------------------------------------------------------------------------------------------------------------------------
+
+
+//* Задание 1.
+// Поймайте переход по ссылке
+// Сделайте так, чтобы при клике на ссылки внутри элемента id="contents" 
+// пользователю выводился вопрос о том, действительно ли он хочет покинуть страницу, и если он не хочет, то прерывать переход по ссылке.
