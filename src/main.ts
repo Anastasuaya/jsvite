@@ -2955,47 +2955,32 @@ console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020))
 // Создать объект такого класса и продемонстрировать работу
 // метода.
 
-// const pmDiv = document.getElementById('pm') as HTMLDivElement
+const pmDiv = document.getElementById('pm') as HTMLDivElement
 
-// class PrintMachine {
+class PrintMachine {
 
-//     tag: string
-//     fSize: string
-//     color: string
-//     fFamily: string
+    tag: string
+    fSize = 24
+    color = 'darkgreen'
+    fFamily = 'roboto'
 
-//     constructor(fSize: string, color: string, fFamily: string, tag = 'p') {
-//         this.tag = tag
-//         this.fSize = fSize
-//         this.color = color
-//         this.fFamily = fFamily
-//     }
+    constructor(fSize: number, color: string, fFamily: string, tag = 'p') {
+        this.tag = tag
+        this.fSize = fSize
+        this.color = color
+        this.fFamily = fFamily
+    }
 
-//     print(text:string) {
-//         pmDiv.innerHTML += `<${this.tag} style ="font-size: ${this.fSize}; font-family: ${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
-//     }
+    print(text:string) {
+        pmDiv.innerHTML += `<${this.tag} style ="font-size: ${this.fSize}; font-family: ${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
+    }
 
-// }
+}
 
-// class ExtendedPrintMachine extends PrintMachine {
-//     fontStyle: string
-//     constructor(fSize: string, color: string, fFamily: string, fontStyle:string, tag = 'p' ) {
-//       super(fSize, color, fFamily, tag)
-//       this.fontStyle = fontStyle
-//     }
-//     print(text: string) {
-//       pmDiv.innerHTML += `<${this.tag} style="font-style:${this.fontStyle};font-size:${this.fSize};font-family:${this.fFamily}; color: ${this.color}">${text}</${this.tag}>`
-//     }
-//   }
-
-
-// PrintMachine
-// const redPM = new PrintMachine('50px', 'red', 'Arial')
-// const blackPM = new PrintMachine('25px', 'black', 'Tahoma', 'h1')
-//   redPM.print('Alert')
-//   blackPM.print('(tommorow)')
-//   redPM.print('1 may on nose')
-//   blackPM.print('not work')
+const mee = new PrintMachine(400, 'white', 'arial')
+mee.print('Hi, I love Alxaitham (this is written by a pm)')
+let mee2 = new PrintMachine(200, 'orange', 'verdana')
+mee2.print('Eula is my wife')
 
 
 
@@ -3021,19 +3006,85 @@ console.log(outputText("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020))
   // С помощью написанного класса реализовать следующий блок
   // и добавить его на страницу с помощью document.write().
 
-//   class HtmlElement {
-//     tag: string
-//     inSingle: boolean
-//     text: string
-//     atributes = [] as any []
-//     styles = [] as any []
-//     elements = [] as HtmlElement []
+  const newsDiv = document.getElementById('news') as HTMLDivElement
+  const newsTitleInput = document.getElementById('title') as HTMLDivElement
+  const newsTextInput = document.getElementById('text') as HTMLDivElement
+  const newsTagInput = document.getElementById('tag') as HTMLDivElement
+  const newsDateInput = document.getElementById('date') as HTMLDivElement
+  const newsAInput = document.getElementById('a') as HTMLDivElement
+  const newsAddButton = document.getElementById('addbutton') as HTMLDivElement
 
-//     constructor(tag: string, text = '') {
+//   newsAddButton.addEventListener('click' () => {
+//     newsF.addNews(newsTitleInput.value, newsTextInput.value )
+//   })
+// newsAddInput.addEventListener('click', () => {
+//     newsF.addNews(newsTitleInput.value, newsTextInput.value, newsTagInput.value, newsDateInput.value, newsAInput.value)
+// })
 
-//         const singleArr = ['area','base','br','col','embed','hr','img','input','keygen','link','meta','param','source','track','wbr']
+// })
+// //удалить новость
+// const newsFindInput = document.getElementById('numNew') as HTMLInputElement
+// const newsDelInput = document.getElementById('delNew') as HTMLInputElement
+// newsDelInput.addEventListener('click', () => {
+//     newsF.deleteNews(+newsFindInput.value)
+// })
+// // найти по тегу
+// const findNInput = document.getElementById('findN') as HTMLInputElement
+// const finddidInput = document.getElementById('findid') as HTMLInputElement
+// finddidInput.addEventListener('click', () => {
+//     newsF.searchNewsByTag(findNInput.value)
+// })
+
+// class News {
+//     heading
+//     date
+//     text
+//     hashtag
+//     a
+//     constructor(heading: string, text: string, hashtag: string, date: string, a: string) {
+//         this.heading = heading
+//         this.text = text
+//         this.hashtag = hashtag
+//         this.date = new Date(date)
+//         this.a = a
 //     }
-//   }
+//     getDate() {
+//         let today = new Date()
+//         let diffTime = Math.abs(today.getTime() - this.date.getTime())
+//         let diffDays = diffTime / (1000 * 60 * 60 * 24)
+//         if (diffDays < 1) {
+//             return 'Today'
+//         } else if (diffDays < 7) {
+//             return `${diffDays} дней назад`
+//         } else {
+//             return this.date.toLocaleDateString()
+//         }
+//     }
+//     print() {
+//         return `<h1>${this.heading}</h1>
+//         <p class="">${this.getDate()}</p>
+//         <p>${this.text}</p>
+//         <a href=" https://www.nytimes.com/2024/04/25/arts/design/san-francisco-museum-sound.html">${this.a}</a>
+//         <p>${this.hashtag}</p>`
+//     }
+// }
+// const newNews = new News('Music Is More Than Just Sound', 'Music is music. But music is also the stuff surrounding the music.Beethoven`s Fifth Symphony, “The White Album,” Coltrane live at Birdland: On their own, these are but air molecules vibrating across our eardrums. Music becomes sacred partly through the material culture it inspires.And just as music shapes design — think jazz album cover versus metal album cover — design also codes how we hear music. In an old Xeroxed flyer for a punk show was information on how to absorb those songs; in an iconic ad for Maxell cassette  tapes lurked signals about the spirit of rock...', '#music #song #TheNYT', '2024-04-07T18:50:20', ' More')
+
+// newNews.print()
+
+
+//*  Задание 3.
+// Реализовать класс, описывающий новостную ленту.
+// Класс должен содержать:
+// ■ массив новостей;
+// ■ свойство, которое возвращает количество новостей;
+// ■ метод для вывода на экран всех новостей;
+// ■ метод для добавления новости;
+// ■ метод для удаления новости;
+// ■ метод для сортировки новостей по дате (от последних новостей до старых);
+// ■ метод для поиска новостей по тегу (возвращает массив
+// новостей, в которых указан переданный в метод тег).
+// Продемонстрировать работу написанных методов.
 
 //! ---------------------------------------------------------------------------------------------------------------------------------
 
