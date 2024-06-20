@@ -3105,54 +3105,54 @@ console.log(c.lengthCircle())
 // С помощью написанного класса реализовать следующий блок
 // и добавить его на страницу с помощью document.write().
 
-class HtmlElement {
-    offsetWidth: any
-    clientWidth: any
-    innerHTML() {
-      throw new Error('Method not implemented.')
-    }
-    tag: string
-    isSingle: boolean
-    text: string
-    atributes = [] as any[]
-    styles = [] as any[]
-    elements = [] as HtmlElement[]
-    constructor(tag: string, text = '') {
-      const singleArr = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr']
-      this.tag = tag
-      this.text = text
-      this.isSingle = singleArr.includes(tag) ? true : false
-    }
-    setAtribute(name: string, value: string) {
-      this.atributes.push({ name, value })
-    }
-    setStyle(name: string, value: string) {
-      this.styles.push({ name, value })
-    }
-    prepend(el: HtmlElement) {
-      this.elements.unshift(el)
-    }
-    append(el: HtmlElement) {
-      this.elements.push(el)
-    }
-    getHtml(): string {
-      const styles = this.styles.map(el => el.name + ':' + el.value).join(';')
-      const attrCopy = [...this.atributes]
-      if (this.styles.length) {
-        attrCopy.push({ name: 'style', value: styles })
-      }
-      if (this.isSingle) {
-        if (this.text) {
-          attrCopy.push({ name: 'area-label', value: this.text })
-        }
-        const atributes = attrCopy.map(el => el.name + '="' + el.value + '"').join(' ')
-        return `<${this.tag} ${atributes}>`
-      } else {
-        const atributes = attrCopy.map(el => el.name + '="' + el.value + '"').join(' ')
-        return `<${this.tag} ${atributes}>${this.text}${this.elements.map(el => el.getHtml()).join('\n')}</${this.tag}>`
-      }
-    }
-  }
+// class HtmlElement {
+//     offsetWidth: any
+//     clientWidth: any
+//     innerHTML() {
+//       throw new Error('Method not implemented.')
+//     }
+//     tag: string
+//     isSingle: boolean
+//     text: string
+//     atributes = [] as any[]
+//     styles = [] as any[]
+//     elements = [] as HtmlElement[]
+//     constructor(tag: string, text = '') {
+//       const singleArr = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr']
+//       this.tag = tag
+//       this.text = text
+//       this.isSingle = singleArr.includes(tag) ? true : false
+//     }
+//     setAtribute(name: string, value: string) {
+//       this.atributes.push({ name, value })
+//     }
+//     setStyle(name: string, value: string) {
+//       this.styles.push({ name, value })
+//     }
+//     prepend(el: HtmlElement) {
+//       this.elements.unshift(el)
+//     }
+//     append(el: HtmlElement) {
+//       this.elements.push(el)
+//     }
+//     getHtml(): string {
+//       const styles = this.styles.map(el => el.name + ':' + el.value).join(';')
+//       const attrCopy = [...this.atributes]
+//       if (this.styles.length) {
+//         attrCopy.push({ name: 'style', value: styles })
+//       }
+//       if (this.isSingle) {
+//         if (this.text) {
+//           attrCopy.push({ name: 'area-label', value: this.text })
+//         }
+//         const atributes = attrCopy.map(el => el.name + '="' + el.value + '"').join(' ')
+//         return `<${this.tag} ${atributes}>`
+//       } else {
+//         const atributes = attrCopy.map(el => el.name + '="' + el.value + '"').join(' ')
+//         return `<${this.tag} ${atributes}>${this.text}${this.elements.map(el => el.getHtml()).join('\n')}</${this.tag}>`
+//       }
+//     }
+//   }
   
 //   const wrapper = new HtmlElement('div')
 //   wrapper.setAtribute('id', 'wrapper')
@@ -3299,14 +3299,62 @@ desCss.innerHTML += bred.getCss()
 
 // docCss.innerHTML += blockCode.style
 // docDiv.innerHTML = blockCode.html
+
+
+
+
+// class HtmlBlock {
+//     styles = [] as CssClass[]
+//     element: HtmlElement
+//     constructor(styles: CssClass[], element: HtmlElement) {
+//         this.styles = styles
+//         this.element = element
+//     }
+//     getCode() {
+//         return {
+//             styles: this.styles.map(el => el.getCss()).join('\n'),
+//             html: this.element.getHtml()
+//         }
+//     }
+// }
+// const docCss = document.getElementById('st') as HTMLDivElement
+// const bigGreen = new CssClass('bigGreen')
+// const docDiv = document.getElementById('he') as HTMLDivElement
+// bigGreen.setStyle("color", "pink")
+// bigGreen.setStyle("color", "white")
+// bigGreen.setStyle("font-size", "40px")
+// bigGreen.setStyle("font-family", "Times New Roman")
+// console.log(bigGreen.getCss())
+// bigGreen.removeProperty("font-family")
+// bigGreen.removeProperty("color")
+
+// const wrapClass = new CssClass('wrap')
+// wrapClass.setStyle("display", "flex")
+
+// const blockClass = new CssClass('block')
+// blockClass.setStyle("width", "300px")
+// blockClass.setStyle("margin", "10px")
+
+// const imgClass = new CssClass('img')
+// imgClass.setStyle("width", "100%")
+// imgClass.setStyle("color", "blueviolet")
+
+// const textClass = new CssClass('text')
+// textClass.setStyle("text-align", "justify")
+
+// const block = new HtmlBlock([wrapClass, blockClass, imgClass, textClass], wrapper)
+
+// docCss.innerHTML += bigGreen.getCss()
+// docDiv.innerHTML = wrapper.getHtml()
+// const blockCode = block.getCode()
+// docCss.innerHTML += blockCode.styles
+// docDiv.innerHTML = blockCode.html
+
+ // const block = new HtmlBlock([bigGreen,], wrapper)
+// docCss.innerHTML += bigGreen.getCss()
+// docDiv.innerHTML = wrapper.getHtml()
  //! ------------------------------------------------------------------------------------------------------------------------
 
-  
-//   docCss.innerHTML += bigGreen.getCss()
-//   docDiv.innerHTML = wrapper.getHtml()
-//   const blockCode = block.getCode()
-//   docCss.innerHTML += blockCode.styles
-//   docDiv.innerHTML = blockCode.html
 //! Даты
 // getFullYear()
   // Получить год(4 цифры)
@@ -3328,8 +3376,75 @@ desCss.innerHTML += bred.getCss()
   // setSeconds(sec, [ms])
   // setMilliseconds(ms)
   // setTime(milliseconds)
-  
-  //! ------------------------------------------------------------------------------------------------------------------------
+
+  //* Задание 1.
+ //Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут. Временная зона – местная.
+
+ //* Задание 2.
+  //Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
+
+//* Задание 3. 
+//В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2)
+// и так до воскресенья (номер 7). Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date.
+
+//* Задание 4.
+//Создайте функцию getDateAgo(date, days), возвращающую число, которое было days дней назад от даты date.
+
+//* Задание 5.
+//Напишите функцию getLastDayOfMonth(year, month), возвращающую последнее число месяца.
+//Иногда это 30, 31 или даже февральские 28/29.
+
+//* Задание 6.
+//Напишите функцию getSecondsToday(), возвращающую количество секунд с начала сегодняшнего дня.
+
+//* Задание 7.
+//Создайте функцию getSecondsToTomorrow(), возвращающую количество секунд до завтрашней даты.
+
+//* Задание 8.
+//Напишите функцию formatDate(date), форматирующую date по следующему принципу:
+//Если спустя date прошло менее 1 секунды, вывести "прямо сейчас".
+//В противном случае, если с date прошло меньше 1 минуты, вывести "n сек. назад".
+//В противном случае, если меньше часа, вывести "m мин. назад".
+//В противном случае, полная дата в формате "DD.MM.YY HH:mm". А именно: "день.месяц.год часы:минуты", всё в виде двух цифр, т.е. 31.12.16 10:00.
+
+//! ------------------------------------------------------------------------------------------------------------------------
+
+
+//TODO Домашка 2.5
+
+//* Задание 1.
+// Реализовать класс, описывающий простой маркер. В классе должны быть следующие компоненты:
+//■ поле, которое хранит цвет маркера;
+//■ поле, которое хранит количество чернил в маркере (в процентах);
+//■ метод для печати (метод принимает строку и выводит текст соответствующим цветом; текст выводится до тех
+//пор, пока в маркере есть чернила; один не пробельный символ – это 0,5% чернил в маркере).
+//Реализовать класс, описывающий заправляющийся маркер, унаследовав его от простого маркера и добавив метод для 
+//заправки маркера. Продемонстрировать работу написанных методов.
+
+//* Задание 2.
+// Реализуйте класс ExtendedDate, унаследовав его от стандартного класса Date и добавив следующие возможности:
+//■ метод для вывода даты (числа и месяца) текстом;
+//■ метод для проверки – это прошедшая дата или будущая
+//(если прошедшая, то метод возвращает false; если будущая или текущая, то true);
+//■ метод для проверки – високосный год или нет;
+//■ метод, возвращающий следующую дату.
+//Создайте объект класса ExtendedDate и выведите на экран результаты работы новых методов.
+
+//* Задание 3.
+// Реализовать класс Employee, описывающий работника, и создать массив работников банка.
+//Реализовать класс EmpTable для генерации html кода таблицы со списком работников банка. Массив работников необходимо
+//передавать через конструктор, а получать html код с помощью метода getHtml().
+//Создать объект класса EmpTable и вывести на экран результат работы метода getHtml().
+
+
+//* Задание 4.
+// Реализовать класс StyledEmpTable, который наследуется от класса EmpTable. Добавить метод getStyles(), который возвращает
+//строку со стилями для таблицы в тегах style. Переопределить метод getHtml(), который добавляет стили к тому, что возвращает
+// метод getHtml() из родительского класса. Создать объект класса StyledEmpTable и вывести на экран
+//результат работы метода getHtml().
+
+
+//! ------------------------------------------------------------------------------------------------------------------------
 
 //TODO Изменение документа.
 
