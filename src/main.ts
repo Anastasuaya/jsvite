@@ -3519,12 +3519,14 @@ desCss.innerHTML += bred.getCss()
 //* Задание 1.
 //Создайте функцию clear(elem), которая удаляет всё содержимое из elem.
 
-//* Задание 2.
-// В примере ниже вызов table.remove() удаляет таблицу из документа.
-// Но если вы запустите его, вы увидите, что текст "aaa" все еще виден.
-// Почему так происходит?
+function clear(elem: any) {
+    elem.innerHTML = ''
 
-//* Задание 3.
+    clear(elem)
+}
+console.log(clear)
+
+//* Задание 2.
 // Напишите интерфейс для создания списка.
 // Для каждого пункта
 // Запрашивайте содержимое пункта у пользователя с помощью prompt.
@@ -3533,7 +3535,24 @@ desCss.innerHTML += bred.getCss()
 // Все элементы должны создаваться динамически.
 // Если пользователь вводит HTML-теги, они должны обрабатываться как текст.
 
-//* Задание 4.
+{
+    const input = document.querySelector('#ToDo input') as HTMLInputElement
+    const button = document.querySelector('#ToDo button') as HTMLButtonElement
+    const list = document.querySelector('#ToDo Ul') as HTMLUListElement
+    
+    button.addEventListener('click', () => {
+        list.insertAdjacentHTML('beforeend', `<li></li>`)
+        if(list.lastElementChild) list.lastElementChild.textContent = input.value.trim()
+        const li = document.createElement('li')
+        li.textContent = input.value.trim()
+        list.append(li)
+        input.value = ''
+        input.focus()
+    })
+}
+
+
+//* Задание 3.
 // Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
 
 // Например:
@@ -3554,13 +3573,30 @@ desCss.innerHTML += bred.getCss()
 //       "магнолия": {}
 //     }
 //   }
-// };
-// Синтаксис:
+// } as Record<string, any>
 
-// let container = document.getElementById('container');
-// createTree(container, data); // создаёт дерево в контейнере
+// let container = document.querySelector('#container ul') as HTMLUListElement
 
-//* Задание 5.
+// function createTree(container: HTMLUListElement, data: Record<string,any>) {
+//     for(let key in data) {
+//         if(Object.keys(data[key]).length) {
+//             const li = document.createElement('li')
+//             li.innerHTML =`${key}<ul></ul>`
+//             container.append(li)
+//             const ul = li.querySelector('ul') as HTMLUListElement
+//             createTree(ul, data[key])
+//         } else {
+//             container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
+//         }
+//     }
+// }
+
+// createTree(container, data)
+// console.log(data)
+
+
+
+//* Задание 4.
 // Выведите список потомков в дереве
 // Есть дерево, организованное в виде вложенных списков ul/li.
 // Напишите код, который добавит каждому элементу списка <li> количество вложенных в него элементов. Узлы нижнего уровня, без детей – пропускайте.
@@ -3571,6 +3607,7 @@ desCss.innerHTML += bred.getCss()
 // Календарь должен быть таблицей, где неделя – это <tr>, а день – это <td>.
 // У таблицы должен быть заголовок с названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
 // Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь:
+
 
 //* Задание 7.
 // Цветные часы с использованием setInterval
@@ -3623,6 +3660,59 @@ desCss.innerHTML += bred.getCss()
 // Поймайте переход по ссылке
 // Сделайте так, чтобы при клике на ссылки внутри элемента id="contents" 
 // пользователю выводился вопрос о том, действительно ли он хочет покинуть страницу, и если он не хочет, то прерывать переход по ссылке.
+
+  
+  //Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
+  
+//   let data = {
+//     "Рыбы": {
+//       "форель": {},
+//       "лосось": {}
+//     },
+//     "Деревья": {
+//       "Огромные": {
+//         "секвойя": {},
+//         "дуб": {}
+//       },
+//       "Цветковые": {
+//         "яблоня": {},
+//         "магнолия": {}
+//       }
+//     }
+//   } as Record<string, any>
+  
+//   let container = document.querySelector('#container ul') as HTMLUListElement
+  
+//   function createTree(container: HTMLUListElement, data: Record<string, any>) {
+//     for (let key in data) {
+//       if (Object.keys(data[key]).length) {
+//         const li = document.createElement('li')
+//         li.innerHTML = `${key}<ul></ul>`
+//         container.append(li)
+//         const ul = li.querySelector('ul') as HTMLUListElement
+//         createTree(ul, data[key])
+//       } else {
+//         container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
+//       }
+//     }
+//   }
+//   createTree(container, data)
+//   console.log(data)
+  
+  //Напишите код для выбора элемента с атрибутом data-widget-name из документа и прочитайте его значение.
+//   let elem = document.querySelector('[data-widget-name]')
+//   console.log(elem?.getAttribute('data-widget-name'))
+  
+  //Сделайте все внешние ссылки оранжевыми, изменяя их свойство style.
+  // найти все ссылки, атрибут href у которых содержит :// и при этом href не начинается с http://internal.com
+  
+//   let selector = 'a[href*="://"]:not([href^="http://internal.com"])'
+//   let links = document.querySelectorAll(selector) as NodeListOf<HTMLAnchorElement>
+//   links.forEach(link => link.style.color = 'orange')
+  
+  
+  // добавление класса
+  //document.body.classList.add('article')
 
 //! ------------------------------------------------------------------------------------------------------------------------
 
