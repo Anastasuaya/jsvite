@@ -3260,42 +3260,42 @@ console.log(c.lengthCircle())
 // ■ метод для удаления стиля;
 // ■ метод getCss(), который возвращает css код в виде строки.
 
-class CssClass {
-    style = [] as any[]
-    name: string
-    constructor(name: string) {
-        this.name = name
-    }
+// class CssClass {
+//     style = [] as any[]
+//     name: string
+//     constructor(name: string) {
+//         this.name = name
+//     }
 
-    setStyle(name: any, value: any) {
-        this.style.push({name, value})
-    }
+//     setStyle(name: any, value: any) {
+//         this.style.push({name, value})
+//     }
 
-    removePr( name: string) {
-        const index = this.style.findIndex(el => el.name == name)
-        if(index != -1) this.style.splice(index, 1)
-    }
+//     removePr( name: string) {
+//         const index = this.style.findIndex(el => el.name == name)
+//         if(index != -1) this.style.splice(index, 1)
+//     }
 
-    getCss() {
-        const styles = this.style.map((el: {name: string, value: string}) => el.name + ':' + el.value).join(';')
-        return `.${this.name}{${styles}}`
-    }
-}
+//     getCss() {
+//         const styles = this.style.map((el: {name: string, value: string}) => el.name + ':' + el.value).join(';')
+//         return `.${this.name}{${styles}}`
+//     }
+// }
 
-const desCss = document.getElementById('st') as HTMLDivElement
-const bred = new CssClass('bred')
+// const desCss = document.getElementById('st') as HTMLDivElement
+// const bred = new CssClass('bred')
 
-bred.setStyle("color", "red")
-bred.setStyle("color", "green")
-bred.setStyle("font-size", "30px")
-bred.setStyle("font-family", "Arial")
-console.log(bred.getCss())
+// bred.setStyle("color", "red")
+// bred.setStyle("color", "green")
+// bred.setStyle("font-size", "30px")
+// bred.setStyle("font-family", "Arial")
+// console.log(bred.getCss())
 
-bred.removePr("font-family")
-bred.removePr("color")
-console.log(bred.getCss())
+// bred.removePr("font-family")
+// bred.removePr("color")
+// console.log(bred.getCss())
 
-desCss.innerHTML += bred.getCss()
+// desCss.innerHTML += bred.getCss()
 
 
 //* Задание 4
@@ -3538,14 +3538,16 @@ console.log(clear)
 {
     const input = document.querySelector('#ToDo input') as HTMLInputElement
     const button = document.querySelector('#ToDo button') as HTMLButtonElement
-    const list = document.querySelector('#ToDo Ul') as HTMLUListElement
+    const list = document.querySelector('#ToDo ul') as HTMLUListElement
     
+    console.log(input, button, list)
     button.addEventListener('click', () => {
-        list.insertAdjacentHTML('beforeend', `<li></li>`)
-        if(list.lastElementChild) list.lastElementChild.textContent = input.value.trim()
-        const li = document.createElement('li')
-        li.textContent = input.value.trim()
-        list.append(li)
+        console.log('click')
+        list.insertAdjacentHTML('beforeend', `<li>${input.value.trim()}</li>`)
+        // if(list.lastElementChild) list.lastElementChild.textContent = input.value.trim()
+        // const li = document.createElement('li')
+        // li.textContent = input.value.trim()
+        // list.append(li)
         input.value = ''
         input.focus()
     })
@@ -3557,43 +3559,42 @@ console.log(clear)
 
 // Например:
 
-// let data = {
-//   "Рыбы": {
-//     "форель": {},
-//     "лосось": {}
-//   },
+let data = {
+  "Рыбы": {
+    "форель": {},
+    "лосось": {}
+  },
 
-//   "Деревья": {
-//     "Огромные": {
-//       "секвойя": {},
-//       "дуб": {}
-//     },
-//     "Цветковые": {
-//       "яблоня": {},
-//       "магнолия": {}
-//     }
-//   }
-// } as Record<string, any>
+  "Деревья": {
+    "Огромные": {
+      "секвойя": {},
+      "дуб": {}
+    },
+    "Цветковые": {
+      "яблоня": {},
+      "магнолия": {}
+    }
+  }
+} as Record<string, any>
 
-// let container = document.querySelector('#container ul') as HTMLUListElement
+let container = document.querySelector('#container ul') as HTMLUListElement
 
-// function createTree(container: HTMLUListElement, data: Record<string,any>) {
-//     for(let key in data) {
-//         if(Object.keys(data[key]).length) {
-//             const li = document.createElement('li')
-//             li.innerHTML =`${key}<ul></ul>`
-//             container.append(li)
-//             const ul = li.querySelector('ul') as HTMLUListElement
-//             createTree(ul, data[key])
-//         } else {
-//             container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
-//         }
-//     }
-// }
+function createTree(container: HTMLUListElement, data: Record<string,any>) {
+    for(let key in data) {
+        if(Object.keys(data[key]).length) {
+            const li = document.createElement('li')
+            li.innerHTML =`${key}<ul></ul>`
+            container.append(li)
+            const ul = li.querySelector('ul') as HTMLUListElement
+            createTree(ul, data[key])
+        } else {
+            container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
+        }
+    }
+}
 
-// createTree(container, data)
-// console.log(data)
-
+createTree(container, data)
+console.log(data)
 
 
 //* Задание 4.
@@ -3601,6 +3602,70 @@ console.log(clear)
 // Есть дерево, организованное в виде вложенных списков ul/li.
 // Напишите код, который добавит каждому элементу списка <li> количество вложенных в него элементов. Узлы нижнего уровня, без детей – пропускайте.
 
+
+data = {
+    "Животные": {
+      "Млекопитающие": {
+        "Коровы": {},
+        "Ослы": {},
+        "Собаки": {},
+        "Тигры": {}
+      },
+      "Другие": {
+        "Змеи": {},
+        "Птицы": {},
+        "Ящерицы": {}
+      }
+    },
+    "Рыбы": {
+      "Аквариумные": {
+        "Гуппи": {},
+        "Скалярии": {}
+      },
+      "Морские": {
+        "Морская форель": {}
+      }
+    }
+   } as Record<string, any>
+
+   container = document.querySelector('#animals ul') as HTMLUListElement
+
+   function countObj(data: any): number {
+    let sum = 0 
+    for(let key in data) {
+        if(Object.keys(data[key]).length) {
+            sum += countObj(data[key])
+        } else {
+            sum++
+        }
+    }
+    return sum
+   }
+
+   function createAnimal(container: HTMLUListElement, data: Record<string,any>) {
+    for(let key in data) {
+        if(Object.keys(data[key]).length) {
+            const li = document.createElement('li')
+            const count = countObj(data[key])
+            li.innerHTML = `${key} [${count}]<ul></ul>`
+            container.append(li)
+            const ul = li.querySelector('ul') as HTMLUListElement
+            createAnimal(ul,data[key])
+        } else {
+            container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
+        }
+    }
+   }
+
+   createAnimal(container, data)
+   const descendants = document.querySelectorAll('#animals li') as NodeListOf<HTMLLIElement>
+   console.log(descendants.length)
+   for(let li of descendants) {
+    const descendantsCount = li.querySelectorAll('li').length
+    if (!descendants) continue
+    li.firstChild!.textContent = li.firstChild!.textContent + '[' + descendantsCount + ']'
+   }
+   
 //* Задание 6.
 // Напишите функцию createCalendar(elem, year, month).
 // Вызов функции должен создать календарь для заданного месяца month в году year и вставить его в elem.
@@ -3617,7 +3682,6 @@ console.log(clear)
 //* Задание 8.
 // Вставьте HTML в список
 // Напишите код для вставки <li>2</li><li>3</li> между этими двумя <li>:
-
 // <ul id="ul">
 //   <li id="one">1</li>
 //   <li id="two">4</li>
