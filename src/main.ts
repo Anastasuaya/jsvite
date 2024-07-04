@@ -3678,7 +3678,7 @@ data = {
     function createCalendar(elem: any, year: number, month: number) {
       let mon = month - 1 // месяцы в JS идут от 0 до 11, а не от 1 до 12
       let d = new Date(year, mon)
-      let table = '<table style="border: 1px; border-color: black; border-style: solid;"><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>'
+      let table = '<p style ="color: white;">Календарь!!!</p><table style="border: 1px; border-color: black; border-style: solid;"><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>'
       for (let i = 0; i < getDay(d); i++) {
         table += '<td></td>'
       }
