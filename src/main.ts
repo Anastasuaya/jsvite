@@ -3673,6 +3673,81 @@ data = {
 // У таблицы должен быть заголовок с названиями дней недели, каждый день – <th>, первым днём недели должен быть понедельник.
 // Например, createCalendar(cal, 2012, 9) сгенерирует в cal следующий календарь:
 
+{
+    let tableElem = document.getElementById('calendar') as HTMLTableElement
+    function createCalendar(elem: any, year: number, month: number) {
+      let mon = month - 1 // месяцы в JS идут от 0 до 11, а не от 1 до 12
+      let d = new Date(year, mon)
+      let table = '<table style="border: 1px; border-color: black; border-style: solid;"><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>'
+      for (let i = 0; i < getDay(d); i++) {
+        table += '<td></td>'
+      }
+      while (d.getMonth() == mon) {
+        table += '<td>' + d.getDate() + '</td>'
+  
+        if (getDay(d) % 7 == 6) {
+          table += '</tr><tr>'
+        }
+  
+        d.setDate(d.getDate() + 1);
+      }
+      if (getDay(d) != 0) {
+        for (let i = getDay(d); i < 7; i++) {
+          table += '<td></td>'
+        }
+      }
+      table += '</tr></table>'
+      elem.innerHTML = table
+    }
+    function getDay(date: Date) {
+      let day = date.getDay()
+      if (day == 0) day = 7 
+      return day - 1
+    }
+    createCalendar(tableElem, 2024, 6)
+  }
+
+
+// {
+//     let table = document.getElementById('calendar') as HTMLTableElement
+
+// function createCalendar(elem: any, year: number, month: number) {
+//     let mon = month - 1
+//     let date = new Date(year,month)
+//     let table = '<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>'
+
+//     for(let i = 0; i < getDay(date); i++) {
+//         table += '<td></td>'
+//     }
+
+//     while(date.getMonth() == mon) {
+//     table += '<td>' + date.getDate() +'</td>'
+
+//      if (getDay(date) % 7 == 6) {
+//         table += '<tr></tr>'
+//      }
+
+//      date.setDate(date.getDate() + 1)
+//     }
+
+//     if (getDay(date) != 0) {
+//         for(let i = getDay(date); i < 7; i++) {
+//             table += '<td></td>'
+//         }
+//     }
+
+//     table += '</tr></table>'
+//     elem.innerHTML = table 
+// }
+
+// function getDay(date: Date) {
+//     let day = Date.getDay()
+//     if (day == 0) day = 7
+//     return day - 1
+// }
+// createCalendar(table, 2024, 6)
+
+// }
 
 //* Задание 7.
 // Цветные часы с использованием setInterval
@@ -3698,6 +3773,7 @@ data = {
 //     <th>Name</th><th>Surname</th><th>Age</th>
 //   </tr>
 // </thead>
+
 // <tbody>
 //   <tr>
 //     <td>John</td><td>Smith</td><td>10</td>
@@ -3725,43 +3801,6 @@ data = {
 // Сделайте так, чтобы при клике на ссылки внутри элемента id="contents" 
 // пользователю выводился вопрос о том, действительно ли он хочет покинуть страницу, и если он не хочет, то прерывать переход по ссылке.
 
-  
-  //Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
-  
-//   let data = {
-//     "Рыбы": {
-//       "форель": {},
-//       "лосось": {}
-//     },
-//     "Деревья": {
-//       "Огромные": {
-//         "секвойя": {},
-//         "дуб": {}
-//       },
-//       "Цветковые": {
-//         "яблоня": {},
-//         "магнолия": {}
-//       }
-//     }
-//   } as Record<string, any>
-  
-//   let container = document.querySelector('#container ul') as HTMLUListElement
-  
-//   function createTree(container: HTMLUListElement, data: Record<string, any>) {
-//     for (let key in data) {
-//       if (Object.keys(data[key]).length) {
-//         const li = document.createElement('li')
-//         li.innerHTML = `${key}<ul></ul>`
-//         container.append(li)
-//         const ul = li.querySelector('ul') as HTMLUListElement
-//         createTree(ul, data[key])
-//       } else {
-//         container.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
-//       }
-//     }
-//   }
-//   createTree(container, data)
-//   console.log(data)
   
   //Напишите код для выбора элемента с атрибутом data-widget-name из документа и прочитайте его значение.
 //   let elem = document.querySelector('[data-widget-name]')
