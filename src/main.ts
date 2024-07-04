@@ -3750,10 +3750,27 @@ data = {
 // }
 
 //* Задание 7.
-// Цветные часы с использованием setInterval
-// Создайте цветные часы как
-// Для стилизации используйте HTML/CSS, JavaScript должен только обновлять время в элементах.
-
+// Создайте цветные часы
+const clock = document.getElementById('clock') as HTMLDivElement
+const buttonStart = document.getElementById('start') as HTMLButtonElement
+const buttonEnd = document.getElementById('end') as HTMLButtonElement
+function newDate() {
+  let date = new Date()
+  let hours = date.getHours()
+  let minutes = date.getMinutes()
+  let seconds = date.getSeconds()
+  clock.children[0].innerHTML = hours.toString().padStart(2, '0')
+  clock.children[1].innerHTML = minutes.toString().padStart(2, '0')
+  clock.children[2].innerHTML = seconds.toString().padStart(2, '0')
+}
+let timer = setInterval(newDate, 1000)
+buttonStart.onclick = function clockStart() {
+  clearInterval(timer)
+  timer = setInterval(newDate, 1000)
+}
+buttonEnd.onclick = function clockStop() {
+  clearInterval(timer)
+}
 //* Задание 8.
 // Вставьте HTML в список
 // Напишите код для вставки <li>2</li><li>3</li> между этими двумя <li>:
