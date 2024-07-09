@@ -3909,3 +3909,32 @@ buttonEnd.onclick = function clockStop() {
 
 // const animal = document.getElementById('mouse') as HTMLPreElement
 
+// let mouse = document.getElementById ('char');
+// document.body.style.overflow = "hidden";
+// mouse.style.position = 'absolute';
+// mouse.tabIndex = 0;
+
+// mouse.addEventListener ('keydown', (e) => {
+// mouse.style.zIndex = 1000;
+// let charsCoords = mouse.getBoundingClientRect();
+// let x = charsCoords.x,
+// y = charsCoords.y;
+// if (x > document.documentElement.clientWidth - mouse.offsetWidth) x = document.documentElement.clientWidth - mouse.offsetWidth;
+// if (x < 0) x = 0;
+// if (y < 0) y = 0;
+// if (y > document.documentElement.clientHeight - mouse.offsetHeight) y = document.documentElement.clientHeight - mouse.offsetHeight;
+// if (e.code == 'ArrowRight') {
+// x += 50;
+// } else if (e.code == 'ArrowDown') {
+// y += 50;
+// } else if (e.code == 'ArrowLeft') {
+// x -= 50;
+// } else if (e.code == 'ArrowUp') {
+// y -= 50;
+// } else return;
+// mouse.style.left = x + "px";
+// mouse.style.top = y + "px";
+// });
+// mouse.addEventListener ('keyup',() => {
+// mouse.style.position = 'absolute';
+// })
