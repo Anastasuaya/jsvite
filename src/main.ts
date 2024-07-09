@@ -3907,5 +3907,5 @@ buttonEnd.onclick = function clockStop() {
 // P.P.S. Не изменяйте HTML/CSS, подход должен быть общим и работать с любым элементом.
 // create a game (cat/mouse)
 
-const animal = document.getElementById('mouse') as HTMLPreElement
+// const animal = document.getElementById('mouse') as HTMLPreElement
 
