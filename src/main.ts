@@ -3933,63 +3933,108 @@ buttonEnd.onclick = function clockStop() {
 // P.P.S. Не изменяйте HTML/CSS, подход должен быть общим и работать с любым элементом.
 // create a game (cat/mouse)
 
-const animal = document.getElementById('mouse') as HTMLPreElement
+const mouse = document.getElementById('mouse') as HTMLPreElement
+const cat = document.getElementById('cat') as HTMLPreElement
 
-animal.tabIndex = 0
-animal.addEventListener ('keydown', (e) => {
-    let charsCoords = animal.getBoundingClientRect()
-    let x = charsCoords.x
-    let y = charsCoords.y
+document.addEventListener ('keydown', (e) => {
+    let mouseCharsCoords = mouse.getBoundingClientRect()
+    let catCharsCoords = cat.getBoundingClientRect()
+    let mouseX = mouseCharsCoords.x
+    let mouseY = mouseCharsCoords.y
+    let catX = catCharsCoords.x
+    let catY = catCharsCoords.y
 
-    if (x > document.documentElement.clientWidth - animal.offsetWidth) x = document.documentElement.clientWidth - animal.offsetWidth
-if (x < 0) x = 0
-if (y < 0) y = 0
-if (y > document.documentElement.clientHeight - animal.offsetHeight) y = document.documentElement.clientHeight - animal.offsetHeight
-if (e.code == 'ArrowRight') {
-x += 50
-} else if (e.code == 'ArrowDown') {
-y += 50
-} else if (e.code == 'ArrowLeft') {
-x -= 50
-} else if (e.code == 'ArrowUp') {
-y -= 50
-} else return;
-animal.style.left = x + "px"
-animal.style.top = y + "px"
+    if (mouseX > document.documentElement.clientWidth - mouse.offsetWidth) mouseX = document.documentElement.clientWidth - mouse.offsetWidth
+    if (mouseX < 0) mouseX = 0
+    if (mouseY < 0) mouseY = 0
+    if (mouseY > document.documentElement.clientHeight - mouse.offsetHeight) mouseY = document.documentElement.clientHeight - mouse.offsetHeight
+    if (e.code == 'ArrowRight') {
+        mouseX += 50
+    } else if (e.code == 'ArrowDown') {
+        e.preventDefault()
+        mouseY += 50
+    } else if (e.code == 'ArrowLeft') {
+        mouseX -= 50
+    } else if (e.code == 'ArrowUp') {
+        e.preventDefault()
+        mouseY -= 50
+    }
+    mouse.style.left = mouseX + "px"
+    mouse.style.top = mouseY + "px"
+    
+    if (catX > document.documentElement.clientWidth - cat.offsetWidth) catX = document.documentElement.clientWidth - cat.offsetWidth
+    if (catX < 0) catX = 0
+    if (catY < 0) catY = 0
+    if (catY > document.documentElement.clientHeight - cat.offsetHeight) catY = document.documentElement.clientHeight - cat.offsetHeight
+    if (e.code == 'KeyD') {
+        catX += 50
+    } else if (e.code == 'KeyS') {
+        catY += 50
+    } else if (e.code == 'KeyA') {
+        catX -= 50
+    } else if (e.code == 'KeyW') {
+        catY -= 50
+    }
+    cat.style.left = catX + "px"
+    cat.style.top = catY + "px"
 })
-animal.addEventListener ('keyup',() => {
-    animal.style.position = 'fixed'
-})
+// const animal = document.getElementById('mouse') as HTMLPreElement
+
+// animal.tabIndex = 0
+// animal.addEventListener ('keydown', (e) => {
+//     let charsCoords = animal.getBoundingClientRect()
+//     let x = charsCoords.x
+//     let y = charsCoords.y
+
+//     if (x > document.documentElement.clientWidth - animal.offsetWidth) x = document.documentElement.clientWidth - animal.offsetWidth
+// if (x < 0) x = 0
+// if (y < 0) y = 0
+// if (y > document.documentElement.clientHeight - animal.offsetHeight) y = document.documentElement.clientHeight - animal.offsetHeight
+// if (e.code == 'ArrowRight') {
+// x += 50
+// } else if (e.code == 'ArrowDown') {
+// y += 50
+// } else if (e.code == 'ArrowLeft') {
+// x -= 50
+// } else if (e.code == 'ArrowUp') {
+// y -= 50
+// } else return;
+// animal.style.left = x + "px"
+// animal.style.top = y + "px"
+// })
+// animal.addEventListener ('keyup',() => {
+//     animal.style.position = 'fixed'
+// })
 
 
 
-const animal1 = document.getElementById('cat') as HTMLPreElement
+// const animal1 = document.getElementById('cat') as HTMLPreElement
 
-animal1.tabIndex = 0
-animal1.addEventListener ('keydown', (e) => {
-    let charsCoords = animal1.getBoundingClientRect()
-    let x = charsCoords.x
-    let y = charsCoords.y
+// animal1.tabIndex = 0
+// animal1.addEventListener ('keydown', (e) => {
+//     let charsCoords = animal1.getBoundingClientRect()
+//     let x = charsCoords.x
+//     let y = charsCoords.y
 
-    if (x > document.documentElement.clientWidth - animal1.offsetWidth) x = document.documentElement.clientWidth - animal1.offsetWidth
-if (x < 0) x = 0
-if (y < 0) y = 0
-if (y > document.documentElement.clientHeight - animal1.offsetHeight) y = document.documentElement.clientHeight - animal1.offsetHeight
-if (e.code == 'ArrowRight') {
-x += 50
-} else if (e.code == 'ArrowDown') {
-y += 50
-} else if (e.code == 'ArrowLeft') {
-x -= 50
-} else if (e.code == 'ArrowUp') {
-y -= 50
-} else return;
-animal1.style.left = x + "px"
-animal1.style.top = y + "px"
-})
-animal1.addEventListener ('keyup',() => {
-    animal1.style.position = 'fixed'
-})
+//     if (x > document.documentElement.clientWidth - animal1.offsetWidth) x = document.documentElement.clientWidth - animal1.offsetWidth
+// if (x < 0) x = 0
+// if (y < 0) y = 0
+// if (y > document.documentElement.clientHeight - animal1.offsetHeight) y = document.documentElement.clientHeight - animal1.offsetHeight
+// if (e.code == 'ArrowRight') {
+// x += 50
+// } else if (e.code == 'ArrowDown') {
+// y += 50
+// } else if (e.code == 'ArrowLeft') {
+// x -= 50
+// } else if (e.code == 'ArrowUp') {
+// y -= 50
+// } else return;
+// animal1.style.left = x + "px"
+// animal1.style.top = y + "px"
+// })
+// animal1.addEventListener ('keyup',() => {
+//     animal1.style.position = 'fixed'
+// })
 
 //TODO Практика 11.07.2024г
 //* Задание 1.
