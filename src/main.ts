@@ -3856,6 +3856,18 @@ buttonEnd.onclick = function clockStop() {
 // Создайте бесконечную страницу. Когда посетитель прокручивает её до конца, 
 // она автоматически добавляет текущие время и дату в текст (чтобы посетитель мог прокрутить ещё).
 
+// (галерея изображений)
+// const galleryLarge = document.querySelector('#largeImg') as HTMLImageElement
+// document.addEventListener('click', (e) => {
+//   const target = e.target as HTMLElement
+//   let galleryMini = target.closest('a') as HTMLAnchorElement
+//   if (galleryMini) {
+//     galleryLarge.src = galleryMini.href
+//   }
+//   if (!galleryMini) return
+//   e.preventDefault()
+// })
+
 //* Задание 2.
 // Создайте кнопку «наверх», чтобы помочь с прокруткой страницы.
 // Она должна работать следующим образом:
@@ -3893,6 +3905,20 @@ buttonEnd.onclick = function clockStop() {
 // <textarea> позволяет редактировать HTML в элементе <div>.
 // Когда пользователь нажимает Enter или переводит фокус, <textarea> превращается обратно в <div>, и его содержимое становится HTML-кодом в <div>.
 
+
+// const view = document.querySelector('#view') as HTMLDivElement
+// view.style.padding = '0'
+// view.addEventListener('click', ()=>{
+//   const data = view.innerHTML
+//   view.innerHTML = `<textarea style="width:100%; height:100%">${data}</textarea>`
+//   const area = view.children[0] as HTMLTextAreaElement
+//   area.focus()
+//   area.onblur = ()=>{
+//     area.onblur = null
+//     view.innerHTML = area.value
+//   }
+// })
+
 //* Задание 3.
 // Сделайте ячейки таблицы редактируемыми по клику.
 
@@ -3907,34 +3933,77 @@ buttonEnd.onclick = function clockStop() {
 // P.P.S. Не изменяйте HTML/CSS, подход должен быть общим и работать с любым элементом.
 // create a game (cat/mouse)
 
-// const animal = document.getElementById('mouse') as HTMLPreElement
+const animal = document.getElementById('mouse') as HTMLPreElement
 
-// let mouse = document.getElementById ('char');
-// document.body.style.overflow = "hidden";
-// mouse.style.position = 'absolute';
-// mouse.tabIndex = 0;
+animal.tabIndex = 0
+    
+animal.addEventListener ('keydown', (e) => {
+    let charsCoords = animal.getBoundingClientRect()
+    let x = charsCoords.x
+    let y = charsCoords.y
 
-// mouse.addEventListener ('keydown', (e) => {
-// mouse.style.zIndex = 1000;
-// let charsCoords = mouse.getBoundingClientRect();
-// let x = charsCoords.x,
-// y = charsCoords.y;
-// if (x > document.documentElement.clientWidth - mouse.offsetWidth) x = document.documentElement.clientWidth - mouse.offsetWidth;
-// if (x < 0) x = 0;
-// if (y < 0) y = 0;
-// if (y > document.documentElement.clientHeight - mouse.offsetHeight) y = document.documentElement.clientHeight - mouse.offsetHeight;
-// if (e.code == 'ArrowRight') {
-// x += 50;
-// } else if (e.code == 'ArrowDown') {
-// y += 50;
-// } else if (e.code == 'ArrowLeft') {
-// x -= 50;
-// } else if (e.code == 'ArrowUp') {
-// y -= 50;
-// } else return;
-// mouse.style.left = x + "px";
-// mouse.style.top = y + "px";
-// });
-// mouse.addEventListener ('keyup',() => {
-// mouse.style.position = 'absolute';
-// })
+    if (x > document.documentElement.clientWidth - animal.offsetWidth) x = document.documentElement.clientWidth - animal.offsetWidth
+if (x < 0) x = 0
+if (y < 0) y = 0
+if (y > document.documentElement.clientHeight - animal.offsetHeight) y = document.documentElement.clientHeight - animal.offsetHeight
+if (e.code == 'ArrowRight') {
+x += 50
+} else if (e.code == 'ArrowDown') {
+y += 50
+} else if (e.code == 'ArrowLeft') {
+x -= 50
+} else if (e.code == 'ArrowUp') {
+y -= 50
+} else return;
+animal.style.left = x + "px"
+animal.style.top = y + "px"
+})
+animal.addEventListener ('keyup',() => {
+    animal.style.position = 'fixed'
+})
+
+const animal1 = document.getElementById('cat') as HTMLPreElement
+
+animal1.tabIndex = 0
+
+    
+animal1.addEventListener ('keydown', (e) => {
+    let charsCoords = animal1.getBoundingClientRect()
+    let x = charsCoords.x
+    let y = charsCoords.y
+
+    if (x > document.documentElement.clientWidth - animal1.offsetWidth) x = document.documentElement.clientWidth - animal1.offsetWidth
+if (x < 0) x = 0
+if (y < 0) y = 0
+if (y > document.documentElement.clientHeight - animal1.offsetHeight) y = document.documentElement.clientHeight - animal1.offsetHeight
+if (e.code == 'ArrowRight') {
+x += 50
+} else if (e.code == 'ArrowDown') {
+y += 50
+} else if (e.code == 'ArrowLeft') {
+x -= 50
+} else if (e.code == 'ArrowUp') {
+y -= 50
+} else return;
+animal1.style.left = x + "px"
+animal1.style.top = y + "px"
+})
+animal1.addEventListener ('keyup',() => {
+    animal1.style.position = 'fixed'
+})
+
+//TODO Практика 11.07.2024г
+//* Задание 1.
+// Модальное диалоговое окно с формой
+// Создайте функцию showPrompt(html, callback), которая выводит форму с сообщением (html), полем ввода и кнопками OK/ОТМЕНА.
+
+// Пользователь должен ввести что-то в текстовое поле и нажать Enter или кнопку «OK», после чего должна вызываться функция callback(value) со значением поля.
+// Если пользователь нажимает Esc или кнопку «ОТМЕНА», тогда вызывается callback(null).
+// В обоих случаях нужно завершить процесс ввода и закрыть диалоговое окно с формой.
+
+// Требования:
+
+// Форма должна быть в центре окна.
+// Форма является модальным окном, это значит, что никакое взаимодействие с остальной частью страницы невозможно, пока пользователь не закроет его.
+// При показе формы, фокус должен находиться сразу внутри <input>.
+// Клавиши Tab/Shift+Tab должны переключать фокус между полями формы, не позволяя ему переходить к другим элементам страницы.

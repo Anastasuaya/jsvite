@@ -12,6 +12,27 @@
     background-color: rgb(39, 39, 48);
     color: white;
   }
+
+  #mouse {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    #mouse:focus {
+    color:rgb(34, 211, 255)
+    }
+
+    #cat {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    #cat:focus {
+     color:rgb(55, 255, 145)
+    }
+    
 </style>
 
 <body>
@@ -84,17 +105,35 @@
   </div>
 
   <!-- Задание 3. Практика 09.07.2024 -->
-  <pre id="mouse">
-    _   _
-   (q\_/p)
-    /. .\
-   =\_t_/=   __
-    /   \   (
-   ((   ))   )
-   /\) (/\  /
-   \  Y  /-'
-    nn^nn
-   </pre>
+  <div style="display: flex;">
+    <pre id="mouse">
+      _   _
+     (q\_/p)
+      /. .\
+     =\_t_/=   __
+      /   \   (
+     ((   ))   )
+     /\) (/\  /
+     \  Y  /-'
+      nn^nn
+     </pre>
+  
+     <pre id="cat">
+  
+       /\„„./\
+      (='•'=  )
+      (") „. (")
+       \,\„„/,/
+       │„„. „│
+       /„/„\„\
+      („) ''(„)
+          ((
+          ))
+          ((
+  
+     </pre>
+  </div>
+  
 
   <select id="genres">
     <option value="rock">Рок</option>
