@@ -3936,7 +3936,6 @@ buttonEnd.onclick = function clockStop() {
 const animal = document.getElementById('mouse') as HTMLPreElement
 
 animal.tabIndex = 0
-    
 animal.addEventListener ('keydown', (e) => {
     let charsCoords = animal.getBoundingClientRect()
     let x = charsCoords.x
@@ -3962,11 +3961,11 @@ animal.addEventListener ('keyup',() => {
     animal.style.position = 'fixed'
 })
 
+
+
 const animal1 = document.getElementById('cat') as HTMLPreElement
 
 animal1.tabIndex = 0
-
-    
 animal1.addEventListener ('keydown', (e) => {
     let charsCoords = animal1.getBoundingClientRect()
     let x = charsCoords.x
