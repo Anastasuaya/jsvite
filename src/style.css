@@ -1,1 +1,85 @@
 
+body {
+    background-color: rgb(39, 39, 48);
+    color: white;
+  }
+
+  #mouse {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0;
+      position: fixed;
+      color: rgb(82, 255, 246);
+    }
+    
+
+    
+    #cat {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0;
+      position: fixed;
+      color: chartreuse;
+    }
+
+
+
+.container-for-carousel {
+    width: calc(300px * 3 + 40px * 2);
+    position: relative;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  
+.catPaw {
+    position: absolute;
+    top: 150px;
+    padding: 0;
+    border: none;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .catPaw:hover {
+    color: rgb(255, 105, 130);
+  }
+  
+  
+  .Left {
+    left: 7px;
+  }
+  
+  .Right {
+    right: 7px;
+  }
+  
+  .cats img {
+    width: 300px;
+    height: 300px;
+    display: block;
+  }
+  
+  .cats li {
+    display: inline-block;
+    /* margin: 0 5px; */
+  }
+
+  .cats {
+    height: 300px;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    transform: translateX(0);
+    transition: transform 1000ms;
+  }
+  
+  .carousel {
+    overflow: hidden;
+    width: 900px;
+  }

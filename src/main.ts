@@ -189,11 +189,11 @@ console.log(age)
 // Запросите у пользователя длину стороны квадрата и вы-
 // ведите периметр такого квадрата.
 
-let width = 10
+// let width = 10
 
-let square = width + width + width + width
+// let square = width + width + width + width
 
-console.log(square)
+// console.log(square)
 
 
 // Домашка 1. Задание 4
@@ -862,14 +862,14 @@ console.log(text)
 //*  Практика 3. Задание 3
 // Запросить число и степень. Возвести число в указанную степень и вывести результат.
 
-let nummber = 10
-let count = 3
-let result = 1
-while (count) {
-    result *= nummber
-    count--
-}
-console.log(result)
+// let nummber = 10
+// let count = 3
+// let result = 1
+// while (count) {
+//     result *= nummber
+//     count--
+// }
+// console.log(result)
 
 //* Практика 3. Задание 4
 // Запросить 2 числа и найти все общие делители.
@@ -906,15 +906,15 @@ console.log(resultat)
 //* Практика 3. Задание 6
 // Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
 
-num = 2
-result = 6
+// num = 2
+// result = 6
 
-do {
-    (num + num * num);
-    num++;
-} while (num < 6);
+// do {
+//     (num + num * num);
+//     num++;
+// } while (num < 6);
 
-console.log(num)
+// console.log(num)
 
   //! ------------------------------------------------------------------------------------------------------------------------
 
@@ -3835,6 +3835,37 @@ buttonEnd.onclick = function clockStop() {
   //document.body.classList.add('article')
 
 //! ------------------------------------------------------------------------------------------------------------------------
+//TODO Карусель.
+
+const carousel = document.querySelector('.container-for-carousel') as HTMLDivElement
+let width = 305
+let count = 3
+let amount = document.querySelectorAll('.cats > li').length
+let rest = amount - count
+let cats = document.querySelector('.cats') as HTMLUListElement
+let position = 0
+
+carousel.querySelector('.Left')?.addEventListener('click', () => {
+    if (amount - rest >= 2 * count) {
+        position -= count * width
+        rest += count
+    } else {
+        position -= (amount - rest - count) * width
+        rest = amount - count
+    }
+    cats.style.transform = `translateX(${-position}px`
+})
+carousel.querySelector('.Right')?.addEventListener('click', () => {
+    if (rest >= count) {
+        position += count * width
+        rest -= count
+    } else {
+        position += rest * width
+        rest = 0
+    }
+    cats.style.transform = `translateX(${-position}px`
+})
+
 
 // Отследить одновременное нажатие
 
