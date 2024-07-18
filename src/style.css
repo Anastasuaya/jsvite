@@ -4,6 +4,11 @@ body {
     color: white;
   }
 
+  #start {
+    width: 64px;
+    height: 64px;
+  }
+
   #mouse {
       display: inline-block;
       cursor: pointer;
