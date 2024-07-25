@@ -4147,12 +4147,13 @@ document.addEventListener('keydown' ,(e) => {
         x -= 50
         jumpingElement.style.left = x + "px"
     }  else if (e.code == 'Space') { 
+        e.preventDefault()
         // Добавляем класс для анимации прыжка 
         jumpingElement.classList.add('jump')
         // Удаляем класс после завершения анимации 
         setTimeout(() => {jumpingElement.classList.remove('jump') }, 500) // Длительность анимации в миллисекундах 
     } 
-    
+
 })
 
 
