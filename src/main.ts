@@ -4124,11 +4124,13 @@ setInterval(() => {
 // У нас должна быть функцияcallback на момент вызова loadScript(script, callback). 
 // Другими словами, нам нужно знать что делать с результатом до того, как вызовется loadScript.
 
+
+
 // Получаем элемент, который будет прыгать 
 const jumpingElement = document.getElementById('jumpingElement') as HTMLDivElement
+
  
 // Функция для обработки нажатия клавиши 
-
 document.addEventListener('keydown' ,(e) => { 
     let jumpingCharsCoords = jumpingElement.getBoundingClientRect()
     let x = jumpingCharsCoords.x
@@ -4139,33 +4141,18 @@ document.addEventListener('keydown' ,(e) => {
     if (y < 0) y = 0
     if (y > document.documentElement.clientHeight - jumpingElement.offsetHeight) y = document.documentElement.clientHeight - jumpingElement.offsetHeight
     if (e.code == 'ArrowRight') {
-    x += 50
+        x += 50
+        jumpingElement.style.left = x + "px"
     }  else if (e.code == 'ArrowLeft') {
-    x -= 50
+        x -= 50
+        jumpingElement.style.left = x + "px"
     }  else if (e.code == 'Space') { 
+        // Добавляем класс для анимации прыжка 
         jumpingElement.classList.add('jump')
-         setTimeout(() => { 
- jumpingElement.classList.remove('jump') }, 500) 
- } 
- jumpingElement.style.left = x + "px"
+        // Удаляем класс после завершения анимации 
+        setTimeout(() => {jumpingElement.classList.remove('jump') }, 500) // Длительность анимации в миллисекундах 
+    } 
+    
 })
 
 
-// Функция для обработки нажатия клавиши 
-// function handleKeyPress(event) { 
- // Проверяем, что нажата клавиша пробела 
-//  if (event.code === 'Space') { 
- // Добавляем класс для анимации прыжка 
-//  jumpingElement.classList.add('jump'); 
- 
- // Удаляем класс после завершения анимации 
-//  setTimeout(() => { 
-//  jumpingElement.classList.remove('jump'); 
-//  }, 500); // Длительность анимации в миллисекундах (здесь 500 мс) 
-//  } 
-// } 
- 
-// Добавляем обработчик события на нажатие клавиши 
-// document.addEventListener('keydown', handleKeyPress);
- 
- 
