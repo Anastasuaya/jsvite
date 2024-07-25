@@ -3866,7 +3866,38 @@ carousel.querySelector('.Right')?.addEventListener('click', () => {
     cats.style.transform = `translateX(${-position}px`
 })
 
-
+//TODO 
+type options = {
+    top?: number,
+    right?: number
+    html?: string
+    class?: string
+}
+function showNotification(options: options) {
+    if (!options.top) options.top = 10
+    if (!options.right) options.right = 10
+    if (!options.html) options.html = ''
+    if (!options.class) options.class = ''
+    let notification = document.createElement('div')
+    notification.innerHTML = options.html
+    notification.classList.add('notification')
+    if (options.class) {
+        notification.classList.add(options.class)
+    }
+    // notification.style.top = window.innerHeight/2-150 + 'px' 
+    // чтобы поставить в центр
+    notification.style.top = options.top + 'px'
+    notification.style.right = options.right + 'px'
+    document.body.append(notification)
+    setTimeout(() => notification.remove(), 2000)
+}
+setInterval(() => {
+    showNotification({
+        top: 30,
+        right: 50,
+        html: '<img src="public/koty-memy-3.webp">'
+    })
+}, 2200)
 // Отследить одновременное нажатие
 
 // Создайте функцию runOnKeys(func, code1, code2, ... code_n), которая запускает func при одновременном нажатии клавиш с кодами code1, code2, …, code_n.
@@ -4097,6 +4128,7 @@ carousel.querySelector('.Right')?.addEventListener('click', () => {
 const jumpingElement = document.getElementById('jumpingElement') as HTMLDivElement
  
 // Функция для обработки нажатия клавиши 
+
 document.addEventListener('keydown' ,(e) => { 
     let jumpingCharsCoords = jumpingElement.getBoundingClientRect()
     let x = jumpingCharsCoords.x
@@ -4117,7 +4149,23 @@ document.addEventListener('keydown' ,(e) => {
  } 
  jumpingElement.style.left = x + "px"
 })
-    
 
+
+// Функция для обработки нажатия клавиши 
+// function handleKeyPress(event) { 
+ // Проверяем, что нажата клавиша пробела 
+//  if (event.code === 'Space') { 
+ // Добавляем класс для анимации прыжка 
+//  jumpingElement.classList.add('jump'); 
+ 
+ // Удаляем класс после завершения анимации 
+//  setTimeout(() => { 
+//  jumpingElement.classList.remove('jump'); 
+//  }, 500); // Длительность анимации в миллисекундах (здесь 500 мс) 
+//  } 
+// } 
+ 
+// Добавляем обработчик события на нажатие клавиши 
+// document.addEventListener('keydown', handleKeyPress);
  
  
