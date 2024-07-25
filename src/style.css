@@ -88,3 +88,19 @@ body {
     overflow: hidden;
     width: 900px;
   }
+
+   #jumpingElement { 
+    display: flex;
+      width: 100px; 
+      height: 100px; 
+      background-color: red; 
+      position: relative; 
+      top: 0; 
+      transition: top 0.5s; /* Длительность анимации */
+      align-items: center;
+ } 
+
+ #jumpingElement.jump { 
+    top: -100px; /* Высота прыжка */ 
+   }
+     

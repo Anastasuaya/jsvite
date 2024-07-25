@@ -3963,52 +3963,54 @@ carousel.querySelector('.Right')?.addEventListener('click', () => {
 // P.S. Не добавляйте обработчики никуда, кроме элемента #mouse.
 // P.P.S. Не изменяйте HTML/CSS, подход должен быть общим и работать с любым элементом.
 // create a game (cat/mouse)
+//! ------------------------------------------------------------------------------------------------------------------------
+// const mouse = document.getElementById('mouse') as HTMLPreElement
+// const cat = document.getElementById('cat') as HTMLPreElement
 
-const mouse = document.getElementById('mouse') as HTMLPreElement
-const cat = document.getElementById('cat') as HTMLPreElement
+// document.addEventListener ('keydown', (e) => {
+//     let mouseCharsCoords = mouse.getBoundingClientRect()
+//     let catCharsCoords = cat.getBoundingClientRect()
+//     let mouseX = mouseCharsCoords.x
+//     let mouseY = mouseCharsCoords.y
+//     let catX = catCharsCoords.x
+//     let catY = catCharsCoords.y
 
-document.addEventListener ('keydown', (e) => {
-    let mouseCharsCoords = mouse.getBoundingClientRect()
-    let catCharsCoords = cat.getBoundingClientRect()
-    let mouseX = mouseCharsCoords.x
-    let mouseY = mouseCharsCoords.y
-    let catX = catCharsCoords.x
-    let catY = catCharsCoords.y
-
-    if (mouseX > document.documentElement.clientWidth - mouse.offsetWidth) mouseX = document.documentElement.clientWidth - mouse.offsetWidth
-    if (mouseX < 0) mouseX = 0
-    if (mouseY < 0) mouseY = 0
-    if (mouseY > document.documentElement.clientHeight - mouse.offsetHeight) mouseY = document.documentElement.clientHeight - mouse.offsetHeight
-    if (e.code == 'ArrowRight') {
-        mouseX += 50
-    } else if (e.code == 'ArrowDown') {
-        e.preventDefault()
-        mouseY += 50
-    } else if (e.code == 'ArrowLeft') {
-        mouseX -= 50
-    } else if (e.code == 'ArrowUp') {
-        e.preventDefault()
-        mouseY -= 50
-    }
-    mouse.style.left = mouseX + "px"
-    mouse.style.top = mouseY + "px"
+//     if (mouseX > document.documentElement.clientWidth - mouse.offsetWidth) mouseX = document.documentElement.clientWidth - mouse.offsetWidth
+//     if (mouseX < 0) mouseX = 0
+//     if (mouseY < 0) mouseY = 0
+//     if (mouseY > document.documentElement.clientHeight - mouse.offsetHeight) mouseY = document.documentElement.clientHeight - mouse.offsetHeight
+//     if (e.code == 'ArrowRight') {
+//         mouseX += 50
+//     } else if (e.code == 'ArrowDown') {
+//         e.preventDefault()
+//         mouseY += 50
+//     } else if (e.code == 'ArrowLeft') {
+//         mouseX -= 50
+//     } else if (e.code == 'ArrowUp') {
+//         e.preventDefault()
+//         mouseY -= 50
+//     }
+//     mouse.style.left = mouseX + "px"
+//     mouse.style.top = mouseY + "px"
     
-    if (catX > document.documentElement.clientWidth - cat.offsetWidth) catX = document.documentElement.clientWidth - cat.offsetWidth
-    if (catX < 0) catX = 0
-    if (catY < 0) catY = 0
-    if (catY > document.documentElement.clientHeight - cat.offsetHeight) catY = document.documentElement.clientHeight - cat.offsetHeight
-    if (e.code == 'KeyD') {
-        catX += 50
-    } else if (e.code == 'KeyS') {
-        catY += 50
-    } else if (e.code == 'KeyA') {
-        catX -= 50
-    } else if (e.code == 'KeyW') {
-        catY -= 50
-    }
-    cat.style.left = catX + "px"
-    cat.style.top = catY + "px"
-})
+//     if (catX > document.documentElement.clientWidth - cat.offsetWidth) catX = document.documentElement.clientWidth - cat.offsetWidth
+//     if (catX < 0) catX = 0
+//     if (catY < 0) catY = 0
+//     if (catY > document.documentElement.clientHeight - cat.offsetHeight) catY = document.documentElement.clientHeight - cat.offsetHeight
+//     if (e.code == 'KeyD') {
+//         catX += 50
+//     } else if (e.code == 'KeyS') {
+//         catY += 50
+//     } else if (e.code == 'KeyA') {
+//         catX -= 50
+//     } else if (e.code == 'KeyW') {
+//         catY -= 50
+//     }
+//     cat.style.left = catX + "px"
+//     cat.style.top = catY + "px"
+// })
+//! ------------------------------------------------------------------------------------------------------------------------
+
 // const animal = document.getElementById('mouse') as HTMLPreElement
 
 // animal.tabIndex = 0
@@ -4090,3 +4092,32 @@ document.addEventListener ('keydown', (e) => {
 //TODO колбэки
 // У нас должна быть функцияcallback на момент вызова loadScript(script, callback). 
 // Другими словами, нам нужно знать что делать с результатом до того, как вызовется loadScript.
+
+// Получаем элемент, который будет прыгать 
+const jumpingElement = document.getElementById('jumpingElement') as HTMLDivElement
+ 
+// Функция для обработки нажатия клавиши 
+document.addEventListener('keydown' ,(e) => { 
+    let jumpingCharsCoords = jumpingElement.getBoundingClientRect()
+    let x = jumpingCharsCoords.x
+    let y = jumpingCharsCoords.y
+
+    if (x > document.documentElement.clientWidth - jumpingElement.offsetWidth) x = document.documentElement.clientWidth - jumpingElement.offsetWidth
+    if (x < 0) x = 0
+    if (y < 0) y = 0
+    if (y > document.documentElement.clientHeight - jumpingElement.offsetHeight) y = document.documentElement.clientHeight - jumpingElement.offsetHeight
+    if (e.code == 'ArrowRight') {
+    x += 50
+    }  else if (e.code == 'ArrowLeft') {
+    x -= 50
+    }  else if (e.code == 'Space') { 
+        jumpingElement.classList.add('jump')
+         setTimeout(() => { 
+ jumpingElement.classList.remove('jump') }, 500) 
+ } 
+ jumpingElement.style.left = x + "px"
+})
+    
+
+ 
+ 
