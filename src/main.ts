@@ -1,6 +1,6 @@
 
 import './style.css'
-
+import 'axios'
 // console.log('Hello world')
 // document.write('<div id="main" style="background: lightcyan;">rain</div>')
 
@@ -4157,3 +4157,4 @@ document.addEventListener('keydown' ,(e) => {
 })
 
 
+//TODO домашка

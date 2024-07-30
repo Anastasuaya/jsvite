@@ -4,6 +4,10 @@ body {
     color: white;
   }
 
+  a {
+    color: white;
+  }
+
   #start {
     width: 64px;
     height: 64px;
