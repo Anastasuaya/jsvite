@@ -7,48 +7,25 @@
   <script type="module" src="/src/idbn.ts"></script>
 </head>
 <style>
-  .flex {
-    display: flex;
-  }
-
-  .jcc {
-    justify-content: center;
-  }
-
-  .fdc {
-    flex-direction: column;
-  }
-
-  .aic {
-    align-items: center;
-  }
-
-  select {
-    height: 22px;
-  }
-
-  form {
-    background-color: rgb(209, 170, 192);
-  }
   
 </style>
 <body>
   <a href="index.html">Нажми на меня</a>
 
   <div class="flex jcc aic">
-    <form class="flex fdc ">
-      <input type="text">
+    <form class="flex fdc">
+      <input type="text" placeholder="title">
       <select>
         <option value="movie">movie</option>
         <option value="series">series</option>
         <option value="episode">episode</option>
       </select>
-      <input type="submit" value="find">
+      <input type="submit" value="Find!">
     </form>
   </div>
 
-  <div id="content">
+  <div id="content" class="flex jcc"></div>
+  <div id="pagination" class="flex jcc"></div>
 
-  </div>
 </body>
 </html>
