@@ -31,7 +31,7 @@ const contentDiv = document.querySelector('#content') as HTMLDivElement
 paginationDiv.addEventListener('click', (e)=>{
   const target = e.target as HTMLElement
   if (!target.dataset.page) return false
-  renderWithPagination(data, +target.dataset.page*3)
+  renderWithPagination(data, +target.dataset.page*5)
 })
 
 let div : HTMLDivElement
@@ -57,8 +57,8 @@ contentDiv.addEventListener('click', (e)=>{
 })
 
 function renderWithPagination(data:any, start:number) {
-  render(data.Search?.slice(start, start+3))
-  const count = Math.ceil(data.Search.length/3)
+  render(data.Search?.slice(start, start+5))
+  const count = Math.ceil(data.Search.length/5)
   paginationDiv.innerHTML = ''
   for (let i=0; i<count;i++) {
     paginationDiv.innerHTML += `<button data-page="${i}">${i+1}</button>`
