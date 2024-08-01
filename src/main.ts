@@ -4157,4 +4157,8 @@ document.addEventListener('keydown' ,(e) => {
 })
 
 
-//TODO домашка
+let url = new URL('https://ru.wikipedia.org/wiki/Тест')
+
+url.searchParams.set('key', 'ъ')
+
+console.log(url)
